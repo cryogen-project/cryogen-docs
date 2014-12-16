@@ -1,0 +1,17 @@
+{:site-title       "Cryogen"
+ :author           "Carmen La"
+ :description      "This blog is awesome"
+ :site-url         "http://blogawesome.com/"
+ :post-root        "posts"
+ :tag-root         "tags"
+ :page-root        "pages"
+ :blog-prefix      ""
+ :rss-name         "feed.xml"
+ :recent-posts     3
+ :post-date-format nil
+ :sass-src         nil
+ :sass-dest        nil
+ :resources        ["css" "js" "404.html"]
+ :keep-files       [".git"]
+ :disqus?          false
+ :disqus-shortname ""}
