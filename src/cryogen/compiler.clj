@@ -27,7 +27,7 @@
   "Generates all the html and copies over resources specified in the config"
   []
   (println (green "compiling assets..."))
-  (let [{:keys [site-url blog-prefix rss-name recent-posts sass-src sass-dest keep-files] :as config} (read-config)
+  (let [{:keys [site-url blog-prefix rss-name recent-posts keep-files] :as config} (read-config)
         posts (add-prev-next (read-posts config))
         pages (add-prev-next (read-pages config))
         [navbar-pages sidebar-pages] (group-pages pages)
