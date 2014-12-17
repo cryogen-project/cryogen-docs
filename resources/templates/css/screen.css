@@ -7,12 +7,11 @@ body {
     max-width: 978px;
 }
 
-header h1 {
-    font-size: 60px;
+header {
+    margin-top: 20px;
 }
-
-header h1 a:hover {
-    text-decoration: none;
+header h1 {
+    display: none;
 }
 
 header h2#slogan {
@@ -108,8 +107,7 @@ header h2#slogan {
 @media screen and (max-width: 767px) {
     header {
         text-align: center;
-        width: auto;
-        margin: auto;
+        margin-top: 20px;
     }
 
     .nav > ul {
