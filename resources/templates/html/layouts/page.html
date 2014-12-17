@@ -1,23 +1,35 @@
 {% extends "templates/html/layouts/base.html" %}
 {%block subtitle %}: {{page.title}}{% endblock %}
 {% block content %}
-<div id="custom-page">
-    <div id="page-header">
-        <h2>{{page.title}}</h2>
-    </div>
-    {% if page.toc %}{{page.toc|safe}}{% endif %}
-    {{page.content|safe}}
 
-    <div id="prev-next">
-        {% if page.prev %}
-        <a href="{{page.prev.uri}}">&laquo; {{page.prev.title}}</a>
+<div class="row">
+    <div id="reading-pane" class="col-lg-9 col-md-9 col-sm-12">
+        <div id="page-header">
+            <h1>{{page.title}}</h1>
+        </div>
+        {% if page.toc %}
+        <div id="toc">{{page.toc|safe}}</div>
         {% endif %}
-        {% if all page.prev page.next %}
-        ||
-        {% endif %}
-        {% if page.next %}
-        <a href="{{page.next.uri}}">{{page.next.title}} &raquo;</a>
-        {% endif %}
+
+        <div id="content">
+            {{page.content|safe}}
+        </div>
+
+        <div id="prev-next">
+            {% if page.prev %}
+            <a class="left" href="{{page.prev.uri}}">&laquo; Prev</a>
+            {% endif %}
+            {% if page.next %}
+            <a class="right" href="{{page.next.uri}}">Next &raquo;</a>
+            {% endif %}
+        </div>
+    </div>
+    <div id="topics-list" class="col-lg-3 col-md-3 col-sm-12">
+        <ul id="topics">
+            {% for page in pages %}
+            <li><a href="{{page.uri}}">{{page.title}}</a></li>
+            {% endfor %}
+        </ul>
     </div>
 </div>
 {% endblock %}

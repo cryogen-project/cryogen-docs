@@ -4,7 +4,7 @@
  :site-url         "http://blogawesome.com/"
  :post-root        "posts"
  :tag-root         "tags"
- :page-root        "pages"
+ :page-root        "docs"
  :blog-prefix      ""
  :rss-name         "feed.xml"
  :recent-posts     3

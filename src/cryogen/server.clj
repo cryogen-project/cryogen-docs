@@ -3,7 +3,8 @@
             [compojure.route :as route]
             [ring.util.response :refer [redirect]]
             [cryogen-core.watcher :refer [start-watcher!]]
-            [cryogen-core.compiler :refer [compile-assets-timed read-config]]))
+            [cryogen-core.compiler :refer [read-config]]
+            [cryogen.compiler :refer [compile-assets-timed]]))
 
 (defn init []
   (compile-assets-timed)

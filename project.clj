@@ -9,6 +9,9 @@
                            [ring/ring-devel "1.3.2"]
                            [compojure "1.3.1"]
                            [ring-server "0.3.1"]
+                           [selmer "0.7.7"]
+                           [clj-text-decoration "0.0.3"]
+                           [io.aviso/pretty "0.1.13"]
                            [cryogen-core "0.1.3"]]
             :plugins [[lein-ring "0.8.13"]]
             :main cryogen.compiler

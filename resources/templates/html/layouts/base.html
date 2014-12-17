@@ -26,7 +26,7 @@
                 <nav>
                     <ul id="menu" class="nav nav-pills navbar-right">
                         <li><a href="{{index-uri}}">Home</a></li>
-                        <li><a href="/pages/documentation.html">Doc<span class="show-on-mobile">s</span><span class="hide-on-mobile">umentation</span></a></li>
+                        <li><a href="/docs/home.html">Doc<span class="show-on-mobile">s</span><span class="hide-on-mobile">umentation</span></a></li>
                         <li><a href="https://github.com/lacarmen/cryogen"><span class="hide-on-mobile">View on </span>Github</a></li>
                     </ul>
                 </nav>
@@ -34,15 +34,9 @@
         </div>
     </header>
 
-    <div id="main">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div id="content">
-                    {% block content %}
-                    {% endblock %}
-                </div>
-            </div>
-        </div>
+    <div id="main" class="row">
+        {% block content %}
+        {% endblock %}
     </div>
     <hr>
 

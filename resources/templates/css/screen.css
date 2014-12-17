@@ -7,6 +7,15 @@ body {
     max-width: 978px;
 }
 
+.left {
+    float: left;
+    text-align: left;
+}
+.right {
+    float: right;
+    text-align: right;
+}
+
 header {
     margin-top: 20px;
 }
@@ -81,6 +90,25 @@ header h2#slogan {
 
 .shell code span.cmd {
     color: #e1e100;
+}
+
+#content {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+#reading-pane {
+    background-color: #F7F9FD;
+    border-radius: 10px;
+}
+
+#prev-next a {
+    margin-bottom: 20px;
+}
+
+#topics {
+    font-size: 16px;
+    line-height: 20px;
 }
 
 @media screen and (min-width: 768px) {
