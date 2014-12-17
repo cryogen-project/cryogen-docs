@@ -1,23 +1,43 @@
 {% extends "templates/html/layouts/base.html" %}
 {% block content %}
-<div id="post">
-    {% include "templates/html/layouts/post-content.html" %}
-    {% if disqus? %}
-    <div id="comments">
-        <a href="{{post.uri}}#disqus_thread">View Comments</a>
-    </div>
-    {% endif %}
+<div id="content">
+    <div id="perks" class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <h2>Simple</h2>
 
-    <div id="prev-next">
-        {% if post.prev %}
-        <a href="{{post.prev.uri}}">&laquo; {{post.prev.title}}</a>
-        {% endif %}
-        {% if all post.prev post.next %}
-        ||
-        {% endif %}
-        {% if post.next %}
-        <a href="{{post.next.uri}}">{{post.next.title}} &raquo;</a>
-        {% endif %}
+            <p>Shipped as a Leiningen template. No need to configure databases for posts and comments - it just works
+                out of the box.</p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <h2>Static</h2>
+
+            <p>Clear separation between your content and layouts makes for fuss free customization. CSS and JavaScript
+                can be easily added.</p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <h2>Automated</h2>
+            <p>No need to worry about linking up your posts or updating your sitemap or RSS feed, Cryogen does it all.</p>
+        </div>
+    </div>
+
+    <h2>Get Started in Seconds</h2>
+
+    <div class="row">
+        <div class="col-lg-7 instructions">
+            <ol>
+                <li>Install <a href="http://leiningen.org/">Leiningen</a></li>
+                <li>Create a new project</li>
+                <li>Start the server and visit <code>localhost:3000</code> in your browser</li>
+            </ol>
+        </div>
+        <div class="col-lg-5">
+            <pre class="shell"><p class="title">Quick Start Guide</p><code class="bash"><span class="dir">~ </span><span
+class="prompt">$ </span><span class="cmd">lein new cryogen my-blog</span>
+<span class="dir">~ </span><span class="prompt">$ </span><span class="cmd">cd my-blog</span>
+<span class="dir">~/my-blog </span><span class="prompt">$ </span><span
+class="cmd">lein ring server</span>
+Started server on port 3000</code></pre>
+        </div>
     </div>
 </div>
 {% endblock %}

@@ -20,11 +20,11 @@
         <div class="row">
             <div class="col-lg-5 col-md-5 col-sm-5">
                 <h1><a href="{{index-uri}}">{{title}}</a></h1>
-
+                <h2 id="slogan" class="faint">Static site generation made easy</h2>
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7">
                 <nav>
-                    <ul class="nav nav-pills navbar-right">
+                    <ul id="menu" class="nav nav-pills navbar-right">
                         <li><a href="{{index-uri}}">Home</a></li>
                         <li><a href="/pages/documentation.html">Doc<span class="show-on-mobile">s</span><span class="hide-on-mobile">umentation</span></a></li>
                         <li><a href="https://github.com/lacarmen/cryogen"><span class="hide-on-mobile">View on </span>Github</a></li>
@@ -33,9 +33,6 @@
             </div>
         </div>
     </header>
-    <hr>
-
-    <div class="desc text-center">Simple static site generation with Clojure</div>
 
     <div id="main">
         <div class="row">
@@ -58,6 +55,7 @@
 
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+{% script "js/main.js" %}
 {% script "js/highlight.pack.js" %}
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
