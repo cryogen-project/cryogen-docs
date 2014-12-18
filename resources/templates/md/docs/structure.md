@@ -2,7 +2,7 @@
  :layout :page
  :page-index 2}
  
-A basic Cryogen site usually* looks something like this:
+A basic Cryogen site usually looks something like this:
 (New files may be added in the future)
 
 ```
