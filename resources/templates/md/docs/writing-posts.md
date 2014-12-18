@@ -9,7 +9,7 @@ Blogging with Cryogen is part of its core functionality. You can simply maintain
 
 All of your blog posts should reside under the `post-root` folder specified in your configuration file. As long as the file contains the proper metadata (discussed later) about the layout of the post followed by valid Markdown content, they will be converted into an HTML page.
 
-### Creating Posts
+## Creating Posts
 
 To create a new blog post, all you need to do is create a new Markdown file under your `post-root` directory. The way you name these files is important. If your specified date format in your configuration file was `dd-MM-yyyy`, Cryogen would require your posts to be named in this format:
 
@@ -17,32 +17,38 @@ To create a new blog post, all you need to do is create a new Markdown file unde
 dd-MM-yyyy-title.md
 ```
 
-If no date format was specified in the configuration file, your post filenames would be as follows:
+If no date format was specified in the configuration file, it will default to the ISO 8601 format.
 
 ```
 yyyy-MM-dd-title.md
 ```
 
-If your title is more than one word long, it must be separated by dashes. For example, the following are valid post filenames:
+If your title is more than one word long, it must be separated by dashes. For example, the following are valid post file names:
  
 ```
 11-04-2014-welcome-to-my-blog.md
 2014-12-01-cryogen-is-greatdocs.md
 ```
 
-The first example uses a specified `dd-MM-yyyy` date format while the second uses the default format.
+The first example uses a specified `dd-MM-yyyy` date format while the second uses the default format. Do note that you cannot mix date formats in post file names though.
 
 ### Post Contents
 
 Every Markdown file representing a post must contain metadata about the title and layout of the post. This is provided as a Clojure map at the beginning of the Markdown file. The following data is required:
 
-  * `:title` - Your post title provided as a string
-  * `:layout` - A keyword corresponding to an HTML file under `html/layouts`
+  * `:title` - Your post title provided as a string.
+  * `:layout` - A keyword corresponding to an HTML file under `html/layouts`.
    
 These are some optional keys that you may provide:
 
-  * `:tags` - A vector of strings represeting any tags associated with the post
-  * `:toc` - Set this to true if you want a table of contents to be generated from the headers in your post.
+  * `:tags` - A vector of strings representing any tags associated with the post.
+  * `:toc` - Set this to true if you want a table of contents to be generated from the headers/headings in your post.
+
+The rest of your file should contain valid Markdown content.
+
+### Tags
+
+Cryogen will automatically create a page for each unique tag that you've used in your posts.  
   
 ### Including Images in Posts
 
@@ -94,7 +100,7 @@ will be compiled into this:
 
 ### Highlighting Code Snippets
 
-Cryogen uses [highlight.js]() to support syntax highlighting for code snippets you wish to include in your posts or pages. Code blocks should be wrapped with triple backticks (```)  and highlight.js will automatically detect the language and handle the syntax colours. If you want to specify the language, simply do so after the first triple backtick. 
+Cryogen uses [highlight.js](https://highlightjs.org/) to support syntax highlighting for code snippets you wish to include in your posts or pages. Code blocks should be wrapped with triple backticks (```)  and highlight.js will automatically detect the language and handle the syntax colours. If you want to specify the language, simply do so after the first triple backtick. 
 
 ## Post Archives
 

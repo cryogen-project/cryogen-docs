@@ -22,6 +22,9 @@ header {
 header h1 {
     display: none;
 }
+header img {
+    margin-left: -35px;
+}
 
 header h2#slogan {
     font-size: 20px;
@@ -92,14 +95,19 @@ header h2#slogan {
     color: #e1e100;
 }
 
+#reading-pane {
+    background-color: #F7F9FD;
+    border-radius: 10px;
+}
+
 #content {
     font-size: 18px;
     line-height: 20px;
 }
 
-#reading-pane {
-    background-color: #F7F9FD;
-    border-radius: 10px;
+#content em {
+    font-family: Arial;
+    font-size: 17px;
 }
 
 #prev-next a {
@@ -107,10 +115,11 @@ header h2#slogan {
 }
 
 #topics h4 {
+    font-size: 21px;
     display: inline-block;
     padding: 0 3px 5px 15px;
+    margin-top: 15px;
     margin-left: -15px;
-    width: auto;
     border-bottom: 3px solid #428bca;
 }
 #topics ul {
@@ -122,6 +131,25 @@ header h2#slogan {
 }
 #topics a {
     color: #333;
+}
+
+pre {
+    box-shadow: 5px 5px 15px #ebebeb inset;
+}
+pre,
+.hljs {
+    background: #f4f4f4;
+}
+
+.hljs-literal,
+.hljs-comment {
+    color: #333;
+}
+
+code {
+    color: #6760d6;
+    background: none;
+    font-size: 80%;
 }
 
 @media screen and (min-width: 768px) {
