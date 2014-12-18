@@ -1,8 +1,9 @@
-{:title "Cryogen's Directory Structure"
+{:title "Directory Structure"
  :layout :page
- :page-index 2}
+ :page-index 2
+ :section "Getting Started"}
  
-A basic Cryogen site usually* looks something like this:
+A basic Cryogen site usually looks something like this:
 (New files may be added in the future)
 
 ```

@@ -1,6 +1,7 @@
 {:title "Getting Started"
  :layout :page
- :page-index 1}
+ :page-index 1
+ :section "Getting Started"}
 
 Cryogen aims to be as simple as possible. There's no need to set up a database or jump through hoops just to get a boilerplate template going.
 
