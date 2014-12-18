@@ -1,6 +1,7 @@
 {:title "Configuration"
  :layout :post
- :page-index 3}
+ :page-index 3
+ :section "Getting Started"}
  
 Cryogen provides some flexible configuration options. Your site's configuration file can be found at `templates/config.edn` and contains the following by default: 
  

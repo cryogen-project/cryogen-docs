@@ -1,6 +1,7 @@
 {:title "Creating Pages"
  :layout :page
- :page-index 5}
+ :page-index 5
+ :section "Your Content"}
  
 Creating pages is not much different from writing posts. You're still required to include the map representing the metadata and the page must be written in valid Markdown. Like blog post, the `title` and `layout` keys are required.
 
