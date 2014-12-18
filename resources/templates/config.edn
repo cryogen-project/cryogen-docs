@@ -1,11 +1,11 @@
 {:site-title       "Cryogen"
  :author           "Carmen La"
- :description      "This blog is awesome"
- :site-url         "http://blogawesome.com/"
+ :description      "Cryogen's Docs"
+ :site-url         "http://lacarmen.github.io/"
  :post-root        "posts"
  :tag-root         "tags"
  :page-root        "docs"
- :blog-prefix      ""
+ :blog-prefix      "/cryogen"
  :rss-name         "feed.xml"
  :recent-posts     3
  :post-date-format nil
