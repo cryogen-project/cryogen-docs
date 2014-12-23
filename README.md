@@ -1,7 +1,7 @@
 cryogen-docs
 ============
 
-Cryogen's documentation website
+The Cryogen project that generates Cryogen's documentation website @ [cryogenweb.org](http://cryogenweb.org/)
 
 ## Contributing
 
