@@ -1,4 +1,4 @@
-cryogen-site
+cryogen-docs
 ============
 
 Cryogen's documentation website
