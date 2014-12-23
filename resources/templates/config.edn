@@ -5,7 +5,7 @@
  :post-root        "posts"
  :tag-root         "tags"
  :page-root        "docs"
- :blog-prefix      "/cryogen"
+ :blog-prefix      ""
  :rss-name         "feed.xml"
  :recent-posts     3
  :post-date-format nil

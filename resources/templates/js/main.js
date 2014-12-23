@@ -1,9 +1,13 @@
 $("#menu").children().each(
-    function() {
+    function () {
         var location = window.location.pathname;
-        var href = $(this).children().first().attr("href");
-        if (location.indexOf(href) > -1)
-            $(this).children().first().addClass("selected");
-        else
-            $(this).children().first().removeClass("selected");
-    });
+        $(this).children().first().removeClass("selected");
+
+        if (location == "/" || location == "/index.html") {
+            $("#home-link").addClass("selected");
+        }
+        else if (location.indexOf("docs") > -1) {
+            $("#docs-link").addClass("selected");
+        }
+    }
+);
