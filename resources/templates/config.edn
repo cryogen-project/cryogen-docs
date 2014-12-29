@@ -1,7 +1,7 @@
 {:site-title       "Cryogen"
  :author           "Carmen La"
  :description      "Cryogen's Docs"
- :site-url         "http://lacarmen.github.io/"
+ :site-url         "http://cryogenweb.org/"
  :post-root        "posts"
  :tag-root         "tags"
  :page-root        "docs"
