@@ -71,7 +71,7 @@
   "Generates all the html and copies over resources specified in the config"
   []
   (println (green "compiling assets..."))
-  (let [{:keys [site-url blog-prefix rss-name recent-posts keep-files] :as config} (read-config)
+  (let [{:keys [site-url blog-prefix rss-name recent-posts keep-files ignored-files] :as config} (read-config)
         posts (add-prev-next (read-posts config))
         pages (add-prev-next (read-pages config))
         [navbar-pages sidebar-pages] (group-pages pages)
@@ -96,7 +96,7 @@
     (compile-index default-params config)
     (compile-archives default-params posts config)
     (println (blue "generating site map"))
-    (spit (str public blog-prefix "/sitemap.xml") (sitemap/generate site-url))
+    (spit (str public blog-prefix "/sitemap.xml") (sitemap/generate site-url ignored-files))
     (println (blue "generating rss"))
     (spit (str public blog-prefix "/" rss-name) (rss/make-channel config posts))))
 
