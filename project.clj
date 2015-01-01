@@ -12,7 +12,7 @@
                            [selmer "0.7.8"]
                            [clj-text-decoration "0.0.3"]
                            [io.aviso/pretty "0.1.13"]
-                           [cryogen-core "0.1.9"]]
+                           [cryogen-core "0.1.10"]]
             :plugins [[lein-ring "0.8.13"]]
             :main cryogen.compiler
             :ring {:init cryogen.server/init

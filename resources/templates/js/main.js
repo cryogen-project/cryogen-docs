@@ -1,3 +1,5 @@
+$("#cpyear").text(new Date().getFullYear());
+
 $("#menu").children().each(
     function () {
         var location = window.location.pathname;

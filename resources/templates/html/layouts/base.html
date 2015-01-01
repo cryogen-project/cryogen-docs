@@ -18,12 +18,17 @@
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
       ga('create', 'UA-56703143-2', 'auto');
       ga('send', 'pageview');
     </script>
-    <meta name="keywords" content="clojure, static site, static site generator, cryogen, leiningen">
+    <meta name="keywords" content="cryogen, clojure, blog engine, static site, static site generator, leiningen">
     <meta name="description" content="Cryogen is a simple static site generator built with Clojure and designed by Carmen La. It's shipped on Leiningen so setup is fuss free.">
+    {% if home %}
+    <meta name="canonical" content="{{site-url}}">
+    {% endif %}
+    {% if not home %}
+    <meta name="canonical" content="{{site-url}}{{uri}}">
+    {% endif %}
 </head>
 <body>
 
@@ -45,7 +50,6 @@
             </div>
         </div>
     </header>
-
     <div id="main" class="row">
         {% block content %}
         {% endblock %}
@@ -53,7 +57,7 @@
     <hr>
 
     <footer class="text-center text-muted">
-        <p>Copyright &copy; 2014 Carmen La</p>
+        <p>Copyright &copy; 2014 - <span id="cpyear"></span> <span>Carmen La</span></p>
 
         <p>Powered by <a href="https://github.com/lacarmen/cryogen">Cryogen</a></p>
     </footer>

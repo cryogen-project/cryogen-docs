@@ -65,6 +65,7 @@
                          (merge default-params
                                 {:servlet-context "../"
                                  :page            page
+                                 :uri             uri
                                  :sections        (group-docs-by-section pages)}))))))
 
 (defn compile-assets
@@ -84,7 +85,8 @@
                         :sidebar-pages sidebar-pages
                         :archives-uri  (str blog-prefix "/archives.html")
                         :index-uri     (str blog-prefix "/index.html")
-                        :rss-uri       (str blog-prefix "/" rss-name)}]
+                        :rss-uri       (str blog-prefix "/" rss-name)
+                        :site-url (if (.endsWith site-url "/") (.substring site-url 0 (dec (count site-url))) site-url)}]
 
     (wipe-public-folder keep-files)
     (println (blue "copying resources"))
