@@ -8,40 +8,29 @@
             [cryogen-core.io :refer [create-folder wipe-public-folder copy-resources copy-images-from-markdown-folders]]
             [cryogen-core.sitemap :as sitemap]
             [cryogen-core.rss :as rss]
-            [cryogen-core.toc :refer [generate-toc]]))
+            [cryogen-core.toc :refer [generate-toc]]
+            [cryogen-core.markup :as m]))
 
 (defn parse-page
   "Parses a page/post and returns a map of the content, uri, date etc."
-  [is-post? page config]
-  (with-open [rdr (java.io.PushbackReader. (reader page))]
-    (let [page-name (.getName page)
-          file-name (clojure.string/replace page-name #".md" ".html")
-          page-meta (read-page-meta page-name rdr)
-          content (parse-content rdr config)]
-      (merge
-        (update-in page-meta [:layout] #(str (name %) ".html"))
-        {:file-name file-name
-         :content   content
-         :toc       (if (:toc page-meta) (generate-toc content))}
-        (if is-post?
-          (let [date (parse-post-date file-name (:post-date-format config))
-                archive-fmt (java.text.SimpleDateFormat. "yyyy MMMM" (java.util.Locale. "en"))
-                formatted-group (.format archive-fmt date)]
-            {:date                    date
-             :formatted-archive-group formatted-group
-             :parsed-archive-group    (.parse archive-fmt formatted-group)
-             :uri                     (post-uri file-name config)
-             :tags                    (set (:tags page-meta))})
-          {:uri        (page-uri file-name config)
-           :page-index (:page-index page-meta)
-           :section    (:section page-meta)})))))
+  [page config markup]
+  (let [{:keys [file-name page-meta content]} (page-content page config markup)]
+    (merge
+      (merge-meta-and-content file-name page-meta content)
+      {:uri (page-uri file-name config markup)
+       :page-index (:page-index page-meta)
+       :section    (:section page-meta)})))
 
 (defn read-pages
   "Returns a sequence of maps representing the data from markdown files of pages.
-   Sorts the sequence by post date."
+  Sorts the sequence by post date."
   [config]
-  (->> (find-pages config)
-       (map #(parse-page false % config))
+  (->> (mapcat
+         (fn [mu]
+           (->>
+             (find-pages config mu)
+             (map #(parse-page % config mu))))
+         (m/markups))
        (sort-by :page-index)))
 
 (defn group-docs-by-section [pages]

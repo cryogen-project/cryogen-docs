@@ -8,11 +8,12 @@
                             :exclusions [com.keminglabs/cljx]]
                            [ring/ring-devel "1.3.2"]
                            [compojure "1.3.1"]
-                           [ring-server "0.3.1"]
+                           [ring-server "0.4.0"]
                            [selmer "0.7.8"]
                            [clj-text-decoration "0.0.3"]
-                           [io.aviso/pretty "0.1.13"]
-                           [cryogen-core "0.1.10"]]
+                           [io.aviso/pretty "0.1.14"]
+                           [cryogen-markdown "0.1.1"]
+                           [cryogen-core "0.1.20"]]
             :plugins [[lein-ring "0.8.13"]]
             :main cryogen.compiler
             :ring {:init cryogen.server/init

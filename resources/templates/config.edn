@@ -7,6 +7,7 @@
  :page-root        "docs"
  :blog-prefix      ""
  :rss-name         "feed.xml"
+ :rss-filters      []
  :recent-posts     3
  :post-date-format nil
  :sass-src         nil
@@ -14,4 +15,5 @@
  :resources        ["css" "img" "js" "404.html"]
  :keep-files       [".git"]
  :disqus?          false
- :disqus-shortname ""}
+ :disqus-shortname ""
+ :ignored-files    [#"\.#.*" #".*\.swp$"]}

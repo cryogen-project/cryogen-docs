@@ -15,32 +15,109 @@ Cryogen provides some flexible configuration options. Your site's configuration 
  :page-root        "pages"
  :blog-prefix      "/blog"
  :recent-posts     5
- :post-date-format "dd-MM-yyyy"
+ :post-date-format "yyyy-MM-dd"
  :rss-name         "feed.xml"
+ :rss-filters      ["cryogen"]
  :sass-src         nil
  :sass-dest        nil
  :resources        ["css" "js" "img"]
  :keep-files       [".git"] 
  :disqus?          false
- :disqus-shortname ""}
+ :disqus-shortname ""
+ :ignored-files    [#"\.#.*" #".*\.swp$"]}
 ```
 
 ## Your options
 
-  * `site-title` - Your site's title.
-  * `author` - Your name goes here!
-  * `description` - A blurb describing your site.
-  * `site-url` - Your site's root url. All of the above values are used when generating your sitemap and RSS feed.
-  * `post-root` - The folder where the compiler will look for blog posts. This value is prepended to all post uri's. Must be provided.
-  * `tag-root` - This value is prepended to all tag page uri's. Must be provided.
-  * `page-root` - The folder where the compiler will look for your custom pages. This value is prepended to all page uri's. Must be provided.
-  * `blog-prefix` - Prepended to all uri's. This must start with a slash. 
-  * `recent-posts` - The maximum number of recent posts to show in the sidebar.
-  * `post-date-format` - Set the date format that you want to use for the names of your .md files representing your posts; nil defaults to yyyy-MM-dd.
-  * `rss-name` - The name of the rss file generated, nil defaults to rss.xml.
-  * `sass-src` -  Directory containing sass(scss) files to be compiled; nil defaults to "css". Be sure to include this directory in your resources section.
-  * `sass-dest` - Directory where the compiled sass would be spit out; nil defaults to "css". Be sure to include this directory in your resources section.
-  * `resources` - A vector of directories/files to be copied over from `template` to `public` upon compilation.
-  * `keep-files` - When wiping the `public` folder, keep the listed directories/files; eg. you would want to keep your `.git` folder if you plan on publishing to Github Pages from the `public` folder.
-  * `disqus?` - Set this to `true` if you want Disqus enabled on your site; nil defaults to `false`.
-  * `disqus-shortname` - Your Disqus shortname.
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>`site-title`</td>
+<td>Your site's title</td>
+</tr>
+<tr>
+<td>`author`</td>
+<td>Your name goes here!</td>
+</tr>
+<tr>
+<td>`description`</td>
+<td>A blurb describing your site</td>
+</tr>
+<tr>
+<td>`site-url`</td>
+<td>Your site's root url. All of the above values are used when generating your sitemap and RSS feed.</td>
+</tr>
+<tr>
+<td>`post-root`</td>
+<td>The folder where the compiler will look for blog posts. This value is prepended to all post uri's. Must
+be provided.
+</td>
+</tr>
+<tr>
+<td>`tag-root`</td>
+<td>This value is prepended to all tag page uri's. Must be provided.</td>
+</tr>
+<tr>
+<td>`page-root`</td>
+<td>The folder where the compiler will look for your custom pages. This value is prepended to all page
+uri's. Must be provided.
+</td>
+</tr>
+<tr>
+<td>`blog-prefix`</td>
+<td>Prepended to all uri's. This must start with a slash.</td>
+</tr>
+<tr>
+<td>`recent-posts`</td>
+<td>The maximum number of recent posts to show in the sidebar.</td>
+</tr>
+<tr>
+<td>`post-date-format`</td>
+<td>Set the date format that you want to use for the names of your .md files representing your posts; nil defaults to yyyy-MM-dd.</td>
+</tr>
+<tr>
+<td>`rss-name`</td>
+<td>The name of the rss file generated, nil defaults to rss.xml.</td>
+</tr>
+<tr>
+<td>`rss-filters`</td>
+<td>Specific tags for which you want to create a separate RSS feed for</td>
+</tr>
+<tr>
+<td>`sass-src`</td>
+<td>Directory containing sass(scss) files to be compiled; nil defaults to "css". Be sure to include this directory in your resources section.</td>
+</tr>
+<tr>
+<td>`sass-dest`</td>
+<td>Directory where the compiled sass would be spit out; nil defaults to "css". Be sure to include this directory in your resources section.</td>
+</tr>
+<tr>
+<td>`resources`</td>
+<td>A vector of directories/files to be copied over from `template` to `public` upon compilation.</td>
+</tr>
+<tr>
+<td>`keep-files`</td>
+<td>When wiping the `public` folder, keep the listed directories/files; eg. you would want to keep your `.git` folder if you plan on publishing to Github Pages from the `public` folder.</td>
+</tr>
+<tr>
+<td>`disqus?`</td>
+<td>Set this to `true` if you want Disqus enabled on your site; nil defaults to `false`.</td>
+</tr>
+<tr>
+<td>`disqus-shortname`</td>
+<td>Your Disqus shortname</td>
+</tr>
+<tr>
+<td>`ignored-files`</td>
+<td>Regexes matching files that you want to ignore during compilation. Ex: emacs interlock files.</td>
+</tr>
+<tr>
+</tr>
+</tbody>
+</table>

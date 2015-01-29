@@ -26,7 +26,16 @@ The following information is mandatory in your page metadata.
   * `:layout` - A keyword representing the name of the HTML file that you want to use as your page layout.
   * `:page-index` - Because pages can be linked up with previous/next links, this is how they get sorted.
   * `:navbar?` - Set this to true if you want the link to this page to appear in the navbar. Set it to false if you want it in the sidebar.
-  
+
+For example:
+
+```
+{:title "Check out this page!"
+ :layout :post
+ :page-index 0
+ :navbar? false}
+```
+
 ### Images in Your Pages
 
 You can include images in your pages in the same way you include images in your blog posts. Please refer to the "Including Images in Posts" and "Images in Markdown" sections of the [Writing Posts](/docs/writing-posts.html) page.

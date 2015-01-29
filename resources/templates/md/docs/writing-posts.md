@@ -46,6 +46,26 @@ These are some optional keys that you may provide:
 
 The rest of your file should contain valid Markdown content.
 
+eg.
+
+```
+{:title "First Post!"
+ :layout :post
+ :tags  ["tag1" "tag3"]}
+
+ ## Hello World
+
+ This is my first post!
+
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ Nunc sodales pharetra massa, eget fringilla ex ornare et.
+ Nunc mattis diam ac urna finibus sodales. Etiam sed ipsum
+ et purus commodo bibendum. Cras libero magna, fringilla
+ tristique quam sagittis, volutpat auctor mi. Aliquam luctus,
+ nulla et vestibulum finibus, nibh justo semper tortor, nec
+ vestibulum tortor est nec nisi.
+```
+
 ### Tags
 
 Cryogen will automatically create a page for each unique tag that you've used in your posts.  
@@ -72,7 +92,7 @@ If you'd like to organize your posts in this fashion, please keep in mind that t
 
 ### Images and Markdown
 
-Normally, you'd want to include images in your posts by referring to the absolute path of the image in your Markdown content. If I were keeping my images under a folder called `img`, I would link to it like so:
+Normally, you'd want to include images in your posts by referring to the absolute path of the image in your Markdown content. If you were keeping your images under a folder called `img`, you would link to it like so:
 
 ```
 ![Image 1](/img/img01.png)
@@ -86,7 +106,7 @@ However, if you'd like you add a prefix to your blog such as `/blog`, your path 
 
 You can probably see how this would be tedious to maintain if you decided to change your prefix or remove it completely though. Suddenly all your images would be missing from your posts.
 
-So how do you include images in your posts? Just go with the first example I provided. Cryogen is smart enough to inject your `blog-prefix` in front of any local images that you include in your posts. Now if your blog prefix was `/blog`, this:
+So how do you include images in your posts? Just go with the first example provided. Cryogen is smart enough to inject your `blog-prefix` in front of any local images that you include in your posts. Now if your blog prefix was `/blog`, this:
  
 ```
 ![Image 1](/img/img01.png)
