@@ -22,10 +22,32 @@ my-projects.md
 
 The following information is mandatory in your page metadata.
 
-  * `:title` - A string representation of your page title.
-  * `:layout` - A keyword representing the name of the HTML file that you want to use as your page layout.
-  * `:page-index` - Because pages can be linked up with previous/next links, this is how they get sorted.
-  * `:navbar?` - Set this to true if you want the link to this page to appear in the navbar. Set it to false if you want it in the sidebar.
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>`title`</td>
+<td>Your post title provided as a string.</td>
+</tr>
+<tr>
+<td>`layout`</td>
+<td>A keyword corresponding to an HTML file under `html/layouts`.</td>
+</tr>
+<tr>
+<td>`page-index`</td>
+<td>Because pages can be linked up with previous/next links, this is how they get sorted.</td>
+</tr>
+<tr>
+<td>`navbar?`</td>
+<td>Set this to true if you want the link to this page to appear in the navbar. Set it to false if you want it in the sidebar.</td>
+</tr>
+</tbody>
+</table>
 
 For example:
 

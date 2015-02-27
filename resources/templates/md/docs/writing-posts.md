@@ -36,13 +36,45 @@ The first example uses a specified `dd-MM-yyyy` date format while the second use
 
 Every Markdown file representing a post must contain metadata about the title and layout of the post. This is provided as a Clojure map at the beginning of the Markdown file. The following data is required:
 
-  * `:title` - Your post title provided as a string.
-  * `:layout` - A keyword corresponding to an HTML file under `html/layouts`.
-   
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>`title`</td>
+<td>Your post title provided as a string.</td>
+</tr>
+<tr>
+<td>`layout`</td>
+<td>A keyword corresponding to an HTML file under `html/layouts`.</td>
+</tr>
+</tbody>
+</table>
+
 These are some optional keys that you may provide:
 
-  * `:tags` - A vector of strings representing any tags associated with the post.
-  * `:toc` - Set this to true if you want a table of contents to be generated from the headers/headings in your post.
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>`tags`</td>
+<td>A vector of strings representing any tags associated with the post.</td>
+</tr>
+<tr>
+<td>`toc`</td>
+<td>Set this to true if you want a table of contents to be generated from the headers/headings in your post.</td>
+</tr>
+</tbody>
+</table>
 
 The rest of your file should contain valid Markdown content.
 

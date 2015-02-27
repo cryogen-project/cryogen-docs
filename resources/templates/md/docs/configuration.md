@@ -121,3 +121,8 @@ uri's. Must be provided.
 </tr>
 </tbody>
 </table>
+
+In addition to these default configuration options, you may add your own custom values. For example, if your blog has a subtitle that you'd like to display on your site:
+
+  1. Add `:subtitle "My subtitle"` to the config file
+  2. Inject the value into your templates using `{% subtitle %}` (Selmer)

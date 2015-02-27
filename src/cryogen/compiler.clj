@@ -43,7 +43,7 @@
 
 (defn compile-pages
   "Compiles all the pages into html and spits them out into the public folder"
-  [default-params pages {:keys [blog-prefix page-root]}]
+  [{:keys [blog-prefix page-root] :as params} pages]
   (when-not (empty? pages)
     (println (blue "compiling pages"))
     (create-folder (str blog-prefix page-root))
@@ -51,7 +51,7 @@
       (println "\t-->" (cyan uri))
       (spit (str public uri)
             (render-file "templates/html/layouts/page.html"
-                         (merge default-params
+                         (merge params
                                 {:servlet-context "../"
                                  :page            page
                                  :uri             uri
@@ -67,25 +67,28 @@
         [navbar-pages sidebar-pages] (group-pages pages)
         posts-by-tag (group-by-tags posts)
         posts (tag-posts posts config)
-        default-params {:title         (:site-title config)
-                        :tags          (map (partial tag-info config) (keys posts-by-tag))
-                        :latest-posts  (->> posts (take recent-posts) vec)
-                        :navbar-pages  navbar-pages
-                        :sidebar-pages sidebar-pages
-                        :archives-uri  (str blog-prefix "/archives.html")
-                        :index-uri     (str blog-prefix "/index.html")
-                        :rss-uri       (str blog-prefix "/" rss-name)
-                        :site-url (if (.endsWith site-url "/") (.substring site-url 0 (dec (count site-url))) site-url)}]
+        params (merge config
+                     {:title         (:site-title config)
+                      :tags          (map (partial tag-info config) (keys posts-by-tag))
+                      :latest-posts  (->> posts (take recent-posts) vec)
+                      :navbar-pages  navbar-pages
+                      :sidebar-pages sidebar-pages
+                      :archives-uri  (str blog-prefix "/archives.html")
+                      :index-uri     (str blog-prefix "/index.html")
+                      :rss-uri       (str blog-prefix "/" rss-name)
+                      :site-url (if (.endsWith site-url "/")
+                                    (.substring site-url 0 (dec (count site-url)))
+                                    site-url)})]
 
     (wipe-public-folder keep-files)
     (println (blue "copying resources"))
     (copy-resources config)
     (copy-images-from-markdown-folders config)
-    (compile-pages default-params pages config)
-    (compile-posts default-params posts config)
-    (compile-tags default-params posts-by-tag config)
-    (compile-index default-params config)
-    (compile-archives default-params posts config)
+    (compile-pages params pages)
+    (compile-posts params posts)
+    (compile-tags params posts-by-tag)
+    (compile-index params)
+    (compile-archives params posts)
     (println (blue "generating site map"))
     (spit (str public blog-prefix "/sitemap.xml") (sitemap/generate site-url ignored-files))
     (println (blue "generating rss"))
