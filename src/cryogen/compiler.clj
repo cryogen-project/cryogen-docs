@@ -57,6 +57,14 @@
                                  :uri             uri
                                  :sections        (group-docs-by-section pages)}))))))
 
+(defn compile-news
+  [{:keys [blog-prefix] :as params}]
+  (println (blue "compiling news"))
+  (spit (str public blog-prefix "/news.html")
+        (render-file "templates/html/layouts/news.html"
+                     (merge params
+                            {:post (get-in params [:latest-posts 0])}))))
+
 (defn compile-assets
   "Generates all the html and copies over resources specified in the config"
   []
@@ -79,7 +87,6 @@
                       :site-url (if (.endsWith site-url "/")
                                     (.substring site-url 0 (dec (count site-url)))
                                     site-url)})]
-
     (wipe-public-folder keep-files)
     (println (blue "copying resources"))
     (copy-resources config)
@@ -88,6 +95,7 @@
     (compile-posts params posts)
     (compile-tags params posts-by-tag)
     (compile-index params)
+    (compile-news params)
     (compile-archives params posts)
     (println (blue "generating site map"))
     (spit (str public blog-prefix "/sitemap.xml") (sitemap/generate site-url ignored-files))

@@ -8,6 +8,9 @@ $("#menu").children().each(
         if (location == "/" || location == "/index.html") {
             $("#home-link").addClass("selected");
         }
+        else if (location.indexOf("news") > -1) {
+            $("#news-link").addClass("selected");
+        }
         else if (location.indexOf("docs") > -1) {
             $("#docs-link").addClass("selected");
         }

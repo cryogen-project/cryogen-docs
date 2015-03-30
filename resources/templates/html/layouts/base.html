@@ -42,18 +42,19 @@
 <div class="container">
     <header>
         <div class="row">
-            <div class="col-lg-5 col-md-5">
-                <a href="{{index-uri}}"><img height="120px" src="/img/banner.svg"/>
+            <div class="col-lg-5 col-md-5 col-sm-6">
+                <a href="{{index-uri}}"><img height="120px" src="/img/banner.png"/>
                     <h1>{{title}}</h1></a>
                 <h2 id="slogan" class="faint">Static sites generated with Clojure</h2>
             </div>
-            <div class="col-lg-7 col-md-7">
+            <div class="col-lg-7 col-md-7 col-sm-6">
                 <nav>
                     <ul id="menu" class="nav nav-pills navbar-right">
                         <li><a id="home-link" href="{{index-uri}}">Home</a></li>
                         <li><a id="docs-link" href="/docs/home.html">Doc<span class="show-on-mobile">s</span><span
                                 class="hide-on-mobile">umentation</span></a></li>
-                        <li><a href="https://github.com/lacarmen/cryogen"><span class="hide-on-mobile">View on </span>GitHub</a>
+                        <li><a id="news-link" href="/news.html">News</a></li>
+                        <li><a href="https://github.com/cryogen-project/cryogen"><span class="hide-on-mobile">View on </span>GitHub</a>
                         </li>
                     </ul>
                 </nav>
@@ -64,12 +65,12 @@
         {% block content %}
         {% endblock %}
     </div>
-    <hr>
 
     <footer class="text-center text-muted">
-        <p>Copyright &copy; 2014 - <span id="cpyear"></span> <span>Carmen La</span></p>
+        <p><a href="http://cryogenweb.org/de">View in German</a></p>
+        <p>Copyright &copy; 2014 - <span id="cpyear"></span> <span>Carmen La</span><br>
 
-        <p>Powered by <a href="https://github.com/lacarmen/cryogen">Cryogen</a></p>
+        Powered by <a href="https://github.com/cryogen-project/cryogen">Cryogen</a></p>
     </footer>
 </div>
 

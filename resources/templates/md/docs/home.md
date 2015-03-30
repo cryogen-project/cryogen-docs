@@ -11,4 +11,4 @@ Cryogen is a simple static site generator built with Clojure. It's shipped on Le
 
 Cryogen reads through a directory containing your Markdown content, compiles it into HTML and injects the content into your templates with the [Selmer](https://GitHub.com/yogthos/selmer) templating system. It then spits out a ready-to-publish website complete with a sitemap and RSS feed.
 
-If you come across anything along the way that this guide doesn't cover, please [open an issue](https://GitHub.com/lacarmen/cryogen/issues/new) on the GitHub page and further instructions can be included here.
+If you come across anything along the way that this guide doesn't cover, please [open an issue](https://github.com/cryogen-project/cryogen/issues/new) on the GitHub page and further instructions can be included here.

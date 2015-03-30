@@ -2,13 +2,13 @@
  :author           "Carmen La"
  :description      "Cryogen's Docs"
  :site-url         "http://cryogenweb.org/"
- :post-root        "posts"
+ :post-root        "news"
  :tag-root         "tags"
  :page-root        "docs"
  :blog-prefix      ""
  :rss-name         "feed.xml"
  :rss-filters      []
- :recent-posts     3
+ :recent-posts     100
  :post-date-format nil
  :sass-src         nil
  :sass-dest        nil
