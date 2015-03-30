@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Cryogen: Seiten erstellen</title>
+    <link rel="icon" href="/img/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/color-brewer.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
+          type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href="../css/screen.css" rel="stylesheet" type="text/css" />
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-56703143-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <meta name="keywords" content="cryogen, clojure, blog engine, static site, static site generator, leiningen">
+    <meta name="description"
+          content="Cryogen is a simple static site generator built with Clojure and designed by Carmen La. It's shipped on Leiningen so setup is simple and fuss free.">
+    
+    
+    <meta name="canonical" content="http://cryogenweb.org/de/docs/creating-pages.html">
+    
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-6">
+                <a href="/de/index.html"><img height="120px" src="/img/banner.png"/>
+                    <h1>Cryogen</h1></a>
+                <h2 id="slogan" class="faint">Statische Seiten, generiert mit Clojure</h2>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-6">
+                <nav>
+                    <ul id="menu" class="nav nav-pills navbar-right">
+                        <li><a id="home-link" href="/de/index.html">Home</a></li>
+                        <li><a id="docs-link" href="/de/docs/home.html">Doku<span class="show-on-mobile">s</span><span
+                                class="hide-on-mobile">mentation</span></a></li>
+                        <li><a href="https://github.com/cryogen-project/cryogen"><span class="hide-on-mobile">Auch auf </span>GitHub</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="main" class="row">
+        
+
+<div class="row">
+    <div id="reading-pane" class="col-lg-10 col-md-10 col-sm-12">
+        <div id="page-header">
+            <h1>Seiten erstellen</h1>
+        </div>
+        
+
+        <div id="content">
+             <p>Sie erstellen Seiten auf einem &aumlhnlichen Weg, wie Sie Posts erzeugen. Sie m&uumlssen immer noch eine map einf&uumlgen, die die Metadaten enth&aumlt, und die Seite muss in g&uumltigem Markdown geschrieben sein.</p><h2><a name="der&#95;seiten-ordner"></a>Der Seiten-Ordner</h2><p>&Aumlnhlich wie f&uumlr Posts werden alle Ihre Seiten in dem <code>page-root</code>-Ordner angelegt, den Sie in Ihrer Konfiguration festgelegt haben. So lange die Datei g&uumltiges Markdown enth&aumlt, wird sie in eine HTML-Seite umgewandelt.</p><h2><a name="seiten&#95;erstellen"></a>Seiten erstellen</h2><p>Um eine neue Seite zu erstellen, kreieren Sie einfach eine neue Markdown-Datei unter dem Verzeichnis <code>page-root</code>. Anders als bei Posts m&uumlssen Sie diesmal kein Datum in den Dateinamen einf&uumlgen. Worte sollten immer noch mit Bindestrichen getrennt werden und m&uumlssen auf <code>.md</code> enden. Beispiel:</p><pre><code>hallo.md
+meine-projekte.md
+</code></pre><h3><a name="seiteninhalt"></a>Seiteninhalt</h3><p>Die folgenden Informationen m&uumlssen in Ihren Seiten-Metadaten enthalten sein:</p><ul><li><code>:title</code> - Ein String mit dem Seitennamen.</li><li><code>:layout</code> - Ein Schl&uumlsselwort, das den Namen der HTML-Datei darstellt, die Sie f&uumlr Ihr Layout nutzen wollen.</li><li><code>:page-index</code> - Seiten k&oumlnnen mit vor/zur&uumlck-Links vernetzt werden, und so werden sie sortiert.</li><li><code>:navbar?</code> - Setzen Sie dies auf true wenn Sie einen Link zu dieser Seite im Men&uuml wollen. Setzen Sie es auf false wenn Sie den Link in der Seitenleiste wollen.</li></ul><p>Zum Beispiel:</p><pre><code>{:title &quot;Was f&amp;uumlr eine Seite!&quot;
+ :layout :post
+ :page-index 0
+ :navbar? false}
+</code></pre><h3><a name="bilder&#95;auf&#95;ihren&#95;seiten"></a>Bilder auf Ihren Seiten</h3><p>Sie k&oumlnnen Bilder in Ihren Seiten auf dem gleichen Weg einf&uumlgen, auf dem Sie Bilder in Ihren Blog-Posts eingef&uumlgt haben. Btte lesen Sie dazu die Sektionen "Bilder in Ihren Blog-Posts" und "Bilder in Markdown" auf der Seite <a href='/de/docs/writing-posts.html'>Posts erstellen</a>.</p><h3><a name="code&#95;hervorheben"></a>Code hervorheben</h3><p>Wollen Sie Ihren Code hervorheben? Es funktioniert genauso wie bei Posts. Einfach den Code mit dreifachen Backticks umschlie&szligen und highlight.js erledigt den Rest.zligen und highlight.js erledigt den Rest.</p>
+        </div>
+
+        <div id="prev-next">
+            
+            <a class="left" href="/de/docs/writing-posts.html">&laquo; Zur&uumlck</a>
+            
+            
+            <a class="right" href="/de/docs/deploying-to-github-pages.html">Vor &raquo;</a>
+            
+        </div>
+    </div>
+    <div id="topics-list" class="col-lg-2 col-md-2 col-sm-12">
+        <div id="topics">
+            
+            <h4>Anfangen</h4>
+            <ul>
+                
+                <li><a href="/de/docs/home.html">Willkommen</a></li>
+                
+                <li><a href="/de/docs/getting-started.html">Anfangen</a></li>
+                
+                <li><a href="/de/docs/structure.html">Verzeichnisstruktur</a></li>
+                
+                <li><a href="/de/docs/configuration.html">Konfiguration</a></li>
+                
+            </ul>
+            
+            <h4>Ihr Inhalt</h4>
+            <ul>
+                
+                <li><a href="/de/docs/writing-posts.html">Posts schreiben</a></li>
+                
+                <li><a href="/de/docs/creating-pages.html">Seiten erstellen</a></li>
+                
+            </ul>
+            
+            <h4>Ins Netz stellen</h4>
+            <ul>
+                
+                <li><a href="/de/docs/deploying-to-github-pages.html">GitHub-Seiten</a></li>
+                
+                <li><a href="/de/docs/deploying-with-nginx-VPS.html">Nginx auf einem VPS</a></li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    <footer class="text-center text-muted">
+        <p><a href="http://cryogenweb.org/">Blick in Englisch</a></p>
+        <p>Copyright &copy; 2014 - <span id="cpyear"></span> <span>Carmen La</span><br>
+
+            Powered by <a href="https://github.com/cryogen-project/cryogen">Cryogen</a></p>
+    </footer>
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="../js/main.js" type="text/javascript"></script>
+<script src="../js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

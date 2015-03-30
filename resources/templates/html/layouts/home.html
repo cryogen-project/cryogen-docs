@@ -1,0 +1,38 @@
+{% extends "templates/html/layouts/base.html" %}
+{%block subtitle %}: Einfache statische Seiten{% endblock %}
+{% block content %}
+<div id="perks" class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4">
+        <h2>Einfach</h2>
+        <p>Ein Programm, um Seiten mit Clojure zu generiern, verpackt als Leiningen-Template. Es m&uumlssen keine Datenbanken generiert werden, es funktionert sofort.</p>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4">
+        <h2>Statisch</h2>
+        <p>Klare Trennung von Inhalt und Layout erlaubt eine einfache Anpassung an Ihre Bed&uumlrfnisse. CSS und JavaScript k&oumlnnen leicht hinzugef&uumlgt werden.</p>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4">
+        <h2>Automatisch</h2>
+        <p>Sie m&uumlssen sich nicht darum k&umlmmern, Ihre Posts zu verlinken oder Ihre sitemap und RSS Feed aktuell zu halten - Cryogen macht das f&uumlr Sie.</p>
+    </div>
+</div>
+
+<h2>Anfangen in Sekunden</h2>
+
+<div class="row">
+    <div class="col-lg-7 instructions">
+        <ol>
+            <li>Installieren Sie <a href="http://leiningen.org/">Leiningen</a></li>
+            <li>Starten Sie ein neues Projekt</li>
+            <li>Starten Sie den server und rufen Sie <code>localhost:3000</code> in Ihrem Browser auf</li>
+        </ol>
+    </div>
+    <div class="col-lg-5">
+        <pre class="shell"><p class="title">Schnellstart</p><code class="bash"><span class="dir">~ </span><span
+class="prompt">$ </span><span class="cmd">lein new cryogen mein-blog</span>
+<span class="dir">~ </span><span class="prompt">$ </span><span class="cmd">cd mein-blog</span>
+<span class="dir">~/my-blog </span><span class="prompt">$ </span><span
+class="cmd">lein ring server</span>
+Started server on port 3000</code></pre>
+    </div>
+</div>
+{% endblock %}
