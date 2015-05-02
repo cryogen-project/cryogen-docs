@@ -3,7 +3,7 @@
  :page-index 7
  :section "Deployment"}
  
-A Virtual Private Servers (VPS) such as [DigitalOcean](https://www.digitalocean.com/) are an excellent way to host a site with static content for around $5 per month. Here's a quick rundown on how to serve your content with [Nginx](http://wiki.nginx.org/) on VPS running Ubuntu.
+Virtual Private Servers (VPS), such as those provided by [DigitalOcean](https://www.digitalocean.com/), are an excellent way to host a site with static content for around $5 per month. Here's a quick rundown on how to serve your content with [Nginx](http://wiki.nginx.org/) on VPS running Ubuntu.
 
 ## Setting up Nginx
 
