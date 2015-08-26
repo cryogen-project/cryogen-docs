@@ -14,17 +14,21 @@ Cryogen provides some flexible configuration options. Your site's configuration 
  :tag-root         "tags"
  :page-root        "pages"
  :blog-prefix      "/blog"
- :recent-posts     5
- :post-date-format "yyyy-MM-dd"
  :rss-name         "feed.xml"
  :rss-filters      ["cryogen"]
+ :recent-posts     3
+ :post-date-format "yyyy-MM-dd"
  :sass-src         nil
  :sass-dest        nil
- :resources        ["css" "js" "img"]
+ :theme            "blue"
+ :resources        ["img"]
  :keep-files       [".git"] 
  :disqus?          false
  :disqus-shortname ""
- :ignored-files    [#"\.#.*" #".*\.swp$"]}
+ :ignored-files    [#"\.#.*" #".*\.swp$"]
+ :posts-per-page 5
+ :blocks-per-preview 2
+ :previews? false}
 ```
 
 ## Your options
@@ -74,14 +78,6 @@ uri's. Must be provided.
 <td>Prepended to all uri's. This must start with a slash.</td>
 </tr>
 <tr>
-<td>`recent-posts`</td>
-<td>The maximum number of recent posts to show in the sidebar.</td>
-</tr>
-<tr>
-<td>`post-date-format`</td>
-<td>Set the date format that you want to use for the names of your .md files representing your posts; nil defaults to yyyy-MM-dd.</td>
-</tr>
-<tr>
 <td>`rss-name`</td>
 <td>The name of the rss file generated, nil defaults to rss.xml.</td>
 </tr>
@@ -90,12 +86,24 @@ uri's. Must be provided.
 <td>Specific tags for which you want to create a separate RSS feed for</td>
 </tr>
 <tr>
+<td>`recent-posts`</td>
+<td>The maximum number of recent posts to show in the sidebar.</td>
+</tr>
+<tr>
+<td>`post-date-format`</td>
+<td>Set the date format that you want to use for the names of your .md files representing your posts; nil defaults to yyyy-MM-dd.</td>
+</tr>
+<tr>
 <td>`sass-src`</td>
 <td>Directory containing sass(scss) files to be compiled; nil defaults to "css". Be sure to include this directory in your resources section.</td>
 </tr>
 <tr>
 <td>`sass-dest`</td>
 <td>Directory where the compiled sass would be spit out; nil defaults to "css". Be sure to include this directory in your resources section.</td>
+</tr>
+<tr>
+<td>`theme`</td>
+<td>Set this to the theme you wish to deliver from the `themes` directory under `templates`. You can add your own theme to the current blue and blue_centered ones.</td>
 </tr>
 <tr>
 <td>`resources`</td>
@@ -116,6 +124,22 @@ uri's. Must be provided.
 <tr>
 <td>`ignored-files`</td>
 <td>Regexes matching files that you want to ignore during compilation. Ex: emacs interlock files.</td>
+</tr>
+<tr>
+<td>`post-per-page`</td>
+<td>Maximum number of posts on a page.</td>
+</tr>
+<tr>
+<td>`posts-per-page`</td>
+<td>Maximum number of posts on a page.</td>
+</tr>
+<tr>
+<td>`blocks-per-preview`</td>
+<td>How man blocks you can see of posts.</td>
+</tr>
+<tr>
+<td>`previews?`</td>
+<td>Boolean on whether previews are available.</td>
 </tr>
 <tr>
 </tr>
