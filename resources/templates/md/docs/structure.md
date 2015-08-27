@@ -142,3 +142,6 @@ my-blog
 </tr>
 </tbody>
 </table>
+
+The html templates use Selmer which can extend other templates. Most html templates extend off of base.html. The following diagram gives an overview of the Cryogen Selmer hierachy.
+![Selmer Hierachy](/img/selmer-hierachy.png)
