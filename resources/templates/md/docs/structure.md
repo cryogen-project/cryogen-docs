@@ -8,35 +8,61 @@ A basic Cryogen site usually looks something like this:
 
 ```
 my-blog
- |---resources
- |   |---public
- |   |---templates
- |   |   |---css
- |   |   |   |---screen.css
- |   |   |---html
- |   |   |   |---layouts
- |   |   |       |---archives.html
- |   |   |       |---base.html
- |   |   |       |---home.html
- |   |   |       |---page.html
- |   |   |       |---post.html
- |   |   |       |---tag.html
- |   |   |---js
- |   |   |   |---highlight.pack.js
- |   |   |---md
- |   |   |   |---pages
- |   |   |   |   |---about.md
- |   |   |   |   |---another-page.md
- |   |   |   |---posts
- |   |   |       |---10-03-2014-first-post.md
- |   |   |       |---11-04-2014-second-post.md
- |   |   |       |---13-11-2014-docs.md
- |   |   |---404.html
- |   |   |---config.edn
- |---src
- |   |---cryogen
- |   |   |---server.clj
- |---project.clj
+├── project.clj
+├── src
+│   └── cryogen
+│       ├── core.clj
+│       └── server.clj
+└── resources
+└── templates
+├── md
+│   ├── posts
+│   │   ├── 2014-11-04-second-post.md
+│   │   ├── 2014-03-10-first-post.md
+│   │   └── 2014-12-11-docs.md
+│   └── pages
+│       ├── another-page.md
+│       └── about.md
+├── config.edn
+├── themes
+│   ├── blue
+│   │   ├── css
+│   │   │   └── screen.css
+│   │   ├── html
+│   │   │   ├── base.html
+│   │   │   ├── page.html
+│   │   │   ├── home.html
+│   │   │   ├── tags.html
+│   │   │   ├── 404.html
+│   │   │   ├── archives.html
+│   │   │   ├── previews.html
+│   │   │   ├── post.html
+│   │   │   ├── post-content.html
+│   │   │   └── tag.html
+│   │   └── js
+│   │       └── highlight.pack.js
+│   └── blue_centered
+│       ├── css
+│       │   └── screen.css
+│       ├── html
+│       │   ├── base.html
+│       │   ├── page.html
+│       │   ├── home.html
+│       │   ├── tags.html
+│       │   ├── 404.html
+│       │   ├── archives.html
+│       │   ├── previews.html
+│       │   ├── post.html
+│       │   ├── post-content.html
+│       │   └── tag.html
+│       └── js
+│           └── highlight.pack.js
+├── img
+└── asc
+├── posts
+│   └── 2014-10-10-adoc-post.asc
+└── pages
+                └── adoc-page.asc
 ```
 
 <table class="table table-bordered">
@@ -57,24 +83,33 @@ my-blog
 </tr>
 <tr>
 <td>`templates`</td>
-<td>The main folder where all your HTML layouts and Markdown content will go.</td>
+<td>The main folder where all your HTML themes and Markdown/AsciiDoc content will go.</td>
 </tr>
 <tr>
-<td>`css`</td>
-<td>Pretty self explanatory. Put your css files here</td>
+<td>`themes`</td>
+<td>This directory contains selectable themes for html/css/js that you can choose via config.edn to apply to your site.</td>
 </tr>
 <tr>
-<td>`html/layouts`</td>
+<td>`themes\{theme}\css`</td>
+<td>Pretty self explanatory. Put your themes css files here</td>
+</tr>
+<tr>
+<td>`themes\{theme}\html`</td>
 <td>These are they templates that wrap posts and pages. Layouts are selected on a post-by-post basis and content gets injected by Selmer.
 </td>
 </tr>
 <tr>
-<td>`js`</td>
-<td>Also self explanatory. JavaScript files go here.</td>
+<td>`themes\{theme}\js`</td>
+<td>Also self explanatory. The themes JavaScript files go here.</td>
 </tr>
 <tr>
 <td>`md`</td>
 <td>Keep your Markdown content here.
+</td>
+</tr>
+<tr>
+<td>`asc`</td>
+<td>Keep your AsciiDoc content here.
 </td>
 </tr>
 <tr>
@@ -86,8 +121,8 @@ my-blog
 <td>The root folder for all your post content in Markdown. This folder name can also be changed.</td>
 </tr>
 <tr>
-<td>`404.html`</td>
-<td>The default 404 page provided.</td>
+<td>`img`</td>
+<td>The default directory to place images.</td>
 </tr>
 <tr>
 <td>`config.edn`</td>
