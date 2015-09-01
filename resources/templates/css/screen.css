@@ -5,10 +5,11 @@ body {
 
 p {
     margin-bottom:20px;
+    object-fit: contain;
 }
 
 .container {
-    max-width: 950px;
+    max-width: 1200px;
 }
 
 .left {
@@ -161,6 +162,11 @@ header h2#slogan {
     margin-bottom: 20px;
 }
 
+img {
+    width: 100%;
+    height: auto;
+}
+
 footer {
     border-top: 1px solid #eee;
     padding-top: 20px;
@@ -180,7 +186,6 @@ pre,
 code {
     color: #428bca;
     background: none;
-    font-size: 80%;
 }
 
 @media (min-width: 768px) {

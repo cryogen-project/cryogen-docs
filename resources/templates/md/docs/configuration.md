@@ -103,11 +103,11 @@ uri's. Must be provided.
 </tr>
 <tr>
 <td>`theme`</td>
-<td>Set this to the theme you wish to deliver from the `themes` directory under `templates`. You can add your own theme to the current blue and blue_centered ones.</td>
+<td>Set this to the theme you wish to deliver from the `themes` directory. You can add your own theme to this folder along with the current `blue` and `blue_centered` themes. Must be provided.</td>
 </tr>
 <tr>
 <td>`resources`</td>
-<td>A vector of directories/files to be copied over from `template` to `public` upon compilation.</td>
+<td>A vector of directories/files to be copied over from `templates` to `public` upon compilation.</td>
 </tr>
 <tr>
 <td>`keep-files`</td>
@@ -127,19 +127,15 @@ uri's. Must be provided.
 </tr>
 <tr>
 <td>`post-per-page`</td>
-<td>Maximum number of posts on a page.</td>
-</tr>
-<tr>
-<td>`posts-per-page`</td>
-<td>Maximum number of posts on a page.</td>
+<td>If post previews are enabled then this is the maximum number of previews on a page.</td>
 </tr>
 <tr>
 <td>`blocks-per-preview`</td>
-<td>How man blocks you can see of posts.</td>
+<td>The default number of (html) blocks to display per post preview. This can be overwritten by adding `<!--more-->` to your .md or .asc file to indicate where you'd like to break off your post.</td>
 </tr>
 <tr>
 <td>`previews?`</td>
-<td>Boolean on whether previews are available.</td>
+<td>Set this to `true` if you would like to display a list of recent posts rather than a full, single post on your home page.</td>
 </tr>
 <tr>
 </tr>
@@ -148,5 +144,5 @@ uri's. Must be provided.
 
 In addition to these default configuration options, you may add your own custom values. For example, if your blog has a subtitle that you'd like to display on your site:
 
-  1. Add `:subtitle "My subtitle"` to the config file
-  2. Inject the value into your templates using `{% subtitle %}` (Selmer)
+1. Add `:subtitle "My subtitle"` to the config file
+2. Inject the value into your templates via Selmer using `{% subtitle %}`

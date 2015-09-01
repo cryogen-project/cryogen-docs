@@ -156,5 +156,5 @@ Cryogen uses [highlight.js](https://highlightjs.org/) to support syntax highligh
 
 ## Post Archives
 
-Cryogen will automatically generate and update a post archives page for you. If you'd like to change the layout of this page, you can do so by editing the HTML in `templates/themes/{theme-name}/html/layouts/archives.html`.
+Cryogen will automatically generate and update a post archives page for you. If you'd like to change the layout of this page, you can do so by editing the HTML in `templates/themes/{theme}/html/archives.html`.
  

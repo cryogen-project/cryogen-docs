@@ -4,7 +4,7 @@
             :license {:name "Eclipse Public License"
                       :url "http://www.eclipse.org/legal/epl-v10.html"}
             :dependencies [[org.clojure/clojure "1.6.0"]
-                           [markdown-clj "0.9.66"
+                           [markdown-clj "0.9.67"
                             :exclusions [com.keminglabs/cljx]]
                            [ring/ring-devel "1.3.2"]
                            [compojure "1.3.4"]
@@ -13,7 +13,7 @@
                            [clj-text-decoration "0.0.3"]
                            [io.aviso/pretty "0.1.18"]
                            [cryogen-markdown "0.1.1"]
-                           [cryogen-core "0.1.21"]]
+                           [cryogen-core "0.1.20"]]
             :plugins [[lein-ring "0.8.13"]]
             :main cryogen.compiler
             :ring {:init cryogen.server/init
