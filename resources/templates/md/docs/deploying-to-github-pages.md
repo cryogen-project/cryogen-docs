@@ -9,7 +9,7 @@ GitHub provides two basic types of hosting: *user/organization pages* and *proje
 
 ## Setting up User and Organization Pages
 
-User and organization pages must live in a GitHub repository dedicated to only your site's files. This repository must be named *username*.GitHub.io. Where *username* is your GitHub username or the name of the organization. For example, `lacarmen.GitHub.io`.
+User and organization pages must live in a GitHub repository dedicated to only your site's files. This repository must be named *username*.GitHub.io. Where *username* is your GitHub username or the name of the organization. For example, `lacarmen.github.io`.
 
 Content from the `master` branch of your repository will be used to build and publish your site to your GitHub page.
 
@@ -17,9 +17,7 @@ If you'd like to create a user or organization page with Cryogen, please make su
 
 ## Setting up Project Pages
 
-Unlike user/organization pages, project pages are kept in the same repository as the project itself, except the site's content is stored in a specially named `gh-pages` branch. The output will become available under a subpath of your user page domain, such as `lacarmen.GitHub.io/cryogen`.
-
-The Cryogen repository is a good example of this structure. The [master branch](https://GitHub.com/lacarmen/cryogen/tree/master) contains the boilerplate lein-template for Cryogen and the website that you're looking at right now is contained in the [gh-pages branch](https://GitHub.com/lacarmen/cryogen/tree/gh-pages) of the same repository.
+Unlike user/organization pages, project pages are kept in the same repository as the project itself, except the site's content is stored in a specially named `gh-pages` branch. The output will become available under a subpath of your user page domain, such as `lacarmen.github.io/cryogen`.
 
 If you'd like to use Cryogen to create a page for your project, please make sure the `blog-prefix` field in the configuration file matches the name of your project's repository.
 
@@ -30,7 +28,7 @@ To create the branch for your project page, you must create a new "orphan" branc
 The safest way to do this is to create a fresh clone of your repository
 
 ```
-$ git clone https://GitHub.com/user/repository.git
+$ git clone https://github.com/user/repository.git
 # Clone your repository
 ```
 

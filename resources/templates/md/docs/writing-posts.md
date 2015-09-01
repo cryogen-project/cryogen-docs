@@ -106,7 +106,7 @@ Cryogen will automatically create a page for each unique tag that you've used in
 
 You'll probably want to include images in your pages or posts eventually. There are different places where you can store these images.
 
-The common option is to keep them in one folder under the `templates` directory such as `assets` or `img`. Make sure to include the name of this folder in the `resources` key in your config so the images get transfered to the `public` folder whne your site compiles.
+The common option is to keep them in one folder under the `templates` directory such as `assets` or `img`. Make sure to include the name of this folder in the `resources` key in your config so the images get transfered to the `public` folder when your site compiles.
 
 The other option is to keep them alongside your Markdown files. This means you would have to save your posts that contain images in a separate folder under your `post-root`. For example:
 
@@ -156,5 +156,5 @@ Cryogen uses [highlight.js](https://highlightjs.org/) to support syntax highligh
 
 ## Post Archives
 
-Cryogen will automatically generate and update a post archives page for you. If you'd like to change the layout of this page, you can do so by editing the HTML in `templates/html/layouts/archives.html`.
+Cryogen will automatically generate and update a post archives page for you. If you'd like to change the layout of this page, you can do so by editing the HTML in `templates/themes/{theme}/html/archives.html`.
  
