@@ -71,7 +71,10 @@ These are some optional keys that you may provide:
 </tr>
 <tr>
 <td>`toc`</td>
-<td>Set this to true if you want a table of contents to be generated from the headers/headings in your post.</td>
+<td>
+Set this to true if you want a table of contents to be generated from the headers/headings in your post.
+(The default table of contents format is an ordered list. Set this to `:ul` if you want a bulleted list.)
+</td>
 </tr>
 </tbody>
 </table>
