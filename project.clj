@@ -13,7 +13,7 @@
                            [clj-text-decoration "0.0.3"]
                            [io.aviso/pretty "0.1.18"]
                            [cryogen-markdown "0.1.1"]
-                           [cryogen-core "0.1.20"]]
+                           [cryogen-core "0.1.21"]]
             :plugins [[lein-ring "0.8.13"]]
             :main cryogen.compiler
             :ring {:init cryogen.server/init

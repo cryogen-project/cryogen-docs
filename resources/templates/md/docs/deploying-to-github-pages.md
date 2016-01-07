@@ -1,6 +1,6 @@
 {:title "GitHub Pages"
  :layout :page
- :page-index 6
+ :page-index 7
  :section "Deployment"}
  
 [GitHub Pages](https://pages.GitHub.com/) are freely hosted web pages on GitHub's `GitHub.io` domain. Normally, they are powered by [Jekyll](http://jekyllrb.com) but because GitHub Pages supports HTML content, it is possible to host your Cryogen-powered sites as well.

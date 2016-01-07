@@ -11,11 +11,12 @@ Similar to your posts, all of your pages should reside under the `page-root` fol
 
 ## Creating Pages
 
-To create a new page, just make a new Markdown file under your `page-root`. You don't need to include a date in the file name like you need to with a post but words should still be dash-separated and the file must have a `.md` extension. For example:
+To create a new page, just make a new Markdown/AsciiDoc file under your `page-root`. You don't need to include a date in the file name or in the metadata like you did a post but words should still be dash-separated and the file must have a `.md` or `.asc` extension. For example:
 
 ```
 about.md
 my-projects.md
+contact-me.asc
 ```
 
 ### Page Contents
@@ -36,7 +37,7 @@ The following information is mandatory in your page metadata.
 </tr>
 <tr>
 <td>`layout`</td>
-<td>A keyword corresponding to an HTML file under `html/layouts`.</td>
+<td>A keyword corresponding to an HTML file under `themes/{theme}/html`.</td>
 </tr>
 <tr>
 <td>`page-index`</td>
@@ -52,10 +53,10 @@ The following information is mandatory in your page metadata.
 For example:
 
 ```
-{:title "Check out this page!"
- :layout :post
+{:title      "Check out this page!"
+ :layout     :page
  :page-index 0
- :navbar? false}
+ :navbar?    false}
 ```
 
 ### Images in Your Pages

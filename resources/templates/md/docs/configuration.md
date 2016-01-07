@@ -6,29 +6,29 @@
 Cryogen provides some flexible configuration options. Your site's configuration file can be found at `templates/config.edn` and contains the following by default: 
  
 ```
-{:site-title       "My Awesome Blog"
- :author           "Bob Bobbert"
- :description      "This blog is awesome"
- :site-url         "http://blogawesome.com/"
- :post-root        "posts"
- :tag-root         "tags"
- :page-root        "pages"
- :blog-prefix      "/blog"
- :rss-name         "feed.xml"
- :rss-filters      ["cryogen"]
- :recent-posts     3
- :post-date-format "yyyy-MM-dd"
- :sass-src         nil
- :sass-dest        nil
- :theme            "blue"
- :resources        ["img"]
- :keep-files       [".git"] 
- :disqus?          false
- :disqus-shortname ""
- :ignored-files    [#"\.#.*" #".*\.swp$"]
- :posts-per-page 5
+{:site-title         "My Awesome Blog"
+ :author             "Bob Bobbert"
+ :description        "This blog is awesome"
+ :site-url           "http://blogawesome.com/"
+ :post-root          "posts"
+ :tag-root           "tags"
+ :page-root          "pages"
+ :blog-prefix        "/blog"
+ :rss-name           "feed.xml"
+ :rss-filters        ["cryogen"]
+ :recent-posts       3
+ :post-date-format   "yyyy-MM-dd"
+ :sass-src           nil
+ :sass-dest          nil
+ :theme              "blue"
+ :resources          ["img"]
+ :keep-files         [".git"]
+ :disqus?            false
+ :disqus-shortname   ""
+ :ignored-files      [#"\.#.*" #".*\.swp$"]
+ :posts-per-page     5
  :blocks-per-preview 2
- :previews? false}
+ :previews?          false}
 ```
 
 ## Your options
@@ -42,7 +42,7 @@ Cryogen provides some flexible configuration options. Your site's configuration 
 </thead>
 <tbody>
 <tr>
-<td>`site-title`</td>
+<td style="width:200px">`site-title`</td>
 <td>Your site's title</td>
 </tr>
 <tr>
@@ -135,7 +135,7 @@ uri's. Must be provided.
 </tr>
 <tr>
 <td>`previews?`</td>
-<td>Set this to `true` if you would like to display a list of recent posts rather than a full, single post on your home page.</td>
+<td>Set this to `true` if you would like to display a list of recent posts rather than a full, single post on your home page. Discussed [here](/docs/customizing-the-index.html).</td>
 </tr>
 <tr>
 </tr>

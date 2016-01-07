@@ -162,8 +162,8 @@ header h2#slogan {
     margin-bottom: 20px;
 }
 
-img {
-    width: 100%;
+#content img {
+    max-width: 100%;
     height: auto;
 }
 
@@ -184,6 +184,7 @@ pre,
 }
 
 code {
+    font-size: 85%;
     color: #428bca;
     background: none;
 }

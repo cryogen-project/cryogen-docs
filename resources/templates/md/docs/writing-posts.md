@@ -11,26 +11,21 @@ All of your blog posts should reside under the `post-root` folder specified in y
 
 ## Creating Posts
 
-To create a new blog post, all you need to do is create a new Markdown file under your `post-root` directory. The way you name these files is important. If your specified date format in your configuration file was `dd-MM-yyyy`, Cryogen would require your posts to be named in this format:
+To create a new blog post, all you need to do is create a new Markdown (or AsciiDoc) file under your `post-root` directory. You must add a date to your post in one of two ways.
+
+The first option is to specify the date of the post right in the name of the Markdown file. The way you name these files is important. The date format in your file name must match the date format specified in your `config.edn` file.
+
+For example, if your specified date format in your configuration file was `dd-MM-yyyy`, Cryogen would require your posts to be named in this format:
 
 ```
 dd-MM-yyyy-title.md
 ```
 
-If no date format was specified in the configuration file, it will default to the ISO 8601 format.
+If no date format was specified in the configuration file, the default is the ISO 8601 format (yyyy-MM-dd).
 
-```
-yyyy-MM-dd-title.md
-```
+Alternatively, you can leave the date out of the post name and specify it in the metadata of the file under the `:date` key. The date format must also match the format specified in your `config.edn` file in this case.
 
-If your title is more than one word long, it must be separated by dashes. For example, the following are valid post file names:
- 
-```
-11-04-2014-welcome-to-my-blog.md
-2014-12-01-cryogen-is-greatdocs.md
-```
-
-The first example uses a specified `dd-MM-yyyy` date format while the second uses the default format. Do note that you cannot mix date formats in post file names though.
+If your title is more than one word long, it must be separated by dashes.
 
 ### Post Contents
 
@@ -50,7 +45,7 @@ Every Markdown file representing a post must contain metadata about the title an
 </tr>
 <tr>
 <td>`layout`</td>
-<td>A keyword corresponding to an HTML file under `html/layouts`.</td>
+<td>A keyword corresponding to an HTML file under `themes/{theme}/html`.</td>
 </tr>
 </tbody>
 </table>
@@ -66,6 +61,10 @@ These are some optional keys that you may provide:
 </thead>
 <tbody>
 <tr>
+<td style="width:100px">`date`</td>
+<td>The date that your post was written. Must follow the date format specified in `config.edn`. <u>Not</u> optional if you did not include the post date in the file name.</td>
+</tr>
+<tr>
 <td>`tags`</td>
 <td>A vector of strings representing any tags associated with the post.</td>
 </tr>
@@ -76,17 +75,22 @@ Set this to true if you want a table of contents to be generated from the header
 (The default table of contents format is an ordered list. Set this to `:ul` if you want a bulleted list.)
 </td>
 </tr>
+<tr>
+<td>`draft`</td>
+<td>
+Files that have this key set to `true` will not be included in the compilation process.
+</td>
+</tr>
 </tbody>
 </table>
 
-The rest of your file should contain valid Markdown content.
-
-eg.
+The rest of your file should contain valid Markdown content. For example:
 
 ```
-{:title "First Post!"
+{:title  "First Post!"
  :layout :post
- :tags  ["tag1" "tag3"]}
+ :date   2016-01-01
+ :tags   ["tag1" "tag3"]}
 
  ## Hello World
 
@@ -127,22 +131,14 @@ If you'd like to organize your posts in this fashion, please keep in mind that t
 
 ### Images and Markdown
 
-Normally, you'd want to include images in your posts by referring to the absolute path of the image in your Markdown content. If you were keeping your images under a folder called `img`, you would link to it like so:
+All images should be included in your Markdown content in the following format. (If `img` were a folder that you created under `resources/templates`.)
 
 ```
 ![Image 1](/img/img01.png)
 ```
 
-However, if you'd like you add a prefix to your blog such as `/blog`, your path will be like this:
+If you have a prefix such as `/blog` specified in your `config.edn` Cryogen will prepend it to any local images that you include in your posts. So this
 
-```
-![Image 1](/blog/img/img01.png)
-```
-
-You can probably see how this would be tedious to maintain if you decided to change your prefix or remove it completely though. Suddenly all your images would be missing from your posts.
-
-So how do you include images in your posts? Just go with the first example provided. Cryogen is smart enough to inject your `blog-prefix` in front of any local images that you include in your posts. Now if your blog prefix was `/blog`, this:
- 
 ```
 ![Image 1](/img/img01.png)
 ```
