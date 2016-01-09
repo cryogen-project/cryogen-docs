@@ -3,15 +3,15 @@
  :page-index 4
  :section "Your Content"}
  
-Blogging with Cryogen is part of its core functionality. You can simply maintain a folder of text files containing Markdown content and Cryogen will take care of compiling them into a blog.
+Blogging with Cryogen is part of its core functionality. You can simply maintain a folder of text files containing Markdown/AsciiDoc content and Cryogen will take care of compiling them into a blog.
 
 ## The Posts Folder
 
-All of your blog posts should reside under the `post-root` folder specified in your configuration file. As long as the file contains the proper metadata (discussed later) about the layout of the post followed by valid Markdown content, they will be converted into an HTML page.
+All of your blog posts should reside under the `post-root` folder specified in your configuration file. As long as the file contains the proper metadata (discussed later) about the layout of the post followed by valid Markdown/AsciiDoc content, they will be converted into an HTML page.
 
 ## Creating Posts
 
-To create a new blog post, all you need to do is create a new Markdown (or AsciiDoc) file under your `post-root` directory. You must add a date to your post in one of two ways.
+To create a new blog post, all you need to do is create a new Markdown or AsciiDoc file (depending on what you're using - you can only choose one) under your `post-root` directory. If you are using Markdown then the files should reside under `templages/md/{post-root}`. If you are using AsciiDoc then the files should reside under `templages/asc/{post-root}`. You must add a date to your post in one of two ways.
 
 The first option is to specify the date of the post right in the name of the Markdown file. The way you name these files is important. The date format in your file name must match the date format specified in your `config.edn` file.
 

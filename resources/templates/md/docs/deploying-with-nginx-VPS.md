@@ -1,6 +1,6 @@
 {:title "Nginx on a VPS"
  :layout :page
- :page-index 8
+ :page-index 9
  :section "Deployment"}
  
 Virtual Private Servers (VPS), such as those provided by [DigitalOcean](https://www.digitalocean.com/), are an excellent way to host a site with static content for around $5 per month. Here's a quick rundown on how to serve your content with [Nginx](http://wiki.nginx.org/) on VPS running Ubuntu.
@@ -28,18 +28,18 @@ Next, you'll want to make a backup of the default configuration in /etc/nginx/si
 server {
  listen 80;
 
- root /home/deploy/site;
- index index.html index.htm;
+ root            /home/deploy/site;
+ index           index.html index.htm;
 
- server_name YOURDOMAIN.COM www.YOURDOMAIN.COM;
+ server_name     YOURDOMAIN.COM www.YOURDOMAIN.COM;
 
- access_log /var/log/nginx/access.log;
- error_log /var/log/nginx/error.log;
+ access_log      /var/log/nginx/access.log;
+ error_log       /var/log/nginx/error.log;
 
  location / {
-   default_type "text/html";
-   alias /home/deploy/site/;
-   try_files $uri.html $uri $uri/ =404;
+   default_type  "text/html";
+   alias         /home/deploy/site/;
+   try_files     $uri.html $uri $uri/ =404;
    error_page    404 = /404.html;
  }
 }
@@ -55,22 +55,22 @@ If you've provided a `blog-prefix` in your Cryogen configuration you will have t
 server{
  listen 80;
 
- root /home/deploy/site;
- index index.html index.htm;
- error_page    404 = /404.html;
+ root            /home/deploy/site;
+ index           index.html index.htm;
+ error_page      404 = /404.html;
 
- server_name YOURDOMAIN.COM www.YOURDOMAIN.COM;
+ server_name  YOURDOMAIN.COM www.YOURDOMAIN.COM;
 
- access_log /var/log/nginx/access.log;
- error_log /var/log/nginx/error.log;
+ access_log      /var/log/nginx/access.log;
+ error_log       /var/log/nginx/error.log;
 
  location / {
-   default_type "text/html";
-   try_files $uri.html $uri $uri/ =404;
+   default_type  "text/html";
+   try_files     $uri.html $uri $uri/ =404;
  }
 
  location /BLOG-PREFIX/ {
-   alias /home/deploy/site/BLOG-PREFIX/;
+   alias         /home/deploy/site/BLOG-PREFIX/;
  }
 }
 ```

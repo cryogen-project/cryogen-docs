@@ -75,12 +75,12 @@ my-blog
 </tr>
 <tr>
 <td>`asc`</td>
-<td>Keep your AsciiDoc content here.
+<td>If you are using AsciiDoc then keep your content here.
 </td>
 </tr>
 <tr>
 <td>`md`</td>
-<td>Keep your Markdown content here.
+<td>If you are using Markdown then keep your content here.
 </td>
 </tr>
 <tr>
@@ -101,7 +101,7 @@ my-blog
 </tr>
 <tr>
 <td>`themes/{theme}/css`</td>
-<td>Pretty self explanatory. Put your themes css files here</td>
+<td>Pretty self explanatory. Put your theme's css files here</td>
 </tr>
 <tr>
 <td>`themes/{theme}/html`</td>
@@ -127,7 +127,7 @@ my-blog
 </tbody>
 </table>
 
-The html templates use Selmer which can extend other templates. Most html templates extend off of base.html. The following diagram gives an overview of the Cryogen Selmer hierachy.
+The html templates use [Selmer](https://github.com/yogthos/Selmer) which can extend other templates. Most html templates extend off of `base.html`. The following diagram gives an overview of the Cryogen Selmer hierachy.
 
 ![Selmer Hierachy](/img/selmer-hierachy.png)
 

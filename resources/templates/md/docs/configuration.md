@@ -11,8 +11,10 @@ Cryogen provides some flexible configuration options. Your site's configuration 
  :description        "This blog is awesome"
  :site-url           "http://blogawesome.com/"
  :post-root          "posts"
- :tag-root           "tags"
  :page-root          "pages"
+ :post-root-uri      "posts-output"
+ :page-root-uri      "pages-output"
+ :tag-root-uri       "tags-output"
  :blog-prefix        "/blog"
  :rss-name           "feed.xml"
  :rss-filters        ["cryogen"]
@@ -42,7 +44,7 @@ Cryogen provides some flexible configuration options. Your site's configuration 
 </thead>
 <tbody>
 <tr>
-<td style="width:200px">`site-title`</td>
+<td style="width:150px">`site-title`</td>
 <td>Your site's title</td>
 </tr>
 <tr>
@@ -55,23 +57,31 @@ Cryogen provides some flexible configuration options. Your site's configuration 
 </tr>
 <tr>
 <td>`site-url`</td>
-<td>Your site's root url. All of the above values are used when generating your sitemap and RSS feed.</td>
+<td>Your site's root url. This, along with all of the above values are used when generating your sitemap and RSS feed.</td>
 </tr>
 <tr>
 <td>`post-root`</td>
-<td>The folder where the compiler will look for blog posts. This value is prepended to all post uri's. Must
-be provided.
+<td>The folder where the compiler will look for blog posts. Must be provided.
 </td>
-</tr>
-<tr>
-<td>`tag-root`</td>
-<td>This value is prepended to all tag page uri's. Must be provided.</td>
 </tr>
 <tr>
 <td>`page-root`</td>
-<td>The folder where the compiler will look for your custom pages. This value is prepended to all page
-uri's. Must be provided.
+<td>The folder where the compiler will look for your custom pages. Must be provided.
 </td>
+</tr>
+<tr>
+<td>`post-root-uri`</td>
+<td>The folder where the compiler will output compiled blog posts. This value is prepended to all post uri's. If this value is `nil` then the name of the output folder will be the same as the `post-root` folder. If the empty string ("") is provided then the posts will be outputted to the root folder of the blog (ie. `resources/public/{blog-prefix}`).
+</td>
+</tr>
+<tr>
+<tr>
+<td>`page-root-uri`</td>
+<td>The folder where the compiler will output compiled pages. This value is prepended to all page uri's. If this value is `nil` then the name of the output folder will be the same as the `page-root` folder. If the empty string ("") is provided then the posts will be outputted to the root folder of the blog.
+</td>
+</tr>
+<td>`tag-root-uri`</td>
+<td>The folder where the compiler will output compiled tag pages. This value is prepended to all tag page uri's. If no value is provided then the empty string will be used.</td>
 </tr>
 <tr>
 <td>`blog-prefix`</td>
@@ -83,7 +93,7 @@ uri's. Must be provided.
 </tr>
 <tr>
 <td>`rss-filters`</td>
-<td>Specific tags for which you want to create a separate RSS feed for</td>
+<td>Specific tags for which you want to create a separate RSS feed.</td>
 </tr>
 <tr>
 <td>`recent-posts`</td>
@@ -119,7 +129,7 @@ uri's. Must be provided.
 </tr>
 <tr>
 <td>`disqus-shortname`</td>
-<td>Your Disqus shortname</td>
+<td>Your Disqus shortname.</td>
 </tr>
 <tr>
 <td>`ignored-files`</td>

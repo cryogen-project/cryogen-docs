@@ -95,7 +95,7 @@
     (compile-posts params posts)
     (compile-tags params posts-by-tag)
     (compile-index params)
-    (compile-news params)
+    #_(compile-news params)
     (compile-archives params posts)
     (println (blue "generating site map"))
     (spit (str public blog-prefix "/sitemap.xml") (sitemap/generate site-url ignored-files))

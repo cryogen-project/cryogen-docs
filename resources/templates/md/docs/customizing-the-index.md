@@ -1,6 +1,6 @@
 {:title "Customizing your Index Page"
  :layout :page
- :page-index 6
+ :page-index 7
  :section "Your Content"}
 
 On the index page of your blog you have the option of displaying a single blog post or a list of previews of several blog posts.
