@@ -11,7 +11,7 @@ my-blog
 ├── resources
 │   ├── public
 │   │   ⋮
-│   └── resources
+│   └── templates
 │       ├── asc
 │       │   ├── pages
 │       │   │   └── adoc-page.asc
