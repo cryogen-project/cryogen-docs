@@ -161,3 +161,6 @@ If you wish to enable comments on your posts, create a [disqus](https://disqus.c
 
 Cryogen will automatically generate and update a post archives page for you. If you'd like to change the layout of this page, you can do so by editing the HTML in `templates/themes/{theme}/html/archives.html`.
  
+## Multiple Authors
+
+You can specify the author for a particular post by including the `:author` key in the post metadata. If you also want to generate a page with posts filtered by author you should provide the `:author-root-uri` value in the `config.edn` file. The compiler will use the `templates/themes/{theme}/html/author.html` layout and will generate a page with the same name as the author. For post without author the global `:author` value from `config.edn` will be used.

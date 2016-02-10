@@ -156,3 +156,5 @@ In addition to these default configuration options, you may add your own custom 
 
 1. Add `:subtitle "My subtitle"` to the config file
 2. Inject the value into your templates via Selmer using `{% subtitle %}`
+
+In a multiple authors scenario you may want to generate a page with filtered posts for each author. To do so just include the `author-root-uri` key which, similarly to `page-root-uri` and `post-root-uri`, will indicate the folder where the compiler will output the html pages. More info [here](/docs/writing-posts.html#multiple_authors).
