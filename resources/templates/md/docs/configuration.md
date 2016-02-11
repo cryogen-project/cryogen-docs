@@ -15,6 +15,7 @@ Cryogen provides some flexible configuration options. Your site's configuration 
  :post-root-uri      "posts-output"
  :page-root-uri      "pages-output"
  :tag-root-uri       "tags-output"
+ :author-root-uri    "authors-output"
  :blog-prefix        "/blog"
  :rss-name           "feed.xml"
  :rss-filters        ["cryogen"]
@@ -84,6 +85,10 @@ Cryogen provides some flexible configuration options. Your site's configuration 
 <td>The folder where the compiler will output compiled tag pages. This value is prepended to all tag page uri's. If no value is provided then the empty string will be used.</td>
 </tr>
 <tr>
+</tr>
+<td>`author-root-uri`</td>
+<td>If this value is provided then the compiler will generate a page for each author containing a list of all their posts. More info [here](/docs/writing-posts.html#multiple_authors).</td>
+</tr>
 <td>`blog-prefix`</td>
 <td>Prepended to all uri's. This must start with a slash.</td>
 </tr>
@@ -157,4 +162,3 @@ In addition to these default configuration options, you may add your own custom 
 1. Add `:subtitle "My subtitle"` to the config file
 2. Inject the value into your templates via Selmer using `{% subtitle %}`
 
-In a multiple authors scenario you may want to generate a page with filtered posts for each author. To do so just include the `author-root-uri` key which, similarly to `page-root-uri` and `post-root-uri`, will indicate the folder where the compiler will output the html pages. More info [here](/docs/writing-posts.html#multiple_authors).

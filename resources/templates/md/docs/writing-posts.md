@@ -65,6 +65,10 @@ These are some optional keys that you may provide:
 <td>The date that your post was written. Must follow the date format specified in `config.edn`. <u>Not</u> optional if you did not include the post date in the file name.</td>
 </tr>
 <tr>
+<td>`author`</td>
+<td>The name of the author of the post.</td>
+</tr>
+<tr>
 <td>`tags`</td>
 <td>A vector of strings representing any tags associated with the post.</td>
 </tr>
@@ -104,6 +108,10 @@ The rest of your file should contain valid Markdown content. For example:
  nulla et vestibulum finibus, nibh justo semper tortor, nec
  vestibulum tortor est nec nisi.
 ```
+
+### Multiple Authors
+
+You can specify the author for a particular post by including the `:author` key in the post metadata as shown above. If you happen to have multiple authors writing on your blog and want to generate a page with posts filtered by author you should provide the `:author-root-uri` value in the `config.edn` file. The compiler will use the `templates/themes/{theme}/html/author.html` layout and will generate a page with the same name as the author. For post without author the global `:author` value from `config.edn` will be used.
 
 ### Tags
 
@@ -160,7 +168,4 @@ If you wish to enable comments on your posts, create a [disqus](https://disqus.c
 ## Post Archives
 
 Cryogen will automatically generate and update a post archives page for you. If you'd like to change the layout of this page, you can do so by editing the HTML in `templates/themes/{theme}/html/archives.html`.
- 
-## Multiple Authors
 
-You can specify the author for a particular post by including the `:author` key in the post metadata. If you also want to generate a page with posts filtered by author you should provide the `:author-root-uri` value in the `config.edn` file. The compiler will use the `templates/themes/{theme}/html/author.html` layout and will generate a page with the same name as the author. For post without author the global `:author` value from `config.edn` will be used.
