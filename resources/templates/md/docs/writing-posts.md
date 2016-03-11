@@ -93,7 +93,7 @@ The rest of your file should contain valid Markdown content. For example:
 ```
 {:title  "First Post!"
  :layout :post
- :date   2016-01-01
+ :date   "2016-01-01"
  :tags   ["tag1" "tag3"]}
 
  ## Hello World
