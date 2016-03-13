@@ -80,7 +80,7 @@ Set this to true if you want a table of contents to be generated from the header
 </td>
 </tr>
 <tr>
-<td>`draft`</td>
+<td>`draft?`</td>
 <td>
 Files that have this key set to `true` will not be included in the compilation process.
 </td>
