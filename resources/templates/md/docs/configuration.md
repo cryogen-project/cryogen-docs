@@ -31,7 +31,8 @@ Cryogen provides some flexible configuration options. Your site's configuration 
  :ignored-files      [#"\.#.*" #".*\.swp$"]
  :posts-per-page     5
  :blocks-per-preview 2
- :previews?          false}
+ :previews?          false
+ :clean-urls?        true}
 ```
 
 ## Your options
@@ -151,6 +152,11 @@ Cryogen provides some flexible configuration options. Your site's configuration 
 <tr>
 <td>`previews?`</td>
 <td>Set this to `true` if you would like to display a list of recent posts rather than a full, single post on your home page. Discussed [here](/docs/customizing-the-index.html).</td>
+</tr>
+<tr>
+<td>`clean-urls?`</td>
+<td>Set this to `true` to emit html as subdirectories, e.g., `prefix/root/page-name/index.html` instead of `prefix/root/page-name.html`. Links would then end in `/page-name/` instead of `/page-name.html`. Defaults to `true`.
+</td>
 </tr>
 <tr>
 </tr>
