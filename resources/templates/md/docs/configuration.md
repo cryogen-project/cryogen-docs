@@ -6,33 +6,34 @@
 Cryogen provides some flexible configuration options. Your site's configuration file can be found at `templates/config.edn` and contains the following by default: 
  
 ```
-{:site-title         "My Awesome Blog"
- :author             "Bob Bobbert"
- :description        "This blog is awesome"
- :site-url           "http://blogawesome.com/"
- :post-root          "posts"
- :page-root          "pages"
- :post-root-uri      "posts-output"
- :page-root-uri      "pages-output"
- :tag-root-uri       "tags-output"
- :author-root-uri    "authors-output"
- :blog-prefix        "/blog"
- :rss-name           "feed.xml"
- :rss-filters        ["cryogen"]
- :recent-posts       3
- :post-date-format   "yyyy-MM-dd"
- :sass-src           nil
- :sass-dest          nil
- :theme              "blue"
- :resources          ["img"]
- :keep-files         [".git"]
- :disqus?            false
- :disqus-shortname   ""
- :ignored-files      [#"\.#.*" #".*\.swp$"]
- :posts-per-page     5
- :blocks-per-preview 2
- :previews?          false
- :clean-urls?        true}
+{:site-title           "My Awesome Blog"
+ :author               "Bob Bobbert"
+ :description          "This blog is awesome"
+ :site-url             "http://blogawesome.com/"
+ :post-root            "posts"
+ :page-root            "pages"
+ :post-root-uri        "posts-output"
+ :page-root-uri        "pages-output"
+ :tag-root-uri         "tags-output"
+ :author-root-uri      "authors-output"
+ :blog-prefix          "/blog"
+ :rss-name             "feed.xml"
+ :rss-filters          ["cryogen"]
+ :recent-posts         3
+ :post-date-format     "yyyy-MM-dd"
+ :archive-group-format "yyyy MMMM"
+ :sass-src             nil
+ :sass-dest            nil
+ :theme                "blue"
+ :resources            ["img"]
+ :keep-files           [".git"]
+ :disqus?              false
+ :disqus-shortname     ""
+ :ignored-files        [#"\.#.*" #".*\.swp$"]
+ :previews?            false
+ :posts-per-page       5
+ :blocks-per-preview   2
+ :clean-urls?          true}
 ```
 
 ## Your options
@@ -106,6 +107,9 @@ Cryogen provides some flexible configuration options. Your site's configuration 
 <td>The maximum number of recent posts to show in the sidebar.</td>
 </tr>
 <tr>
+<td>`archive-group-format`</td>
+<td>Set the date format in which your archive page is organised. "yyyy" organises by year, "yyyy MMMM" organises by year and month; nil defaults to "yyyy MMMM".
+<tr>
 <td>`post-date-format`</td>
 <td>Set the date format that you want to use for the names of your .md files representing your posts; nil defaults to yyyy-MM-dd.</td>
 </tr>
@@ -142,16 +146,16 @@ Cryogen provides some flexible configuration options. Your site's configuration 
 <td>Regexes matching files that you want to ignore during compilation. Ex: emacs interlock files.</td>
 </tr>
 <tr>
+<td>`previews?`</td>
+<td>Set this to `true` if you would like to display a list of recent posts rather than a full, single post on your home page. Discussed [here](/docs/customizing-the-index.html).</td>
+</tr>
+<tr>
 <td>`post-per-page`</td>
 <td>If post previews are enabled then this is the maximum number of previews on a page.</td>
 </tr>
 <tr>
 <td>`blocks-per-preview`</td>
 <td>The default number of (html) blocks to display per post preview. This can be overwritten by adding `<!--more-->` to your .md or .asc file to indicate where you'd like to break off your post.</td>
-</tr>
-<tr>
-<td>`previews?`</td>
-<td>Set this to `true` if you would like to display a list of recent posts rather than a full, single post on your home page. Discussed [here](/docs/customizing-the-index.html).</td>
 </tr>
 <tr>
 <td>`clean-urls?`</td>
