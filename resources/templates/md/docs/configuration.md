@@ -35,7 +35,8 @@ Cryogen provides some flexible configuration options. Your site's configuration 
  :previews?            false
  :posts-per-page       5
  :blocks-per-preview   2
- :clean-urls?          true}
+ :clean-urls?          true
+ :hide-future-posts?   true}
 ```
 
 ## Your options
@@ -181,6 +182,8 @@ search path or has a different name than please adapt this value.
 </td>
 </tr>
 <tr>
+<td>`hide-future-posts?`</td>
+<td>Set this to `true` to include only current and past blogs in the compiled site. This allows for easy drafting of future articles.</td>
 </tr>
 </tbody>
 </table>
