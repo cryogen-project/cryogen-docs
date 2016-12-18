@@ -2,9 +2,9 @@
  :layout :post
  :page-index 3
  :section "Getting Started"}
- 
-Cryogen provides some flexible configuration options. Your site's configuration file can be found at `templates/config.edn` and contains the following by default: 
- 
+
+Cryogen provides some flexible configuration options. Your site's configuration file can be found at `templates/config.edn` and contains the following by default:
+
 ```
 {:site-title           "My Awesome Blog"
  :author               "Bob Bobbert"
@@ -24,6 +24,8 @@ Cryogen provides some flexible configuration options. Your site's configuration 
  :archive-group-format "yyyy MMMM"
  :sass-src             nil
  :sass-dest            nil
+ :sass-path            "sass"
+ :compass-path         "compass"
  :theme                "blue"
  :resources            ["img"]
  :keep-files           [".git"]
@@ -122,6 +124,22 @@ Cryogen provides some flexible configuration options. Your site's configuration 
 <td>Directory where the compiled sass would be spit out; nil defaults to "css". Be sure to include this directory in your resources section.</td>
 </tr>
 <tr>
+<td>`sass-path`</td>
+<td>Path at which the `sass` executable can be found. The default value "sass" works if you have the executable in your path, in that case
+nothing needs to be changed. If the executable is not in the
+search path or has a different name than please adapt this value.
+</td>
+</tr>
+<tr>
+<td>`compass-path`</td>
+<td>Path at which the `compass` executable can be found.
+Just as with the `sass-path` fhe default value "compass" works
+if you have the executable in your path, in that case
+nothing needs to be changed. If the executable is not in the
+search path or has a different name than please adapt this value.
+</td>
+</tr>
+<tr>
 <td>`theme`</td>
 <td>Set this to the theme you wish to deliver from the `themes` directory. You can add your own theme to this folder along with the current `blue` and `blue_centered` themes. Must be provided.</td>
 </tr>
@@ -171,4 +189,3 @@ In addition to these default configuration options, you may add your own custom 
 
 1. Add `:subtitle "My subtitle"` to the config file
 2. Inject the value into your templates via Selmer using `{% subtitle %}`
-
