@@ -47,6 +47,10 @@ The following information is mandatory in your page metadata.
 <td>`navbar?`</td>
 <td>Set this to true if you want the link to this page to appear in the navbar. Set it to false if you want it in the sidebar.</td>
 </tr>
+<tr>
+<td>`home?`</td>
+<td>Set this to true if you want to use this page as homepage content. This page will only be rendered as home page. In addition this page will not be part of your :navbar-pages or sidebar-pages collection. Layout will be respected.</td>
+</tr>
 </tbody>
 </table>
 
@@ -56,7 +60,8 @@ For example:
 {:title      "Check out this page!"
  :layout     :page
  :page-index 0
- :navbar?    false}
+ :navbar?    false
+ :home?      false}
 ```
 
 ### Images in Your Pages
