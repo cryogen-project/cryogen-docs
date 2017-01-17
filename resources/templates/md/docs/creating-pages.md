@@ -2,12 +2,12 @@
  :layout :page
  :page-index 5
  :section "Your Content"}
- 
-Creating pages is not much different from writing posts. You're still required to include the map representing the metadata and the page must be written in valid Markdown. 
+
+Creating pages is not much different from writing posts. You're still required to include the map representing the metadata and the page must be written in valid Markdown.
 
 ## The Pages Folder
 
-Similar to your posts, all of your pages should reside under the `page-root` folder specified in your configuration file. Again, as long as the file contains the proper metadata followed by valid Markdown content, they will be converted into an HTML page. 
+Similar to your posts, all of your pages should reside under the `page-root` folder specified in your configuration file. Again, as long as the file contains the proper metadata followed by valid Markdown content, they will be converted into an HTML page.
 
 ## Creating Pages
 
@@ -45,11 +45,11 @@ The following information is mandatory in your page metadata.
 </tr>
 <tr>
 <td>`navbar?`</td>
-<td>Set this to true if you want the link to this page to appear in the navbar. Set it to false if you want it in the sidebar.</td>
+<td>Set this to `true` if you want the link to this page to appear in the navbar. Set it to `false` if you want it in the sidebar.</td>
 </tr>
 <tr>
 <td>`home?`</td>
-<td>Set this to true if you want to use this page as homepage content. This page will only be rendered as home page. In addition this page will not be part of your :navbar-pages or sidebar-pages collection. Layout will be respected.</td>
+<td>Set this to `true` if you want to use this page as your index rather than a blog post or list of previews. Only one page may have this flag set to `true`. This page will not be part of your `navbar-pages` or `sidebar-pages` collection. The `:layout` key will be respected. `:previews?` must be set to `false` in the `config.edn`.</td>
 </tr>
 </tbody>
 </table>

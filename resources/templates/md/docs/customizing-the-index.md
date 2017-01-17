@@ -3,16 +3,14 @@
  :page-index 7
  :section "Your Content"}
 
-On the index page of your blog you have the option of displaying a single blog post or a list of previews of several blog posts.
+You have several options when choosing what content to display on the home page of your blog.
 
 ## The Single Page Option
-This option allows you to display a dedicated page on the index page of your site.
-
-This option requires you to declare one of your pages as home page. Put a `:home? true` to the meta data of your homepages content page.
+This option allows you to display a dedicated page on the index of your site. To do so, you must declare one of your pages as the home page by setting the `:home?` flag to `true` in the meta data of the page you wish to use.
 
 ## The Single Post Option
 
-This option allows you to display your latest blog post on the index page of your site. The prev/next links then allow readers to navigate between blog psots.
+This option allows you to display your latest blog post on the index of your site. The prev/next links then allow readers to navigate between blog posts.
 
 (Ex. [yogthos.net](http://yogthos.net/))
 
