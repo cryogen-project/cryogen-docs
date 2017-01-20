@@ -85,6 +85,11 @@ Set this to true if you want a table of contents to be generated from the header
 Files that have this key set to `true` will not be included in the compilation process.
 </td>
 </tr>
+<tr>
+<td>`klipse`</td>
+<td>Set [klipse](https://github.com/viebel/klipse) configuration for the post.
+See [Klipse Integration](klipse.html) for details.</td>
+</tr>
 </tbody>
 </table>
 
