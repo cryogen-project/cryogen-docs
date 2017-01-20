@@ -2,7 +2,7 @@
  :layout :page
  :page-index 4
  :section "Your Content"}
- 
+
 Blogging with Cryogen is part of its core functionality. You can simply maintain a folder of text files containing Markdown/AsciiDoc content and Cryogen will take care of compiling them into a blog.
 
 ## The Posts Folder
@@ -115,8 +115,8 @@ You can specify the author for a particular post by including the `:author` key 
 
 ### Tags
 
-Cryogen will automatically create a page for each unique tag that you've used in your posts.  
-  
+Cryogen will automatically create a page for each unique tag that you've used in your posts.
+
 ### Including Images in Posts
 
 You'll probably want to include images in your pages or posts eventually. There are different places where you can store these images.
@@ -159,7 +159,7 @@ will be compiled into this:
 
 ### Highlighting Code Snippets
 
-Cryogen uses [highlight.js](https://highlightjs.org/) to support syntax highlighting for code snippets you wish to include in your posts or pages. Code blocks should be wrapped with triple backticks (```)  and highlight.js will automatically detect the language and handle the syntax colours. If you want to specify the language, simply do so after the first triple backtick. 
+Cryogen uses [highlight.js](https://highlightjs.org/) to support syntax highlighting for code snippets you wish to include in your posts or pages. Code blocks should be wrapped with triple backticks (```)  and highlight.js will automatically detect the language and handle the syntax colours. If you want to specify the language, simply do so after the first triple backtick.
 
 ### Disqus Integration
 
@@ -168,4 +168,3 @@ If you wish to enable comments on your posts, create a [disqus](https://disqus.c
 ## Post Archives
 
 Cryogen will automatically generate and update a post archives page for you. If you'd like to change the layout of this page, you can do so by editing the HTML in `templates/themes/{theme}/html/archives.html`.
-

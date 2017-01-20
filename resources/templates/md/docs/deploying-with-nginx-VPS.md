@@ -2,7 +2,7 @@
  :layout :page
  :page-index 9
  :section "Deployment"}
- 
+
 Virtual Private Servers (VPS), such as those provided by [DigitalOcean](https://www.digitalocean.com/), are an excellent way to host a site with static content for around $5 per month. Here's a quick rundown on how to serve your content with [Nginx](http://wiki.nginx.org/) on VPS running Ubuntu.
 
 ## Setting up Nginx
@@ -13,7 +13,7 @@ The first thing you'll need to do is install Nginx if you don't already have it 
 $ sudo apt-get install nginx
 ```
 
-Next, you'll want to create a directory for your site's content and make it public. For the purposes of this guide, let's suppose we're on a user called `deploy` with sudo permissions. 
+Next, you'll want to create a directory for your site's content and make it public. For the purposes of this guide, let's suppose we're on a user called `deploy` with sudo permissions.
 
 ```
 $ mkdir ~/site

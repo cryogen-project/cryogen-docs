@@ -2,7 +2,7 @@
  :layout :page
  :page-index 8
  :section "Deployment"}
- 
+
 [GitHub Pages](https://pages.GitHub.com/) are freely hosted web pages on GitHub's `GitHub.io` domain. Normally, they are powered by [Jekyll](http://jekyllrb.com) but because GitHub Pages supports HTML content, it is possible to host your Cryogen-powered sites as well.
 
 GitHub provides two basic types of hosting: *user/organization pages* and *project pages*. Both of these work by looking at specific branches of your repositories on GitHub. The way to deploy these two types of sites are very similar and only differ in their initial setup.
@@ -46,12 +46,12 @@ $ git rm -rf .
 # rm .gitignore
 ```
 
-  
+
 ## Deploying to GitHub Pages
 
 Once you've set up your repository for the type of GitHub Page that you want, copy over all your files and folders under the root directory of your site - `public` if you're creating a user page; `public/YOUR-PROJECT-REPO-NAME` if you're creating a project page.
- 
-The last step is to push your content to GitHub. 
+
+The last step is to push your content to GitHub.
 
 ```
 $ git add *
