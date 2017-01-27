@@ -18,39 +18,52 @@ Alternatively you can override specific settings in the post metadata by passing
 
 The configuration is a map that may include the following keys.
 
-### settings
-
-Contains a map that's passed to `window.klipse_settings`.
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>`settings`</td>
+<td>Contains a map that's passed to `window.klipse_settings`.
 All the settings are documented [here](https://github.com/viebel/klipse#configuration).
 In cryogen you can use `:lisp-cased-keywords` instead of `"snake_cased_strings"`.
-
-### js-src
-
-A map with the keys `:min` and `:non-min`. These are uris that point to the
+</td>
+</tr>
+<tr>
+<td>`js-src`</td>
+<td>A map with the keys `:min` and `:non-min`. These are uris that point to the
 minified and non-minified version of the klipse plugin.
 They default to the plugin hosted by klipse, but to host it yourself,
 just set the appropriate uris.
-
-### js
-
-Can be either `:min` or `:non-min`. Self-hosted clojurescript is not (yet?)
+</td>
+</tr>
+<tr>
+<td>`js`</td>
+<td>Can be either `:min` or `:non-min`. Self-hosted clojurescript is not (yet?)
 compatible with advanced compilation, so if a post has cljs snippets, it needs
 to use the non-minified version, but any other languages can use the minified version.
 
 Cryogen will infer this based on the setting and the classes in the code blocks
 in each post, so normally you don't need to worry about it.
-Can be overridden if necessary.
-
-### css-base
-
-The uri to the codemirror css that is used by klipse. As with `:js-src`,
+Can be overridden if necessary.</td>
+</tr>
+<tr>
+<td>`css-base`</td>
+<td>The uri to the codemirror css that is used by klipse. As with `:js-src`,
 it defaults to css hosted by klipse and you can override it if you want
-to host it yourself.
-
-### css-theme
-
-You can also use a codemirror theme for the snippets,
-just set this to a uri pointing to one.
+to host it yourself.</td>
+</tr>
+<tr>
+<td>`css-theme`</td>
+<td>You can also use a codemirror theme for the snippets,
+just set this to a uri pointing to one.</td>
+</tr>
+</tbody>
+</table>
 
 ## Examples
 
