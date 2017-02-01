@@ -12,7 +12,7 @@
                            [selmer "0.8.2"]
                            [clj-text-decoration "0.0.3"]
                            [io.aviso/pretty "0.1.18"]
-                           [cryogen-markdown "0.1.1"]
+                           [cryogen-markdown "0.1.5"]
                            [cryogen-core "0.1.21"]]
             :plugins [[lein-ring "0.8.13"]]
             :main cryogen.compiler
