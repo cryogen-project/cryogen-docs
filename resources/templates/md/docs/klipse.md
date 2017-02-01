@@ -11,8 +11,10 @@ Visitors can edit the snippets and they are evaluated continuously as they type.
 It's all evaluated client-side, so no server involved.
 
 In Cryogen you can integrate klipse in your blog with minimal effort.
-You configure the klipse plugin in `config.edn` and set `:klipse` to `true` in the post metadata.
-Alternatively you can override specific settings in the post metadata by passing a map.
+You configure the klipse plugin in `config.edn` and set `:klipse` to `true` in
+the post or page metadata.
+Alternatively you can override parts of the global configuration by passing a
+configuration map containing the desired changes to the `:klipse` key in the post/page metadata.
 
 ## Configuration
 
@@ -28,9 +30,10 @@ The configuration is a map that may include the following keys.
 <tbody>
 <tr>
 <td>`settings`</td>
-<td>Contains a map that's passed to `window.klipse_settings`.
+<td>Contains a clojure map that's passed to `window.klipse_settings`.
 All the settings are documented [here](https://github.com/viebel/klipse#configuration).
-In cryogen you can use `:lisp-cased-keywords` instead of `"snake_cased_strings"`.
+
+(In cryogen you can use `:lisp-cased-keywords` instead of `"snake_cased"`/`"camelCased"` strings.)
 </td>
 </tr>
 <tr>
