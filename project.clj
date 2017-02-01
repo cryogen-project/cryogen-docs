@@ -3,9 +3,7 @@
             :url "https://github.com/lacarmen/cryogen"
             :license {:name "Eclipse Public License"
                       :url "http://www.eclipse.org/legal/epl-v10.html"}
-            :dependencies [[org.clojure/clojure "1.6.0"]
-                           [markdown-clj "0.9.67"
-                            :exclusions [com.keminglabs/cljx]]
+            :dependencies [[org.clojure/clojure "1.7.0"]
                            [ring/ring-devel "1.3.2"]
                            [compojure "1.3.4"]
                            [ring-server "0.4.0"]
