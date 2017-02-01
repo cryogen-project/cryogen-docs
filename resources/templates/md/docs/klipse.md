@@ -74,9 +74,8 @@ just set this to a uri pointing to one.</td>
 
 This config is all you need to write code blocks with normal cljs, reagent and/or ruby eval.
 
-
 `config.edn`
-```clojure
+```
 {...
 :hide-future-posts? true
 
@@ -88,17 +87,19 @@ This config is all you need to write code blocks with normal cljs, reagent and/o
 ```
 
 `hello-world.md`
-```
-{:title "A post"
- :layout :post
- :date "2017-01-19"
- :klipse true
- :tags ["cljs"]}
 
-## Hello world!
+    {:title "A post"
+     :layout :post
+     :date "2017-01-19"
+     :klipse true
+     :tags ["cljs"]}
+    
+    ## Hello world!
+    
+    ```klipse-cljs
+    (map #(* % %) (range 10))
+    ```
 
-Lorem ipsum etc.
-```
 
 ### More complicated config
 
@@ -106,7 +107,7 @@ This one has some more configuration to show how you can override settings
 in a specific post.
 
 `config.edn`
-```clojure
+```
 {...
 :hide-future-posts? true
 
@@ -122,17 +123,19 @@ in a specific post.
 ```
 
 `hello-world.md`
-```
-{:title "A post"
- :layout :post
- :date "2017-01-19"
 
- ;; Override config.edn and turn off line numbers for snippet output.
- :klipse {:settings {:codemirror-options-out {:line-numbers false}}}
+    {:title "A post"
+     :layout :post
+     :date "2017-01-19"
+    
+     ;; Override config.edn and turn off line numbers for snippet output.
+     :klipse {:settings {:codemirror-options-out {:line-numbers false}}}
+    
+     :tags ["cljs"]}
+    
+    ## Hello world!
+    
+    ```klipse-ruby
+    (0...10).map {|i| i * i}
+    ```
 
- :tags ["cljs"]}
-
-## Hello world!
-
-Lorem ipsum etc.
-```
