@@ -37,6 +37,7 @@ Cryogen provides some flexible configuration options. Your site's configuration 
  :blocks-per-preview   2
  :clean-urls?          true
  :hide-future-posts?   true
+ :klipse               {}
  :debug?               false}
 ```
 
@@ -143,7 +144,7 @@ search path or has a different name than please adapt this value.
 </tr>
 <tr>
 <td>`theme`</td>
-<td>Set this to the theme you wish to deliver from the `themes` directory. You can add your own theme to this folder along with the current `blue` and `blue_centered` themes. Must be provided.</td>
+<td>Set this to the theme you wish to deliver from the `themes` directory. You can add your own theme to this folder along with the current `blue`, `blue_centered` and `nucleus` themes. Must be provided.</td>
 </tr>
 <tr>
 <td>`resources`</td>
@@ -185,6 +186,11 @@ search path or has a different name than please adapt this value.
 <tr>
 <td>`hide-future-posts?`</td>
 <td>Set this to `true` to include only current and past blogs in the compiled site. This allows for easy drafting of future articles.</td>
+</tr>
+<tr>
+<td>`klipse`</td>
+<td>Set [klipse](https://github.com/viebel/klipse) configuration for the whole site.
+See [Klipse Integration](klipse.html) for details.</td>
 </tr>
 <tr>
 <td>`debug?`</td>
