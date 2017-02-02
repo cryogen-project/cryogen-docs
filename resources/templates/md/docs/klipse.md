@@ -1,17 +1,16 @@
-{:title "Klipse integration"
+{:title "Klipse Integration"
  :layout :page
  :page-index 8
  :toc true
  :section "Your Content"}
 
 [Klipse](https://github.com/viebel/klipse)
-is a tool for making code snippets on a web page interactive.
-It consists of a javascript plugin that evaluates your code snippets.
+is a javascript plugin that transforms static code snippets of an html page into live and
+interactive snippets. making code snippets on a web page interactive.
 Visitors can edit the snippets and they are evaluated continuously as they type.
-It's all evaluated client-side, so no server involved.
 
-In Cryogen you can integrate klipse in your blog with minimal effort.
-You configure the klipse plugin in `config.edn` and set `:klipse` to `true` in
+In Cryogen you can integrate Klipse in your blog with minimal effort.
+To get started, configure the Klipse plugin in `config.edn` and set `:klipse` to `true` in
 the post or page metadata.
 Alternatively you can override parts of the global configuration by passing a
 configuration map containing the desired changes to the `:klipse` key in the post/page metadata.
@@ -31,16 +30,14 @@ The configuration is a map that may include the following keys.
 <tr>
 <td>`settings`</td>
 <td>Contains a clojure map that's passed to `window.klipse_settings`.
-All the settings are documented [here](https://github.com/viebel/klipse#configuration).
-
-(In cryogen you can use `:lisp-cased-keywords` instead of `"snake_cased"`/`"camelCased"` strings.)
+All the settings are documented [here](https://github.com/viebel/klipse#configuration). (In cryogen you can use `:lisp-cased-keywords` instead of `"snake_cased"`/`"camelCased"` strings.)
 </td>
 </tr>
 <tr>
 <td>`js-src`</td>
 <td>A map with the keys `:min` and `:non-min`. These are uris that point to the
-minified and non-minified version of the klipse plugin.
-They default to the plugin hosted by klipse, but to host it yourself,
+minified and non-minified version of the Klipse plugin.
+They default to the plugin hosted by Klipse, but to host it yourself,
 just set the appropriate uris.
 </td>
 </tr>
@@ -49,15 +46,15 @@ just set the appropriate uris.
 <td>Can be either `:min` or `:non-min`. Self-hosted clojurescript is not (yet?)
 compatible with advanced compilation, so if a post has cljs snippets, it needs
 to use the non-minified version, but any other languages can use the minified version.
-
+<br><br>
 Cryogen will infer this based on the setting and the classes in the code blocks
 in each post, so normally you don't need to worry about it.
 Can be overridden if necessary.</td>
 </tr>
 <tr>
 <td>`css-base`</td>
-<td>The uri to the codemirror css that is used by klipse. As with `:js-src`,
-it defaults to css hosted by klipse and you can override it if you want
+<td>The uri to the codemirror css that is used by Klipse. As with `:js-src`,
+it defaults to css hosted by Klipse and you can override it if you want
 to host it yourself.</td>
 </tr>
 <tr>
@@ -72,7 +69,8 @@ just set this to a uri pointing to one.</td>
 
 ### Basic config
 
-This config is all you need to write code blocks with normal cljs, reagent and/or ruby eval.
+This config is all you need to write code blocks with live vanilla ClojureScript,
+Reagent and/or Ruby evaluation.
 
 `config.edn`
 ```
@@ -101,7 +99,7 @@ This config is all you need to write code blocks with normal cljs, reagent and/o
     ```
 
 
-### More complicated config
+### More advanced config
 
 This one has some more configuration to show how you can override settings
 in a specific post.

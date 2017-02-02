@@ -87,7 +87,7 @@ Files that have this key set to `true` will not be included in the compilation p
 </tr>
 <tr>
 <td>`klipse`</td>
-<td>Set [klipse](https://github.com/viebel/klipse) configuration for the post.
+<td>Set [Klipse](https://github.com/viebel/klipse) configuration for the post.
 See [Klipse Integration](klipse.html) for details.</td>
 </tr>
 </tbody>

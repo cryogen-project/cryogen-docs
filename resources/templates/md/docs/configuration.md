@@ -189,7 +189,7 @@ search path or has a different name than please adapt this value.
 </tr>
 <tr>
 <td>`klipse`</td>
-<td>Set [klipse](https://github.com/viebel/klipse) configuration for the whole site.
+<td>Set [Klipse](https://github.com/viebel/klipse) configuration for the whole site.
 See [Klipse Integration](klipse.html) for details.</td>
 </tr>
 <tr>
