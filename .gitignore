@@ -11,3 +11,4 @@ pom.xml.asc
 .lein-failures
 resources/public/
 .idea/
+.DS_Store
