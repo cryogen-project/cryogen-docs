@@ -121,7 +121,7 @@ Keys marked with a * must be provided.
 </tr>
 <tr>
 <td>`sass-src`</td>
-<td>A vector of directories containing sass(scss) files to be compiled. If this key is omitted then the default is `["css"]`. Be sure to include this directory in your resources section as the compiled css will be ouputted in the same directory.</td>
+<td>A vector of directories containing sass(scss) files to be compiled. If this key is omitted then the default is `["css"]`. Be sure to include these directories in your resources section as the compiled css will be outputted in the same directory.</td>
 </tr>
 <tr>
 <td>`sass-path`</td>
