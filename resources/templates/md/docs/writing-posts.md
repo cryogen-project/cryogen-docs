@@ -1,7 +1,8 @@
 {:title "Writing Posts"
  :layout :page
  :page-index 4
- :section "Your Content"}
+ :section "Your Content"
+ :toc true}
 
 Blogging with Cryogen is part of its core functionality. You can simply maintain a folder of text files containing Markdown/AsciiDoc content and Cryogen will take care of compiling them into a blog.
 

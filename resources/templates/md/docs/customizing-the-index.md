@@ -1,7 +1,8 @@
 {:title "Customizing your Index Page"
  :layout :page
  :page-index 7
- :section "Your Content"}
+ :section "Your Content"
+ :toc true}
 
 You have several options when choosing what content to display on the home page of your blog.
 

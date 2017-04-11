@@ -1,8 +1,8 @@
 {:title "Klipse Integration"
  :layout :page
  :page-index 8
- :toc true
- :section "Your Content"}
+ :section "Your Content"
+ :toc true}
 
 [Klipse](https://github.com/viebel/klipse)
 is a javascript plugin that transforms static code snippets of an html page into live and
@@ -91,9 +91,9 @@ Reagent and/or Ruby evaluation.
      :date "2017-01-19"
      :klipse true
      :tags ["cljs"]}
-    
+
     ## Hello world!
-    
+
     ```klipse-cljs
     (map #(* % %) (range 10))
     ```
@@ -125,15 +125,14 @@ in a specific post.
     {:title "A post"
      :layout :post
      :date "2017-01-19"
-    
+
      ;; Override config.edn and turn off line numbers for snippet output.
      :klipse {:settings {:codemirror-options-out {:line-numbers false}}}
-    
+
      :tags ["cljs"]}
-    
+
     ## Hello world!
-    
+
     ```klipse-ruby
     (0...10).map {|i| i * i}
     ```
-

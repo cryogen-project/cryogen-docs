@@ -1,7 +1,8 @@
 {:title "Creating Pages"
  :layout :page
  :page-index 5
- :section "Your Content"}
+ :section "Your Content"
+ :toc true}
 
 Creating pages is not much different from writing posts. You're still required to include the map representing the metadata and the page must be written in valid Markdown.
 
