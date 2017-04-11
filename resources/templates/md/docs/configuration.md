@@ -199,3 +199,31 @@ In addition to these default configuration options, you may add your own custom 
 
 1. Add `:subtitle "My subtitle"` to the config file
 2. Inject the value into your templates via Selmer using `{% subtitle %}`
+
+## Advanced Configuration
+ If you want to override or extend config.edn from code, (e.g. by reading environment variables or by using an untracked file) you can edit `src/cryogen/core.clj` and `src/cryogen/server.clj` to pass a clojure map to the `compile-assets-timed` function. This is especially useful if you are making use of the custom values to configure 3rd party integrations like ReCaptcha.
+ 
+ For Example, if you wanted to have private options loaded from a secrets.edn file, you could do the following:
+ ```clojure
+ ;; src/cryogen/core.clj
+ 
+ ;; ...
+ (defn -main []
+   (let [overrides (read-string (slurp "secrets.edn"))]
+     (load-plugins)
+     (compile-assets-timed overrides)
+     (System/exit 0)))
+ ;; ...
+ ```
+
+
+```clojure
+ ;; src/cryogen/server.clj
+ ;; ...
+ (defn init []
+  (load-plugins)
+  (compile-assets-timed (read-string (slurp "secrets.edn")))
+  (let [ignored-files (-> (read-config) :ignored-files)]
+    (start-watcher! "resources/templates" ignored-files (partial compile-assets-timed 
+                                                                 (read-string (slurp "secrets.edn"))))))
+```
