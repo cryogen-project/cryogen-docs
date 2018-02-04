@@ -38,6 +38,7 @@ Cryogen provides some flexible configuration options. Your site's configuration 
  :posts-per-page       5
  :blocks-per-preview   2
  :clean-urls?          true
+ :collapse-subdirs?    false
  :hide-future-posts?   true
  :klipse               {}
  :debug?               false}
@@ -181,6 +182,10 @@ search path or has a different name than please adapt this value.
 <tr>
 <td>* `clean-urls?`</td>
 <td>Set this to `true` to emit html as subdirectories, e.g., `prefix/root/page-name/index.html` instead of `prefix/root/page-name.html`. Links would then end in `/page-name/` instead of `/page-name.html`.</td>
+</tr>
+<tr>
+<td>`collapse-subdirs?`</td>
+<td>Set this to `true` if you have your posts or pages organized in subdirectories and do not want that structure reflected in the url.  e.g., `/awesome-post/` instead of `/2016/awesome-post/`.</td>
 </tr>
 <tr>
 <td>* `hide-future-posts?`</td>
