@@ -37,7 +37,7 @@ Cryogen provides some flexible configuration options. Your site's configuration 
  :previews?            false
  :posts-per-page       5
  :blocks-per-preview   2
- :clean-urls?          true
+ :clean-urls           :trailing-slash
  :collapse-subdirs?    false
  :hide-future-posts?   true
  :klipse               {}
@@ -180,8 +180,8 @@ search path or has a different name than please adapt this value.
 <td>The default number of (html) blocks to display per post preview. This can be overwritten by adding `<!--more-->` to your .md or .asc file to indicate where you'd like to break off your post.</td>
 </tr>
 <tr>
-<td>* `clean-urls?`</td>
-<td>Set this to `true` to emit html as subdirectories, e.g., `prefix/root/page-name/index.html` instead of `prefix/root/page-name.html`. Links would then end in `/page-name/` instead of `/page-name.html`.</td>
+<td>* `clean-urls`</td>
+<td>`:trailing-slash`, `:no-trailing-slash`, and `:dirty` are valid options. Set this to `:trailing-slash` to emit html as subdirectories, e.g., `prefix/root/page-name/index.html`. Links would then end in `/page-name/`. Set this to `:no-trailing-slash` if you use GitHub Pages and prefer URLs not contain a final trailing slash. Links would then end in `/page-name`. <strong>Note:</strong> `:no-trailing-slash will not work on all hosting providers such as Amazon S3. Set this to `:dirty` will result in `prefix/root/page-name.html`. Links would then end in `/page-name.html`</td>
 </tr>
 <tr>
 <td>`collapse-subdirs?`</td>
