@@ -12,7 +12,7 @@
                            [io.aviso/pretty "0.1.33"]
                            [cryogen-markdown "0.1.5"]
                            [cryogen-core "0.1.21"]]
-            :plugins [[lein-ring "0.8.13"]]
+            :plugins [[lein-ring "0.12.5"]]
             :main cryogen.core
             :ring {:init cryogen.server/init
                    :handler cryogen.server/handler})
