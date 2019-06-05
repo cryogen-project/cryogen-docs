@@ -13,6 +13,6 @@
                            [cryogen-markdown "0.1.5"]
                            [cryogen-core "0.1.21"]]
             :plugins [[lein-ring "0.8.13"]]
-            :main cryogen.compiler
+            :main cryogen.core
             :ring {:init cryogen.server/init
                    :handler cryogen.server/handler})
