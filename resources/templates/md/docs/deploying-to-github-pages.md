@@ -65,7 +65,7 @@ If you make any changes to your site, simply follow this deployment step to upda
 
 If you'd like to use a custom domain, GitHub supports this by configuring a `CNAME` file in the root of your repository. You'll need to acquire a domain from a registrar and then setup either a `CNAME` record or an `A` record pointing to GitHub. GitHub has documentation [here](https://help.github.com/articles/quick-start-setting-up-a-custom-domain/) that details the difference.
 
-For the Cryogen part, create a file called `CNAME` at `resources/templates/CNAME` with contents similar to this:
+For the Cryogen part, create a file called `CNAME` at `content/CNAME` with contents similar to this:
 
 ```
 cryogenweb.org
@@ -77,4 +77,4 @@ Now edit your `config.edn` and add `CNAME` to your `:resources`:
 :resources ["img" "CNAME"]
 ```
 
-Now when you build, your CNAME file should be copied into your `resources/public/` folder.
+Now when you build, your CNAME file should be copied into your `public/` folder.
