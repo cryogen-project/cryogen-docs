@@ -100,7 +100,8 @@ The rest of your file should contain valid Markdown content. For example:
 {:title  "First Post!"
  :layout :post
  :date   "2016-01-01"
- :tags   ["tag1" "tag3"]}
+ :tags   ["tag1" "tag3"]
+ :author "Jane Doe"}
 
  ## Hello World
 
@@ -127,7 +128,7 @@ Cryogen will automatically create a page for each unique tag that you've used in
 
 You'll probably want to include images in your pages or posts eventually. There are different places where you can store these images.
 
-The common option is to keep them in one folder under the `content` directory such as `assets` or `img`. Make sure to include the name of this folder in the `resources` key in your config so the images get transfered to the `public` folder when your site compiles.
+The common option is to keep them in one folder under the `content` directory such as `assets` or `img`. Make sure to include the name of this folder in the `:resources` key in your config so the images get transfered to the `public` folder when your site compiles.
 
 The other option is to keep them alongside your Markdown files. This means you would have to save your posts that contain images in a separate folder under your `post-root`. For example:
 

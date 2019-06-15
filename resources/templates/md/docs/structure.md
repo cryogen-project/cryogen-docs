@@ -62,37 +62,39 @@ my-blog
 <tbody>
 <tr>
 <td>`public`</td>
-<td>This is where the generated site will go once Cryogen is done compiling your content.</td>
+<td>This is where the generated site will go (by default) once Cryogen is done compiling your content. This can be configured in `config.edn`</td>
 </tr>
 <tr>
 <td>`content`</td>
 <td>The main folder where all your Markdown/AsciiDoc content and other resources will go.</td>
 </tr>
 <tr>
-<td>`asc`</td>
-<td>If you are using AsciiDoc then keep your content here.
-</td>
+<td>`themes`</td>
+<td>This directory contains themes that you may apply to your site. You may use a theme by specifying its name under the `theme` key in `config.edn`.</td>
 </tr>
 <tr>
-<td>`md`</td>
-<td>If you are using Markdown then keep your content here.
-</td>
+<td>`content/config.edn`</td>
+<td>Configuration data for your site.</td>
+</tr>
+<tr>
+<td>`content/asc`</td>
+<td>If you are using AsciiDoc then keep your content here.</td>
+</tr>
+<tr>
+<td>`content/md`</td>
+<td>If you are using Markdown then keep your content here.</td>
 </tr>
 <tr>
 <td>`pages`</td>
-<td>The root folder for all your custom Markdown/Asciidoc pages. This folder name can be changed in config.edn.</td>
+<td>The root folder for all your custom Markdown/Asciidoc pages. This folder name can be changed in `config.edn`.</td>
 </tr>
 <tr>
 <td>`posts`</td>
 <td>The root folder for all your post content in Markdown/Asciidoc. This folder name can also be changed.</td>
 </tr>
 <tr>
-<td>`img`</td>
+<td>`content/img`</td>
 <td>The default directory to place images.</td>
-</tr>
-<tr>
-<td>`themes`</td>
-<td>This directory contains themes that you may apply to your site. You may use a theme by specifying its name under the `theme` key in `config.edn`.</td>
 </tr>
 <tr>
 <td>`themes/{theme}/css`</td>
@@ -106,10 +108,6 @@ my-blog
 <tr>
 <td>`themes/{theme}/js`</td>
 <td>Also self explanatory. The theme's JavaScript files go here.</td>
-</tr>
-<tr>
-<td>`config.edn`</td>
-<td>Configuration data for your site.</td>
 </tr>
 <tr>
 <td>`src/cryogen`</td>
