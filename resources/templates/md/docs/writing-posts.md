@@ -12,7 +12,7 @@ All of your blog posts should reside under the `post-root` folder specified in y
 
 ## Creating Posts
 
-To create a new blog post, all you need to do is create a new Markdown or AsciiDoc file (depending on what you're using - you can only choose one) under your `post-root` directory. If you are using Markdown then the files should reside under `templages/md/{post-root}`. If you are using AsciiDoc then the files should reside under `templages/asc/{post-root}`. You must add a date to your post in one of two ways.
+To create a new blog post, all you need to do is create a new Markdown or AsciiDoc file (depending on what you're using - you can only choose one) under your `post-root` directory. If you are using Markdown then the files should reside under `content/md/{post-root}`. If you are using AsciiDoc then the files should reside under `content/asc/{post-root}`. You must add a date to your post in one of two ways.
 
 The first option is to specify the date of the post right in the name of the Markdown file. The way you name these files is important. The date format in your file name must match the date format specified in your `config.edn` file.
 
@@ -117,7 +117,7 @@ The rest of your file should contain valid Markdown content. For example:
 
 ### Multiple Authors
 
-You can specify the author for a particular post by including the `:author` key in the post metadata as shown above. If you happen to have multiple authors writing on your blog and want to generate a page with posts filtered by author you should provide the `:author-root-uri` value in the `config.edn` file. The compiler will use the `templates/themes/{theme}/html/author.html` layout and will generate a page with the same name as the author. For post without author the global `:author` value from `config.edn` will be used.
+You can specify the author for a particular post by including the `:author` key in the post metadata as shown above. If you happen to have multiple authors writing on your blog and want to generate a page with posts filtered by author you should provide the `:author-root-uri` value in the `config.edn` file. The compiler will use the `themes/{theme}/html/author.html` layout and will generate a page with the same name as the author. For post without author the global `:author` value from `config.edn` will be used.
 
 ### Tags
 
@@ -127,7 +127,7 @@ Cryogen will automatically create a page for each unique tag that you've used in
 
 You'll probably want to include images in your pages or posts eventually. There are different places where you can store these images.
 
-The common option is to keep them in one folder under the `templates` directory such as `assets` or `img`. Make sure to include the name of this folder in the `resources` key in your config so the images get transfered to the `public` folder when your site compiles.
+The common option is to keep them in one folder under the `content` directory such as `assets` or `img`. Make sure to include the name of this folder in the `resources` key in your config so the images get transfered to the `public` folder when your site compiles.
 
 The other option is to keep them alongside your Markdown files. This means you would have to save your posts that contain images in a separate folder under your `post-root`. For example:
 
@@ -145,7 +145,7 @@ If you'd like to organize your posts in this fashion, please keep in mind that t
 
 ### Images and Markdown
 
-All images should be included in your Markdown content in the following format. (If `img` were a folder that you created under `resources/templates`.)
+All images should be included in your Markdown content in the following format. (If `img` were a folder that you created under `content`.)
 
 ```
 ![Image 1](/img/img01.png)
@@ -173,4 +173,4 @@ If you wish to enable comments on your posts, create a [disqus](https://disqus.c
 
 ## Post Archives
 
-Cryogen will automatically generate and update a post archives page for you. If you'd like to change the layout of this page, you can do so by editing the HTML in `templates/themes/{theme}/html/archives.html`.
+Cryogen will automatically generate and update a post archives page for you. If you'd like to change the layout of this page, you can do so by editing the HTML in `themes/{theme}/html/archives.html`.
