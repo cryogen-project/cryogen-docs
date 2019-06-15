@@ -6,7 +6,7 @@
 
 ## Your Options
 
-Cryogen provides some flexible configuration options. Your site's configuration file can be found at `templates/config.edn` and contains the following by default:
+Cryogen provides some flexible configuration options. Your site's configuration file can be found at `content/config.edn` and contains the following by default:
 
 ```clojure
 {:site-title           "My Awesome Blog"
@@ -84,7 +84,7 @@ Keys marked with a * must be provided.
 </tr>
 <tr>
 <td>`post-root-uri`</td>
-<td>The folder where the compiler will output compiled blog posts. This value is prepended to all post uri's. If this key is omitted then the name of the output folder will be the same as the `post-root` folder. If the an string ("") is provided then the posts will be outputted to the root folder of the blog (ie. `resources/public/{blog-prefix}`).
+<td>The folder where the compiler will output compiled blog posts. This value is prepended to all post uri's. If this key is omitted then the name of the output folder will be the same as the `post-root` folder. If the an string ("") is provided then the posts will be outputted to the root folder of the blog (ie. `public/{blog-prefix}`).
 </td>
 </tr>
 <tr>
@@ -149,7 +149,7 @@ search path or has a different name than please adapt this value.
 </tr>
 <tr>
 <td>* `resources`</td>
-<td>A vector of directories/files to be copied over from `templates` to `public` upon compilation.</td>
+<td>A vector of directories/files to be copied over from `content` to `public` upon compilation.</td>
 </tr>
 <tr>
 <td>* `keep-files`</td>
@@ -200,6 +200,10 @@ See [Klipse Integration](klipse.html) for details.</td>
 <td>* `debug?`</td>
 <td>Enable debug outputs for compiler.</td>
 </tr>
+<tr>
+<td>`public-dest`</td>
+<td>Sets where to output the rendered site. Defaults to `"public"` if not specified.
+</tr>
 </tbody>
 </table>
 
@@ -232,8 +236,8 @@ In addition to these default configuration options, you may add your own custom 
  (defn init []
   (load-plugins)
   (compile-assets-timed (read-string (slurp "secrets.edn")))
-  (let [ignored-files (-> (read-config) :ignored-files)]
-    (start-watcher! "resources/templates" ignored-files (partial compile-assets-timed
+  (let [ignored-files (-> (resolve-config) :ignored-files)]
+    (start-watcher! "content" ignored-files (partial compile-assets-timed
                                                                  (read-string (slurp "secrets.edn"))))))
 ;; ...
 ```
