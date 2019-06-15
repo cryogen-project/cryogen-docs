@@ -8,48 +8,47 @@ A basic Cryogen site usually looks something like this:
 
 ```
 my-blog
-├── resources
-│   ├── public
-│   │   ⋮
-│   └── templates
-│       ├── asc
-│       │   ├── pages
-│       │   │   └── adoc-page.asc
-│       │   └── posts
-│       │       └── 2014-10-10-adoc-post.asc
-│       ├── md
-│       │   ├── pages
-│       │   │   ├── about.md
-│       │   │   └── another-page.md
-│       │   └── posts
-│       │       ├── 2014-03-10-first-post.md
-│       │       ├── 2014-11-04-second-post.md
-│       │       └── 2014-12-11-docs.md
-│       ├── img
-│       ├── themes
-│       │   ├── blue
-│       │   │   ├── css
-│       │   │   │   └── screen.css
-│       │   │   ├── html
-│       │   │   │   ├── 404.html
-│       │   │   │   ├── archives.html
-│       │   │   │   ├── base.html
-│       │   │   │   ├── home.html
-│       │   │   │   ├── page.html
-│       │   │   │   ├── post-content.html
-│       │   │   │   ├── post.html
-│       │   │   │   ├── previews.html
-│       │   │   │   ├── tag.html
-│       │   │   │   └── tags.html
-│       │   │   └── js
-│       │   │       └── highlight.pack.js
-│       │   └── blue_centered
-│       │       ⋮
-│       ├── config.edn
+├── content
+│   ├── asc
+│   │   ├── pages
+│   │   │   └── adoc-page.asc
+│   │   └── posts
+│   │       └── 2014-10-10-adoc-post.asc
+│   ├── md
+│   │   ├── pages
+│   │   │   ├── about.md
+│   │   │   └── another-page.md
+│   │   └── posts
+│   │       ├── 2014-03-10-first-post.md
+│   │       ├── 2014-11-04-second-post.md
+│   │       └── 2014-12-11-docs.md
+│   ├── img
+│   └── config.edn
+├── public
+│   ⋮
 ├── src
 │   └── cryogen
 │       ├── core.clj
-│       └── server.clj       
+│       └── server.clj
+├── themes
+│   ├── blue
+│   │   ├── css
+│   │   │   └── screen.css
+│   │   ├── html
+│   │   │   ├── 404.html
+│   │   │   ├── archives.html
+│   │   │   ├── base.html
+│   │   │   ├── home.html
+│   │   │   ├── page.html
+│   │   │   ├── post-content.html
+│   │   │   ├── post.html
+│   │   │   ├── previews.html
+│   │   │   ├── tag.html
+│   │   │   └── tags.html
+│   │   └── js
+│   │       └── highlight.pack.js
+│   └── blue_centered
+│       ⋮
 └── project.clj
 ```
 
@@ -62,16 +61,12 @@ my-blog
 </thead>
 <tbody>
 <tr>
-<td>`resources`</td>
-<td>This is where all of your site content and configuration will go. It's divided into the `templates` folder and the `public` folder.</td>
-</tr>
-<tr>
 <td>`public`</td>
 <td>This is where the generated site will go once Cryogen is done compiling your content.</td>
 </tr>
 <tr>
-<td>`templates`</td>
-<td>The main folder where all your HTML themes and Markdown/AsciiDoc content will go.</td>
+<td>`content`</td>
+<td>The main folder where all your Markdown/AsciiDoc content and other resources will go.</td>
 </tr>
 <tr>
 <td>`asc`</td>
