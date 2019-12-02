@@ -37,10 +37,6 @@ The following information is mandatory in your page metadata.
 <td>Your post title provided as a string.</td>
 </tr>
 <tr>
-<td>`layout`</td>
-<td>A keyword corresponding to an HTML file under `themes/{theme}/html`.</td>
-</tr>
-<tr>
 <td>`page-index`</td>
 <td>Because pages can be linked up with previous/next links, this is how they get sorted.</td>
 </tr>
@@ -70,6 +66,11 @@ These are some optional keys that you may provide:
 <td>Set [Klipse](https://github.com/viebel/klipse) configuration for the post.
 See [Klipse Integration](klipse.html) for details.</td>
 </tr>
+<tr>
+<td>`layout`</td>
+<td>A keyword corresponding to an HTML file under `themes/{theme}/html`.
+Defaults to `:page`.</td>
+</tr>
 </tbody>
 </table>
 
@@ -77,7 +78,6 @@ For example:
 
 ```
 {:title      "Check out this page!"
- :layout     :page
  :page-index 0
  :navbar?    false
  :home?      false}
