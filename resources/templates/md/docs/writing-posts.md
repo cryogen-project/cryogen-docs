@@ -91,6 +91,11 @@ Files that have this key set to `true` will not be included in the compilation p
 <td>Set [Klipse](https://github.com/viebel/klipse) configuration for the post.
 See [Klipse Integration](klipse.html) for details.</td>
 </tr>
+</tr>
+<tr>
+<td>`description`</td>
+<td>Provide a custom description for the post (available as `{{post.description}}` in the templates) instead of the one created automatically from the post's preview. Set it to `false` to disable description for the page. (`post.description` will thus be nil.)</td>
+</tr>
 </tbody>
 </table>
 
