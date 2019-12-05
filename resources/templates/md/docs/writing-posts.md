@@ -92,6 +92,10 @@ See [Klipse Integration](klipse.html) for details.</td>
 <td>A keyword corresponding to an HTML file under `themes/{theme}/html`.
 Defaults to `:post` for posts.</td>
 </tr>
+<tr>
+<td>`description`</td>
+<td>Provide a custom description for the post (available as `{{post.description}}` in the templates) instead of the one created automatically from the post's preview. Set it to `false` to disable description for the page. (`post.description` will thus be nil.)</td>
+</tr>
 </tbody>
 </table>
 
