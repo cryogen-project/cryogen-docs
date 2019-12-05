@@ -247,3 +247,17 @@ In addition to these default configuration options, you may add your own custom 
        (start-watcher! "themes" ignored-files (partial compile-assets-timed overrides)))))
 ;; ...
 ```
+### Deriving Params
+
+If you wish to further derive more parameters from the data that the cryogen compiler generates, you may pass in a `:extend-params-fn` in your overrides map which will be invoked by the compiler like so
+
+```clojure
+((:extend-params-fn overrides)
+  params
+  {:posts posts
+   :pages pages
+   :posts-by-tag posts-by-tag
+   :navbar-pages navbar-pages
+   :sidebar-pages sidebar-pages})
+```
+
