@@ -169,6 +169,20 @@ will be compiled into this:
 <img src="/blog/img/img01.png">
 ```
 
+### Linking to other Posts or Pages
+
+If you include local links to your other pages or posts, Cryogen will preprend your blog prefix the same way it does with images. So this
+
+```
+[Check out my bio](/pages/about-me)
+```
+
+will be compiled into this
+
+```
+<a href="/blog/pages/about-me">Check out my bio</a>
+```
+
 ### Highlighting Code Snippets
 
 Cryogen uses [highlight.js](https://highlightjs.org/) to support syntax highlighting for code snippets you wish to include in your posts or pages. Code blocks should be wrapped with triple backticks (```)  and highlight.js will automatically detect the language and handle the syntax colours. If you want to specify the language, simply do so after the first triple backtick.

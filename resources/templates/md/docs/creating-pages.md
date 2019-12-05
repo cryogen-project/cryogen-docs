@@ -89,6 +89,10 @@ For example:
 
 You can include images in your pages in the same way you include images in your blog posts. Please refer to the "Including Images in Posts" and "Images in Markdown" sections of the [Writing Posts](/docs/writing-posts.html) page.
 
+### Linking to other Posts or Pages
+
+You can link to other pages or posts on your site in [the same way you include these links in your blog posts](/docs/writing-posts.html#linking_to_other_posts_or_pages).
+
 ### Highlighting Code Snippets
 
 Want to show off your code in a page? It works the same way as it does in posts. Just wrap your code block in triple backticks and highlight.js will take care of the rest.
