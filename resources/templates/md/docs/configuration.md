@@ -9,40 +9,41 @@
 Cryogen provides some flexible configuration options. Your site's configuration file can be found at `content/config.edn` and contains the following by default:
 
 ```clojure
-{:site-title           "My Awesome Blog"
- :author               "Bob Bobbert"
- :description          "This blog is awesome"
- :site-url             "http://blogawesome.com/"
- :post-root            "posts"
- :page-root            "pages"
- :post-root-uri        "posts-output"
- :page-root-uri        "pages-output"
- :tag-root-uri         "tags-output"
- :author-root-uri      "authors-output"
- :public-dest          "public"
- :blog-prefix          "/blog"
- :rss-name             "feed.xml"
- :rss-filters          ["cryogen"]
- :recent-posts         3
- :post-date-format     "yyyy-MM-dd"
- :archive-group-format "yyyy MMMM"
- :sass-src             []
- :sass-path            "sass"
- :compass-path         "compass"
- :theme                "blue"
- :resources            ["img"]
- :keep-files           [".git"]
- :disqus?              false
- :disqus-shortname     ""
- :ignored-files        [#"\.#.*" #".*\.swp$"]
- :previews?            false
- :posts-per-page       5
- :blocks-per-preview   2
- :clean-urls           :trailing-slash
- :collapse-subdirs?    false
- :hide-future-posts?   true
- :klipse               {}
- :debug?               false}
+{:site-title                   "My Awesome Blog"
+ :author                       "Bob Bobbert"
+ :description                  "This blog is awesome"
+ :site-url                     "http://blogawesome.com/"
+ :post-root                    "posts"
+ :page-root                    "pages"
+ :post-root-uri                "posts-output"
+ :page-root-uri                "pages-output"
+ :tag-root-uri                 "tags-output"
+ :author-root-uri              "authors-output"
+ :public-dest                  "public"
+ :blog-prefix                  "/blog"
+ :rss-name                     "feed.xml"
+ :rss-filters                  ["cryogen"]
+ :recent-posts                 3
+ :post-date-format             "yyyy-MM-dd"
+ :archive-group-format         "yyyy MMMM"
+ :sass-src                     []
+ :sass-path                    "sass"
+ :compass-path                 "compass"
+ :theme                        "blue"
+ :resources                    ["img"]
+ :keep-files                   [".git"]
+ :disqus?                      false
+ :disqus-shortname             ""
+ :ignored-files                [#"\.#.*" #".*\.swp$"]
+ :previews?                    false
+ :posts-per-page               5
+ :blocks-per-preview           2
+ :description-include-elements #{:p :h1 :h2 :h3 :h4 :h5 :h6}
+ :clean-urls                   :trailing-slash
+ :collapse-subdirs?            false
+ :hide-future-posts?           true
+ :klipse                       {}
+ :debug?                       false}}
 ```
 
 ### Details
@@ -180,6 +181,11 @@ search path or has a different name than please adapt this value.
 <tr>
 	<td>`blocks-per-preview`</td>
 	<td>The default number of (html) blocks to display per post preview. This can be overwritten by adding `<!--more-->` to your .md or .asc file to indicate where you'd like to break off your post. Defaults to 2.</td>
+</tr>
+</tr>
+<tr>
+	<td>`:description-include-elements`</td>
+	<td>The HTML elements from a preview whose content should be included in the plain-text `:description` of the page/post. Defaults to paragraphs and all headings, i.e. `#{:p :h1 :h2 :h3 :h4 :h5 :h6}`.</td>
 </tr>
 <tr>
 	<td>* `clean-urls`</td>
