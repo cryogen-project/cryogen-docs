@@ -44,10 +44,6 @@ Every Markdown file representing a post must contain metadata about the title an
 <td>`title`</td>
 <td>Your post title provided as a string.</td>
 </tr>
-<tr>
-<td>`layout`</td>
-<td>A keyword corresponding to an HTML file under `themes/{theme}/html`.</td>
-</tr>
 </tbody>
 </table>
 
@@ -91,6 +87,10 @@ Files that have this key set to `true` will not be included in the compilation p
 <td>Set [Klipse](https://github.com/viebel/klipse) configuration for the post.
 See [Klipse Integration](klipse.html) for details.</td>
 </tr>
+<tr>
+<td>`layout`</td>
+<td>A keyword corresponding to an HTML file under `themes/{theme}/html`.
+Defaults to `:post` for posts.</td>
 </tr>
 <tr>
 <td>`description`</td>
