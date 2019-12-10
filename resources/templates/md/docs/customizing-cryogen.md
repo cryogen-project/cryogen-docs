@@ -6,15 +6,70 @@
 
 If the malleability provided by the [configuration](configuration.html) and templates isn't enough for your needs, here are your options.
 
-### Extra parameters for your Selmer templates
+### Leverage Cryogen config and hooks to add, modify, or derive new template parameters
 
-You can invoke [`cryogen-core.compiler/compile-assets-timed`](https://github.com/cryogen-project/cryogen-core/blob/master/src/cryogen_core/compiler.clj) with a custom `config` that:
+You can invoke [`cryogen-core.compiler/compile-assets-timed`](https://github.com/cryogen-project/cryogen-core/blob/master/src/cryogen_core/compiler.clj) with a custom `config` to:
 
-1. Can override any settings from `config.edn`
+1. Override any settings from `config.edn`
 2. Add any additional parameters that will be made available to your pages (ex.: `{{my-custom-key}}`)
-3. Provide under `:extend-params-fn` a function of the signature `(fn [params site-data] params)`
-   that can leverage all the available `params` (the data eventually passed to Selmer) and the
-   provided `site-data` to derive modified `params`. See the code for the available data.
+   (Similarly as you can do with custom keys in the article (i.e. page or post) metadata but for all articles.)
+3. Derive new / modify existing page parameters (available in your Selmer templates) by supplying under `:extend-params-fn`
+   a function of the signature `(fn [params site-data] params)`. See the code for the available `site-data`.
+4. Add or modify data of any "article" (a page or a post) or exclude it from further processing by supplying under
+   `:update-article-fn` a function of the signature `(fn [article, config] article)`. Return `nil` to exclude that article.
+
+#### Examples
+
+##### Add counts of tag occurrences
+
+We want to show not only tags but also how frequent they are at `/tags/`. So let's first find that out:
+
+```clojure
+(cryogen-core.compiler/compile-assets-timed
+  {:extend-params-fn
+   (fn extend-params [params site-data]
+     (let [tag-count (->> (:posts-by-tag site-data)
+                          (map (fn [[k v]] [k (count v)]))
+                          (into {}))]
+       (update
+         params :tags
+         #(map (fn [t] (assoc t
+                         :count (tag-count (:name t))))
+               %))))})
+```
+
+And in `tags.html`:
+
+```diff
+- <li><a href="{{tag.uri}}">{{tag.name}}</a></li>
++ <li><a href="{{tag.uri}}">{{tag.name}}</a> ({{tag.count}})</li>
+```
+
+##### Auto-link headings in posts and pages, GitHub style
+
+See the cryogen 0.2.3 [auto-link customization gist](https://gist.github.com/holyjak/bbeb714ca25ec99b55933c40f2e75881).
+
+##### Override the default URI based on a custom article metadata
+
+You have the post `2019-12-31-my-awesome-post.asc`, which would normally be displayed at https://blog.example.com/2019-12-31-my-awesome-post/ but you don't want to have the date in the URL. (You could simply move the date from the file name into the `:date` metadata but let's assume you don't want to for a reason.) So you have added the desired URL slug to the post:
+
+```clojure
+{:title "Awesome!" :slug "my-awesome-post"}
+My blog post is the greatest!
+```
+
+Now let's tell Cryogen to use the slug instead of the default `:uri`:
+
+```clojure
+(cryogen-core.compiler/compile-assets-timed
+  {:update-article-fn
+   (fn update-article [{:keys [slug] :as article} config]
+       (if slug
+         (assoc article :uri (str "/" slug "/"))
+         article))})
+```
+
+Voilà, https://blog.example.com/my-awesome-post/ is there!
 
 ### Extra pages / posts
 
