@@ -1,12 +1,12 @@
 {:title "Customizing/Extending Cryogen"
  :layout :page
  :toc true
- :page-index 12
+ :page-index 11
  :section "Additional Resources"}
 
 If the malleability provided by the [configuration](configuration.html) and templates isn't enough for your needs, here are your options.
 
-### Leverage Cryogen config and hooks to add, modify, or derive new template parameters
+## Leverage Cryogen config and hooks to add, modify, or derive new template parameters
 
 You can invoke [`cryogen-core.compiler/compile-assets-timed`](https://github.com/cryogen-project/cryogen-core/blob/master/src/cryogen_core/compiler.clj) with a custom `config` to:
 
@@ -18,9 +18,9 @@ You can invoke [`cryogen-core.compiler/compile-assets-timed`](https://github.com
 4. Add or modify data of any "article" (a page or a post) or exclude it from further processing by supplying under
    `:update-article-fn` a function of the signature `(fn [article, config] article)`. Return `nil` to exclude that article.
 
-#### Examples
+### Examples
 
-##### Add counts of tag occurrences
+#### Add counts of tag occurrences
 
 We want to show not only tags but also how frequent they are at `/tags/`. So let's first find that out:
 
@@ -45,11 +45,11 @@ And in `tags.html`:
 + <li><a href="{{tag.uri}}">{{tag.name}}</a> ({{tag.count}})</li>
 ```
 
-##### Auto-link headings in posts and pages, GitHub style
+#### Auto-link headings in posts and pages, GitHub style
 
 See the cryogen 0.2.3 [auto-link customization gist](https://gist.github.com/holyjak/bbeb714ca25ec99b55933c40f2e75881).
 
-##### Override the default URI based on a custom article metadata
+#### Override the default URI based on a custom article metadata
 
 You have the post `2019-12-31-my-awesome-post.asc`, which would normally be displayed at https://blog.example.com/2019-12-31-my-awesome-post/ but you don't want to have the date in the URL. (You could simply move the date from the file name into the `:date` metadata but let's assume you don't want to for a reason.) So you have added the desired URL slug to the post:
 
@@ -71,10 +71,10 @@ Now let's tell Cryogen to use the slug instead of the default `:uri`:
 
 Voilà, https://blog.example.com/my-awesome-post/ is there!
 
-### Extra pages / posts
+## Extra pages / posts
 
 You can leverage the functions in `cryogen-core.compiler` and write your own, invoking them from your `cryogen.core/-main` and `cryogen.server/init`, to generate additional pages and posts in the same way as `compile-assets-timed` does.
 
-### Customizing the code
+## Customizing the code
 
 You can copy the `cryogen-core.compiler` namespace directly into your project (where it will override the one from the cryogen-core.jar) and modify it to your liking. It is not very long or complicated and is quite easy to modify. That is [what we did for this site](https://github.com/cryogen-project/cryogen-docs/blob/fd601c857cc88f7cb633a41c47b4c692e1522ed8/src/cryogen/compiler.clj) (although it uses a much older version of cryogen-core, you may still use the same strategy today).

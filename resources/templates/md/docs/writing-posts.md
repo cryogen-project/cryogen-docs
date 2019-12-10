@@ -77,6 +77,12 @@ Set this to true if you want a table of contents to be generated from the header
 </td>
 </tr>
 <tr>
+<td>`toc-class`</td>
+<td>
+Specify the class that you want attached to the root element of your TOC (either `ul` or `li`). If this is not provided then the compiler will look for the class in `config.edn`. If neither are provided then `"toc"` is used.
+</td>
+</tr>
+<tr>
 <td>`draft?`</td>
 <td>
 Files that have this key set to `true` will not be included in the compilation process.

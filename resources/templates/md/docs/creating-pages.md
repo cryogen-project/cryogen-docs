@@ -62,6 +62,19 @@ These are some optional keys that you may provide:
 <td>Set this to `true` if you want to use this page as your index rather than a blog post or list of previews. Only one page may have this flag set to `true`. This page will not be part of your `navbar-pages` or `sidebar-pages` collection. The `:layout` key will be respected. `:previews?` must be set to `false` in the `config.edn`.</td>
 </tr>
 <tr>
+<td>`toc`</td>
+<td>
+Set this to true if you want a table of contents to be generated from the headers/headings in your post.
+(The default table of contents format is an ordered list. Set this to `:ul` if you want a bulleted list.)
+</td>
+</tr>
+<tr>
+<td>`toc-class`</td>
+<td>
+Specify the class that you want attached to the root element of your TOC (either `ul` or `li`). If this is not provided then the compiler will look for the class in `config.edn`. If neither are provided then `"toc"` is used.
+</td>
+</tr>
+<tr>
 <td>`klipse`</td>
 <td>Set [Klipse](https://github.com/viebel/klipse) configuration for the post.
 See [Klipse Integration](klipse.html) for details.</td>
@@ -70,6 +83,8 @@ See [Klipse Integration](klipse.html) for details.</td>
 <td>`layout`</td>
 <td>A keyword corresponding to an HTML file under `themes/{theme}/html`.
 Defaults to `:page`.</td>
+</tr>
+<tr>
 <td>`description`</td>
 <td>Provide a custom description for the post (available as `{{post.description}}` in the templates) instead of the one created automatically from the post's preview. Set it to `false` to disable description for the page. (`post.description` will thus be nil.)</td>
 </tr>

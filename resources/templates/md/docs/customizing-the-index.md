@@ -21,7 +21,7 @@ This option requires no changes to the default `config.edn` file. Just set the `
 
 This option will allow you to display a number of "previews" of your blog posts on your index page. Each preview will show the post title followed by a snippet from the post and a link to the full article. Clicking the prev/next links will then allow readers to view the next set of previews.
 
-An example taken from the project owner's blog:
+An example of how this could look:
 
 ![Preview Example](/img/preview-example.png)
 
