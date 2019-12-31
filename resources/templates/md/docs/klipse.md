@@ -17,7 +17,7 @@ configuration map containing the desired changes to the `:klipse` key in the pos
 
 ## Configuration
 
-The configuration is a map that may include the following keys.
+The configuration is a map that may include the keys described below. The map must must contain at least selectors for the language(s) you want to klipsify, see examples below.
 
 <table class="table table-bordered">
 <thead>
@@ -98,6 +98,24 @@ Reagent and/or Ruby evaluation.
     (map #(* % %) (range 10))
     ```
 
+Alternatively, for asciidoc:
+
+`hello-world.asc`
+
+    {:title "A post"
+     :layout :post
+     :date "2017-01-19"
+     :klipse true
+     :tags ["cljs"]}
+
+    == Hello world!
+
+    [source,klipse-cljs]
+    ----
+    (map #(* % %) (range 10))
+    ----
+
+(Notice that in both cases `language-` is prepended to the language so the selector is `.language-klipse-cljs`.)
 
 ### More advanced config
 
