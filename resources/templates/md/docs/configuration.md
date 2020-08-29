@@ -43,7 +43,8 @@ Cryogen provides some flexible configuration options. Your site's configuration 
  :collapse-subdirs?            false
  :hide-future-posts?           true
  :klipse                       {}
- :debug?                       false}}
+ :debug?                       false
+ :parse-content-with-selmer?   false}}
 ```
 
 ### Details
@@ -207,6 +208,10 @@ See [Klipse Integration](klipse.html) for details.</td>
 <tr>
 	<td>`debug?`</td>
 	<td>Enable debug outputs for compiler.</td>
+</tr>
+<tr>
+	<td>`parse-content-with-selmer?`</td>
+	<td>Set this to `true` to run pages and posts through selmer, allowing you to use selmer's syntax in your content files. One example usage would be to add your email to `config.edn` and render it in of your `.md` or `.asc` files with `{{ email|email }}`.</td>
 </tr>
 </tbody>
 </table>
