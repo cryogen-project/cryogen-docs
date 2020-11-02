@@ -1,10 +1,10 @@
-{% extends "templates/html/layouts/base.html" %}
+{% extends "/html/base.html" %}
 {%block subtitle %}: {{post.title}}{% endblock %}
 {% block content %}
 
 <div class="row">
     <div id="reading-pane" class="col-lg-10 col-md-10 col-sm-12">
-        {% include "templates/html/layouts/post-content.html" %}
+        {% include "/html/post-content.html" %}
         <div id="prev-next">
             {% if page.prev %}
             <a class="left" href="{{page.prev.uri}}">&laquo; Prev</a>
