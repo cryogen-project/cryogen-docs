@@ -16,9 +16,9 @@ jobs:
           name: build site
           command: |
             lein run
-            rm resources/public/feed.xml
-            rm resources/public/archives.html
-            cp -r resources/public/* cryogen-project.github.io/
+            rm public/feed.xml
+            rm public/archives.html
+            cp -r public/* cryogen-project.github.io/
       - save_cache: 
           paths: 
             - ~/.m2
