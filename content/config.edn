@@ -10,7 +10,7 @@
  :rss-filters      []
  :recent-posts     100
  :post-date-format ""
- :sass-src         nil
+ :sass-src         []
  ;:sass-dest        nil
  :theme "docs"
  :resources        []
