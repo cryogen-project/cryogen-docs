@@ -1,5 +1,5 @@
 {:title "Configuration"
- :layout :post
+ :layout :page
  :page-index 3
  :section "Getting Started"
  :toc true}
