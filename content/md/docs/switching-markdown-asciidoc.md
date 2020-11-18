@@ -9,4 +9,4 @@
  Instead of looking for files ending in `.md` in the `content/md` directory, the compiler will now look for files ending in any of the following extensions in the `content/asc` directory: `.adoc`, `.ad`, `.asciidoc`, `.asc`.
 
 If you want to configure Cryogen's use of AsciiDoc or create AsciiDoc
-extensions, see repository for [cryogen-asciidoc](https://github.com/cryogen-project/cryogen-asciidoc).
+extensions, see the repository for [cryogen-asciidoc](https://github.com/cryogen-project/cryogen-asciidoc).

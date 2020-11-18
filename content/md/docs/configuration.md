@@ -171,6 +171,11 @@ search path or has a different name than please adapt this value.
 	<td>A vector of regexes matching files that you want to ignore during compilation. (Ex: emacs interlock files.)</td>
 </tr>
 <tr>
+	<td>`ignored-sitemap-paths`</td>
+	<td>A vector of regexes matching paths that you want to ignore
+	when generating a sitemap.</td>
+</tr>
+<tr>
 	<td>`previews?`</td>
 	<td>Set this to `true` if you would like to display a list of recent posts rather than a full, single post on your home page. Discussed [here](/docs/customizing-the-index.html). `post-per-page` and `blocks-per-preview` must provided if this is `true`.</td>
 </tr>
