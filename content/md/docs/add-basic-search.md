@@ -4,7 +4,7 @@
  :page-index 13
  :section "Additional Resources"}
 
-To enable a search option for your site, you can use [`Lunr`](https://lunrjs.com/), which will create a searchable index without the need of any server-side or external search service. The inspiration to integrate Lunr with Cryogen was the following site [`Lunr-Index-and-Search-for-Static-Sites`](https://github.com/BLE-LTER/Lunr-Index-and-Search-for-Static-Sites), where the source JavaScript files can be found, which are used with slightly modifications here.
+To enable search for your site, you can use [`Lunr`](https://lunrjs.com/), which will create a searchable index without the need for any server-side or external search service. The inspiration to integrate Lunr with Cryogen was the following site [`Lunr-Index-and-Search-for-Static-Sites`](https://github.com/BLE-LTER/Lunr-Index-and-Search-for-Static-Sites), where the source JavaScript files can be found, which are used with slightly modifications here.
 
 A live demo of the result can be found at: [https://blog.stderr.at/](https://blog.stderr.at/)
 
@@ -16,7 +16,7 @@ Before we start, Node.js and some modules must be installed on your system:
 3. Install cheerio: `npm install cheerio`
 
 ## Copy build-index.js
-As the filename says, this script will create the index file, which will be used to search your page.
+As the filename says, this script will create the index file, which will be used to search your pages.
 
 > *NOTE*: Everytime when a new post/page is published, the index should be recreated. Therefore, the best option would be to add this to your deployment routine.
 
@@ -46,13 +46,13 @@ Line 64: This adds "posts-output" to the link, which might be removed depending 
         "link": "posts-output/"+file,
 ```
 
-## Create index file
+## Create an index file
 The index file should be created with any new post or page which is published using the following command:
 ```bash
 node ./build-index.js
 ```
 ## Download lunrclient.js
-Download and place the file lunrclient.js into the js folder of your theme: [lunrclient.js](/lunr/lunrclient.js)
+Download [lunrclient.js](/lunr/lunrclient.js) and place it into the `js/` folder of your theme.
 
 This script will create the search result page.
 
@@ -68,9 +68,9 @@ In the `head` tag the JavaScript files must be loaded. First lunr itself, then t
 
 The search form can look like this:
 ```html
-    <!--- Search from -->
+    <!--- Search form -->
     <form id="lunrSearchForm" name="lunrSearchForm" action="/">
-        <input class="search-input" name="q" placeholder="Enter search term" type="text"> 
+        <input class="search-input" name="q" placeholder="Enter search term" type="text">
         <input class="button nopadding" type="submit" value="Search">
     </form>
     <div class="loading" id="loading-div">
@@ -79,8 +79,8 @@ The search form can look like this:
     </div>
 ```
 
-Last but not least the search result is rendered in the main page (right side, nucleus example theme was used here.)
-The script lunrclient.js will replace the elements "resultCount" and "searchResults"
+Last but not least the search result is rendered in the main page (right side, nucleus example theme was used here).
+The script `lunrclient.js` will replace the elements "resultCount" and "searchResults".
 ```html
 <div id="right" class="clearfix">
   <div class="resultCount" id="resultCount"></div>
@@ -91,7 +91,7 @@ The script lunrclient.js will replace the elements "resultCount" and "searchResu
   </div>
 ```
 
-Tip: If you use the nucleus example template, or any javascript which does a **window.onload** you may want to do the following changes too:
+Tip: If you use the nucleus example template, or any javascript which does a **window.onload**, you may want to do the following changes too:
 
 `themes/nucleus/js/scripts.js`
 add
