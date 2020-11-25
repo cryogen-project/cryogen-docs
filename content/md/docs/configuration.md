@@ -1,5 +1,5 @@
 {:title "Configuration"
- :layout :post
+ :layout :page
  :page-index 3
  :section "Getting Started"
  :toc true}
@@ -169,6 +169,11 @@ search path or has a different name than please adapt this value.
 <tr>
 	<td>`ignored-files`</td>
 	<td>A vector of regexes matching files that you want to ignore during compilation. (Ex: emacs interlock files.)</td>
+</tr>
+<tr>
+	<td>`ignored-sitemap-paths`</td>
+	<td>A vector of regexes matching paths that you want to ignore
+	when generating a sitemap.</td>
 </tr>
 <tr>
 	<td>`previews?`</td>

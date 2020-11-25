@@ -12,3 +12,4 @@ pom.xml.asc
 resources/public/
 .idea/
 .DS_Store
+public/
