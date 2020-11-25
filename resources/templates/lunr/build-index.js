@@ -11,6 +11,7 @@ const SEARCH_FIELDS = ["title", "description", "keywords", "body"];
 const EXCLUDE_FILES = ["search.html"];
 const MAX_PREVIEW_CHARS = 275;  // Number of characters to show for a given search result
 const OUTPUT_INDEX = "themes/nucleus/js/index/lunr_index.js";  // Index file
+var SEARCH_FIELD_BOOSTS = {title: 2, description: 1.3};
 
 
 function isHtml(filename) {
@@ -75,7 +76,8 @@ function buildIndex(docs) {
     var idx = lunr(function () {
         this.ref('id');
         for (var i = 0; i < SEARCH_FIELDS.length; i++) {
-            this.field(SEARCH_FIELDS[i].slice(0, 1));
+            var boost = SEARCH_FIELD_BOOSTS[SEARCH_FIELDS[i]] || 1;
+            this.field(SEARCH_FIELDS[i].slice(0, 1), { boost });
         }
         docs.forEach(function (doc) {
                 this.add(doc);

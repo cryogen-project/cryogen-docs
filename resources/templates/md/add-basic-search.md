@@ -4,12 +4,12 @@
  :page-index 13
  :section "Additional Resources"}
 
-To enable a search option for your site, you can use [`Lunr`](https://lunrjs.com/), which will create a searchable index without the need of any server-side or external search service. The inspiration to integrate Lunr with Cryogen was the following site [`Lunr-Index-and-Search-for-Static-Sites`](https://github.com/BLE-LTER/Lunr-Index-and-Search-for-Static-Sites), where the source Javascript files can be found, which are used with slightly modifications here.
+To enable a search option for your site, you can use [`Lunr`](https://lunrjs.com/), which will create a searchable index without the need of any server-side or external search service. The inspiration to integrate Lunr with Cryogen was the following site [`Lunr-Index-and-Search-for-Static-Sites`](https://github.com/BLE-LTER/Lunr-Index-and-Search-for-Static-Sites), where the source JavaScript files can be found, which are used with slightly modifications here.
 
-A life demo of the result can be found at: [https://blog.stderr.at/](https://blog.stderr.at/)
+A live demo of the result can be found at: [https://blog.stderr.at/](https://blog.stderr.at/)
 
 ## Prerequisites
-Before we start Node.js and some modules must be installed on your system:
+Before we start, Node.js and some modules must be installed on your system:
 
 1. Install [`Node.js`](https://nodejs.org/en/download/)
 2. Install lunr: `npm install lunr`
@@ -54,12 +54,12 @@ node ./build-index.js
 ## Download lunrclient.js
 Download and place the file lunrclient.js into the js folder of your theme: [lunrclient.js](/lunr/lunrclient.js)
 
-This script will create the search rusult page.
+This script will create the search result page.
 
 ## Changes to HTML and CSS
 Changes to the actual html/css highly depend on your theme. Therefor only a basic snippets of a possible change of the **base.html** are shown here.
 
-In the `head` tag the Javascripts must be loaded. First lunr itself, then the indexfile and then the client file:
+In the `head` tag the JavaScript files must be loaded. First lunr itself, then the indexfile and then the client file:
 ```html
     <script src="https://unpkg.com/lunr/lunr.js"></script>
     <script src="/js/index/lunr_index.js"></script>
@@ -91,7 +91,7 @@ The script lunrclient.js will replace the elements "resultCount" and "searchResu
   </div>
 ```
 
-Tip: If you use nucleus example template, or any javascript which does a **window.onload** you may want to do the following changes too:
+Tip: If you use the nucleus example template, or any javascript which does a **window.onload** you may want to do the following changes too:
 
 `themes/nucleus/js/scripts.js`
 add
