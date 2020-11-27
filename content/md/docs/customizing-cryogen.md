@@ -6,7 +6,7 @@
 
 If the malleability provided by the [configuration](configuration.html) and templates isn't enough for your needs, here are your options.
 
-## Leverage Cryogen config and hooks to add, modify, or derive new template parameters
+## Leverage Cryogen config and hooks to add, modify, or derive new template parameters and modify content
 
 You can invoke [`cryogen-core.compiler/compile-assets-timed`](https://github.com/cryogen-project/cryogen-core/blob/master/src/cryogen_core/compiler.clj) with a custom `config` to:
 
@@ -17,6 +17,7 @@ You can invoke [`cryogen-core.compiler/compile-assets-timed`](https://github.com
    a function of the signature `(fn [params site-data] params)`. See the code for the available `site-data`.
 4. Add or modify data of any "article" (a page or a post) or exclude it from further processing by supplying under
    `:update-article-fn` a function of the signature `(fn [article, config] article)`. Return `nil` to exclude that article.
+5. Post-process the HTML `:content` of any article right before it is written to the disk by supplying under `:postprocess-article-html-fn` a function of the signature `(fn [article, params] article)`.
 
 ### Examples
 
@@ -49,8 +50,8 @@ And in `tags.html`:
 
 See the cryogen 0.2.3 [auto-link customization gist](https://gist.github.com/holyjak/bbeb714ca25ec99b55933c40f2e75881).
 
-#### Override the default URI based on a custom article metadata
 
+#### Override the default URI based on a custom article metadata
 You have the post `2019-12-31-my-awesome-post.asc`, which would normally be displayed at https://blog.example.com/2019-12-31-my-awesome-post/ but you don't want to have the date in the URL. (You could simply move the date from the file name into the `:date` metadata but let's assume you don't want to for a reason.) So you have added the desired URL slug to the post:
 
 ```clojure
@@ -70,6 +71,36 @@ Now let's tell Cryogen to use the slug instead of the default `:uri`:
 ```
 
 Voilà, https://blog.example.com/my-awesome-post/ is there!
+
+#### Post-process article content with Selmer
+
+Having a post like this:
+
+```markdown
+{:title "Test of markdown with Selmer templating"
+ :date "2020-11-26"
+ :my/postprocess? true}
+
+Selmer test - it says: {{HELLO}}
+```
+
+and configuring Cryogen with this `postprocess-article-html-fn`:
+
+```clojure
+(cryogen-core.compiler/compile-assets-timed
+     {:postprocess-article-html-fn
+      (fn postprocess-article [article params]
+        (require 'selmer.parser)
+        (if (:my/postprocess? article)
+          (update article :content selmer.parser/render {:HELLO "Nazdar!"})
+          article))})
+```
+
+we end up with HTML including
+
+```html
+<p>Selmer test - it says: Nazdar!</p>
+```
 
 ## Extra pages / posts
 
