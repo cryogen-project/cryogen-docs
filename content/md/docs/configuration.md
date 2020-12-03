@@ -194,7 +194,8 @@ search path or has a different name than please adapt this value.
 </tr>
 <tr>
 	<td>* `clean-urls`</td>
-	<td>`:trailing-slash`, `:no-trailing-slash`, and `:dirty` are valid options. Set this to `:trailing-slash` to emit html as subdirectories, e.g., `prefix/root/page-name/index.html`. Links would then end in `/page-name/`. Set this to `:no-trailing-slash` if you use GitHub Pages and prefer URLs not contain a final trailing slash. Links would then end in `/page-name`. <strong>Note:</strong> `:no-trailing-slash` will not work on all hosting providers such as Amazon S3. Set this to `:dirty` will result in `prefix/root/page-name.html`. Links would then end in `/page-name.html`</td>
+	<td>`:trailing-slash`, `:no-trailing-slash`, and `:dirty` are valid options. Set this to `:trailing-slash` to emit html as subdirectories, e.g., `prefix/root/page-name/index.html`. Links would then end in `/page-name/`. Set this to `:no-trailing-slash` if you use GitHub Pages and prefer URLs not contain a final trailing slash. Links would then end in `/page-name`. <strong>Note:</strong> `:no-trailing-slash` will not work on all hosting providers such as Amazon S3. Set this to `:dirty` will result in `prefix/root/page-name.html`. Links would then end in `/page-name.html`
+	<strong>Note 2:</strong> You can override the default URL with a smart use of <a href="/docs/customizing-cryogen.html"><code>:update-article-fn</code></a>.</td>
 </tr>
 <tr>
 	<td>`collapse-subdirs?`</td>
@@ -252,7 +253,7 @@ In addition to these default configuration options, you may add your own custom 
        (start-watcher! "themes" ignored-files (partial compile-assets-timed overrides)))))
 ;; ...
 ```
-### Deriving Params
+### Deriving Additional Params for Use in Templates
 
 If you wish to further derive more parameters from the data that the cryogen compiler generates, you may pass in a `:extend-params-fn` in your overrides map which will be invoked by the compiler like so
 
@@ -266,3 +267,6 @@ If you wish to further derive more parameters from the data that the cryogen com
    :sidebar-pages sidebar-pages})
 ```
 
+It should return the `params`, likely with additional keys. These will be visible to your templates.
+
+See [Customizing/Extending Cryogen](/docs/customizing-cryogen.html) for an example.

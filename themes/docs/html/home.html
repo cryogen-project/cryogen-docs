@@ -23,17 +23,20 @@
 <div class="row">
     <div class="col-lg-7 col-md-7 col-sm-6 instructions">
         <ol>
-            <li>Install <a href="http://leiningen.org/">Leiningen</a></li>
+            <li>Install <a href="https://leiningen.org/">Leiningen</a> or <a href="https://clojure.org/guides/deps_and_cli">Clojure CLI</a> with <a href="https://github.com/seancorfield/clj-new/">clj-new</a></li>
             <li>Create a new cryogen project</li>
             <li>Start the server and visit <code>localhost:3000</code> in your browser</li>
         </ol>
     </div>
     <div class="col-lg-5 col-md-5 col-sm-6">
-        <pre class="shell"><p class="title">Quick Start Guide</p><code class="bash"><span class="dir">~ </span><span
-class="prompt">$ </span><span class="cmd">lein new cryogen my-blog</span>
-<span class="dir">~ </span><span class="prompt">$ </span><span class="cmd">cd my-blog</span>
+        <pre class="shell">
+            <p class="title">Quick Start Guide</p><code class="bash"><span class="dir">~ </span><span
+                class="prompt">$ </span><span class="cmd">lein new cryogen my-blog</span><span class="comment"> # or: </span>
+<span class="dir">~ </span><span
+                    class="prompt">$ </span><span class="cmd">clojure -X:new create :template cryogen :name me.my-blog</span>
+<span class="dir">~ </span><span class="prompt">$ </span><span class="cmd">cd *my-blog</span>
 <span class="dir">~/my-blog </span><span class="prompt">$ </span><span
-class="cmd">lein ring server</span>
+class="cmd">lein serve</span>
 Started server on port 3000</code></pre>
     </div>
 </div>
