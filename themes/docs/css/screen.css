@@ -111,6 +111,10 @@ header h2#slogan {
     color: #e1e100;
 }
 
+.shell code .comment .hljs-comment {
+    color: #aca9a9;
+}
+
 #reading-pane {
     background-color: #F7F9FD;
     border-radius: 10px;
