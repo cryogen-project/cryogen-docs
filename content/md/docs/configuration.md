@@ -132,18 +132,18 @@ Keys marked with a * must be provided.
 </tr>
 <tr>
 	<td>`sass-path`</td>
-	<td>Path at which the `sass` executable can be found. The default value "sass" works if you have the executable in your path, in that case
+	<td>Path at which the `sass` executable can be found. The default value "sass" works if you have the executable in your path; in that case,
 nothing needs to be changed. If the executable is not in the
-search path or has a different name than please adapt this value.
+search path or has a different name then please adapt this value.
 </td>
 </tr>
 <tr>
 	<td>`compass-path`</td>
 	<td>Path at which the `compass` executable can be found.
-Just as with the `sass-path` fhe default value "compass" works
-if you have the executable in your path, in that case
+Just as with the `sass-path` the default value "compass" works
+if you have the executable in your path; in that case,
 nothing needs to be changed. If the executable is not in the
-search path or has a different name than please adapt this value.
+search path or has a different name then please adapt this value.
 </td>
 </tr>
 <tr>
