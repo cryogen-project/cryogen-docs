@@ -14,7 +14,7 @@ To get started, you'll need to have either [Leiningen](http://leiningen.org/) or
 ~/my-blog $ lein serve
 
 # Clojure CLI:
-~ $ clojure -X:new create :template cryogen :name me.my-blog
+~ $ clojure -X:new :template cryogen :name me.my-blog
 ~ $ cd me.my-blog
 ~/my-blog $ clojure -X:serve
 ```
