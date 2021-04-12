@@ -1,4 +1,4 @@
-{:title "Deploying on Netlify"
+{:title "Netlify"
  :layout :page
  :page-index 11
  :section "Deployment"}
