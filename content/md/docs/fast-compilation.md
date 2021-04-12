@@ -1,7 +1,7 @@
 {:title "Fast Compilation"
  :layout :page
  :toc true
- :page-index 14
+ :page-index 15
  :section "Additional Resources"}
 
 As of Cryogen 0.4.0 [there is support for fast but partial compilation](https://github.com/cryogen-project/cryogen-core/pull/149). It is intended to be used when you work on a blog post or page and want to see it quickly, without re-compiling the whole site.

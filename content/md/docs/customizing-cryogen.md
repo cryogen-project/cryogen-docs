@@ -1,7 +1,7 @@
 {:title "Customizing/Extending Cryogen"
  :layout :page
  :toc true
- :page-index 11
+ :page-index 12
  :section "Additional Resources"}
 
 If the malleability provided by the [configuration](configuration.html) and templates isn't enough for your needs, here are your options.
