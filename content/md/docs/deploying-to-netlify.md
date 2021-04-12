@@ -3,13 +3,13 @@
  :page-index 11
  :section "Deployment"}
 
-Netlify provides free hosting of non-commericial static sites and builds automatically from a repository. 
+[Netlify](https://www.netlify.com) provides free hosting of non-commericial static sites and builds automatically from a repository. 
 
 Once Netlify is configured, everytime you push to github your site will be updated. 
 
 ## Short instructions
 
-1. In content/config.edn set :blog-prefix to ""
+1. In content/config.edn set **`:blog-prefix` to `""`**
 1. Make sure git is tracking public/
 1. Leave the Netlify build instructions blank
 1. Set Netlify's "Publish directory" to "public".
@@ -21,7 +21,7 @@ Once Netlify is configured, everytime you push to github your site will be updat
 1. Make a Netlify account.
 2. Make a github, bitbucket, or gitlab repo.
 3. Connect Netlify to your blog repo.
-4. In content/config.end set :blog-prefix to ""
+1. In content/config.edn set **`:blog-prefix` to `""`**
 5. Have git track public/ . It may be helpful to edit your .gitignore
 6. set Netlify's "Publish directory" to "public"
 7. Leave Netlify's build instructions blank. 
@@ -32,9 +32,9 @@ Once Netlify is configured, everytime you push to github your site will be updat
 
 ### Home page shows but the links are broken and CSS doesn't load
 
-You probably did not set :blog-prefix to "".
+You probably did not set `:blog-prefix` to `""`.
 
-If :blog-prefix has been set correctly and you have updated the site using "lein run" then download Netlify's version of your site. You'll have to figure it out for yourself what isn't working. How to download Netlify's version of your website https://answers.netlify.com/t/can-i-download-my-website/3622
+If :blog-prefix has been set correctly and you have updated the site using "lein run" then [download Netlify's version of your site.](https://answers.netlify.com/t/can-i-download-my-website/3622) You'll have to figure it out for yourself what isn't working.
 
 ### 404 when viewing the homepage
 
