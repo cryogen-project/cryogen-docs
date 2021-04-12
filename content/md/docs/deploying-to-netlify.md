@@ -9,7 +9,7 @@ Once Netlify is configured, everytime you push to github your site will be updat
 
 ## Short instructions
 
-1. In content/config.edn set **`:blog-prefix` to `""`**.
+1. In content/config.edn set `:blog-prefix` to `""`.
 1. Make sure git is tracking public/.
 1. Leave the Netlify build instructions blank.
 1. Set Netlify's "Publish directory" to "public".
@@ -21,7 +21,7 @@ Once Netlify is configured, everytime you push to github your site will be updat
 1. Make a Netlify account.
 2. Make a github, bitbucket, or gitlab repo.
 3. Connect Netlify to your blog repo.
-1. In content/config.edn set **`:blog-prefix` to `""`**
+1. In content/config.edn set `:blog-prefix` to `""`
 5. Have git track public/ . It may be helpful to edit your .gitignore.
 6. set Netlify's "Publish directory" to "public".
 7. Leave Netlify's build instructions blank. 
@@ -30,7 +30,7 @@ Once Netlify is configured, everytime you push to github your site will be updat
 
 ## Troubleshooting
 
-### Home page shows but the links are broken and CSS doesn't load
+### Home page shows but the links are broken and CSS/Theme doesn't load
 
 You probably did not set `:blog-prefix` to `""`.
 
