@@ -3,9 +3,9 @@
  :page-index 11
  :section "Deployment"}
 
-[Netlify](https://www.netlify.com) provides free hosting of non-commericial static sites and builds automatically from a repository. 
+[Netlify](https://www.netlify.com) provides free hosting of non-commerecial static sites and builds automatically from a repository. 
 
-Once Netlify is configured, everytime you push to github your site will be updated. 
+Once Netlify is configured, every time you push to github your site will be updated. 
 
 ## Short instructions
 
