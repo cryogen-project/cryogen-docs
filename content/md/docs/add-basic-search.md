@@ -1,7 +1,7 @@
 {:title "Basic Search with Lunr"
  :layout :page
  :toc true
- :page-index 13
+ :page-index 14
  :section "Additional Resources"}
 
 To enable search for your site, you can use [`Lunr`](https://lunrjs.com/), which will create a searchable index without the need for any server-side or external search service. The inspiration to integrate Lunr with Cryogen was the following site [`Lunr-Index-and-Search-for-Static-Sites`](https://github.com/BLE-LTER/Lunr-Index-and-Search-for-Static-Sites), where the source JavaScript files can be found, which are used with slightly modifications here.
