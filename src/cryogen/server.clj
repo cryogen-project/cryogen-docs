@@ -66,4 +66,5 @@
     (merge {:init (partial init fast)} opts)))
 
 (defn -main [& args]
-  (serve {:port 3000, :fast ((set args) "fast")}))
+  (let [port (some-> (System/getenv "PORT") (Integer/parseInt))]
+    (serve {:port (or port 3000), :fast ((set args) "fast")})))
