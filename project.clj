@@ -10,7 +10,7 @@
                            [selmer "1.10.6"]
                            [clj-text-decoration "0.0.3"]
                            [io.aviso/pretty "0.1.33"]
-                           [cryogen-flexmark "0.1.4"]
+                           [cryogen-flexmark "0.1.5"]
                            [cryogen-core "0.3.2"]]
             :plugins [[lein-ring "0.12.5"]]
             :main cryogen.core

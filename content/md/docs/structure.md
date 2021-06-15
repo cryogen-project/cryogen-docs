@@ -68,7 +68,7 @@ my-blog
 | `themes/{theme}/js`   | Also self explanatory. The theme's JavaScript files go here.                                                                                      |
 | `src/cryogen`         | Contains the core and server.                                                                                                                     |
 | `project.clj`         | Your typical project file for a Clojure project.                                                                                                  |
-<!-- TODO: Add {.table .table-bordered} when the flexmark ext. https://github.com/vsch/flexmark-java/wiki/Attributes-Extension added -->
+{.table .table-bordered}
 
 
 The html templates use [Selmer](https://github.com/yogthos/Selmer) which can extend other templates. Most html templates extend off of `base.html`. The following diagram gives an overview of the Cryogen Selmer hierachy.

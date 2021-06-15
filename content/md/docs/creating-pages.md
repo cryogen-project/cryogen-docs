@@ -28,7 +28,7 @@ The following information is mandatory in your page metadata.
 |--------------|---------------------------------------------------------------------------------------|
 | `title`      | Your post title provided as a string.                                                 |
 | `page-index` | Because pages can be linked up with previous/next links, this is how they get sorted. |
-<!-- TODO: Add {.table .table-bordered} when the flexmark ext. https://github.com/vsch/flexmark-java/wiki/Attributes-Extension added -->
+{.table .table-bordered}
 
 
 These are some optional keys that you may provide:
@@ -42,7 +42,7 @@ These are some optional keys that you may provide:
 | `klipse`      | Set [Klipse](https://github.com/viebel/klipse) configuration for the post. See [Klipse Integration](klipse.html) for details.                                                                                                                                                                                                             |
 | `layout`      | A keyword corresponding to an HTML file under `themes/{theme}/html`. Defaults to `:page`.                                                                                                                                                                                                                                                 |
 | `description` | Provide a custom description for the post (available as `{{post.description}}` in the templates) instead of the one created automatically from the post's preview. Set it to `false` to disable description for the page. (`post.description` will thus be nil.)                                                                          |
-<!-- TODO: Add {.table .table-bordered} when the flexmark ext. https://github.com/vsch/flexmark-java/wiki/Attributes-Extension added -->
+{.table .table-bordered}
 
 For example:
 

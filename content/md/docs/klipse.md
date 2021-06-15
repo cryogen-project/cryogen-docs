@@ -26,7 +26,7 @@ The configuration is a map that may include the keys described below. The map mu
 | `js`        | Can be either `:min` or `:non-min`. Self-hosted clojurescript is not (yet?) compatible with advanced compilation, so if a post has cljs snippets, it needs to use the non-minified version, but any other languages can use the minified version. <br><br> Cryogen will infer this based on the setting and the classes in the code blocks in each post, so normally you don't need to worry about it. Can be overridden if necessary. |
 | `css-base`  | The uri to the codemirror css that is used by Klipse. As with `:js-src`, it defaults to css hosted by Klipse and you can override it if you want to host it yourself.                                                                                                                                                                                                                                                                  |
 | `css-theme` | You can also use a codemirror theme for the snippets, just set this to a uri pointing to one.                                                                                                                                                                                                                                                                                                                                          |
-<!-- TODO: Add {.table .table-bordered} when the flexmark ext. https://github.com/vsch/flexmark-java/wiki/Attributes-Extension added -->
+{.table .table-bordered}
 
 ## Examples
 
