@@ -19,51 +19,14 @@ configuration map containing the desired changes to the `:klipse` key in the pos
 
 The configuration is a map that may include the keys described below. The map must must contain at least selectors for the language(s) you want to klipsify, see examples below.
 
-<table class="table table-bordered">
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>`settings`</td>
-<td>Contains a clojure map that's passed to `window.klipse_settings`.
-All the settings are documented [here](https://github.com/viebel/klipse#configuration). (In cryogen you can use `:lisp-cased-keywords` instead of `"snake_cased"`/`"camelCased"` strings.)
-</td>
-</tr>
-<tr>
-<td>`js-src`</td>
-<td>A map with the keys `:min` and `:non-min`. These are uris that point to the
-minified and non-minified version of the Klipse plugin.
-They default to the plugin hosted by Klipse, but to host it yourself,
-just set the appropriate uris.
-</td>
-</tr>
-<tr>
-<td>`js`</td>
-<td>Can be either `:min` or `:non-min`. Self-hosted clojurescript is not (yet?)
-compatible with advanced compilation, so if a post has cljs snippets, it needs
-to use the non-minified version, but any other languages can use the minified version.
-<br><br>
-Cryogen will infer this based on the setting and the classes in the code blocks
-in each post, so normally you don't need to worry about it.
-Can be overridden if necessary.</td>
-</tr>
-<tr>
-<td>`css-base`</td>
-<td>The uri to the codemirror css that is used by Klipse. As with `:js-src`,
-it defaults to css hosted by Klipse and you can override it if you want
-to host it yourself.</td>
-</tr>
-<tr>
-<td>`css-theme`</td>
-<td>You can also use a codemirror theme for the snippets,
-just set this to a uri pointing to one.</td>
-</tr>
-</tbody>
-</table>
+| Key         | Description                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `settings`  | Contains a clojure map that's passed to `window.klipse_settings`. All the settings are documented [here](https://github.com/viebel/klipse#configuration). (In cryogen you can use `:lisp-cased-keywords` instead of `"snake_cased"`/`"camelCased"` strings.)                                                                                                                                                                           |
+| `js-src`    | A map with the keys `:min` and `:non-min`. These are uris that point to the minified and non-minified version of the Klipse plugin. They default to the plugin hosted by Klipse, but to host it yourself, just set the appropriate uris.                                                                                                                                                                                               |
+| `js`        | Can be either `:min` or `:non-min`. Self-hosted clojurescript is not (yet?) compatible with advanced compilation, so if a post has cljs snippets, it needs to use the non-minified version, but any other languages can use the minified version. <br><br> Cryogen will infer this based on the setting and the classes in the code blocks in each post, so normally you don't need to worry about it. Can be overridden if necessary. |
+| `css-base`  | The uri to the codemirror css that is used by Klipse. As with `:js-src`, it defaults to css hosted by Klipse and you can override it if you want to host it yourself.                                                                                                                                                                                                                                                                  |
+| `css-theme` | You can also use a codemirror theme for the snippets, just set this to a uri pointing to one.                                                                                                                                                                                                                                                                                                                                          |
+{.table .table-bordered}
 
 ## Examples
 
