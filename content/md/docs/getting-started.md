@@ -11,12 +11,22 @@ To get started, you'll need to have either [Leiningen](http://leiningen.org/) or
 # Leiningen:
 ~ $ lein new cryogen my-blog
 ~ $ cd my-blog
+
+# start continuous build that watches for changes
 ~/my-blog $ lein serve
+
+# build for deployment
+~ $ lein run
 
 # Clojure CLI:
 ~ $ clojure -X:new :template cryogen :name me.my-blog
 ~ $ cd me.my-blog
+
+# start continuous build that watches for changes
 ~/my-blog $ clojure -X:serve
+
+# build for deployment
+~ $ clojure -M:build
 ```
 
 Once the server starts, you can visit your site at `localhost:3000`. The first thing you'll see is a helpful README on what to do next.
