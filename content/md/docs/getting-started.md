@@ -13,20 +13,23 @@ To get started, you'll need to have either [Leiningen](http://leiningen.org/) or
 ~ $ cd my-blog
 
 # start continuous build that watches for changes
-~/my-blog $ lein serve
+~/my-blog $ lein serve # or lein serve:fast 
 
 # build for deployment
 ~ $ lein run
 
 # Clojure CLI:
-~ $ clojure -X:new :template cryogen :name me.my-blog
-~ $ cd me.my-blog
+~ $ clojure -Ttools install com.github.seancorfield/clj-new '{:git/tag "v1.2.362"}' :as clj-new
+~ $ clojure -Tclj-new create :template cryogen :name myname/my-blog :force true
+~ $ cd myname/my-blog/
 
 # start continuous build that watches for changes
-~/my-blog $ clojure -X:serve
+~/my-blog $ clojure -X:serve # or clojure -X:serve:fast
 
 # build for deployment
 ~ $ clojure -M:build
 ```
 
-Once the server starts, you can visit your site at `localhost:3000`. The first thing you'll see is a helpful README on what to do next.
+Once the server starts, you can visit your site at `localhost:3000`<sup>*</sup>. The first thing you'll see is a helpful README on what to do next.
+
+<sup>*</sup>) You can override the default port by setting the env variable PORT: `env PORT=8080 lein serve`
