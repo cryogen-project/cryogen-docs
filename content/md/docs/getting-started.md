@@ -24,7 +24,7 @@ Once you have that ready, here's how to get the base template.
 ~ $ lein run
 
 # Clojure CLI (after installing clj-new as a tool - see link above)):
-~ $ clojure -Tclj-new :template cryogen :name me.my-blog
+~ $ clojure -Tclj-new create :template cryogen :name me.my-blog
 ~ $ cd me.my-blog
 
 # start continuous build that watches for changes
