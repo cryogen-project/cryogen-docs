@@ -26,11 +26,13 @@ If no date format was specified in the configuration file, the default is the IS
 
 Alternatively, you can leave the date out of the post name and specify it in the metadata of the file under the `:date` key. The date format must also match the format specified in your `config.edn` file in this case.
 
+Finally, if you don't have embedded metadata in your post, the date will be taken from the file creation date of your post's markdown file.
+
 If your title is more than one word long, it must be separated by dashes.
 
 ### Post Contents
 
-Every Markdown file representing a post must contain metadata about the title and layout of the post. This is provided as a Clojure map at the beginning of the Markdown file. The following data is required:
+Every Markdown file representing a post may contain metadata about the title and layout of the post. This is provided as a Clojure map at the beginning of the Markdown file. If you do provide such a map, the following data is required:
 
 | Key     | Description                           |
 |---------|---------------------------------------|
@@ -50,6 +52,18 @@ These are some optional keys that you may provide:
 | `klipse`                    | Set [Klipse](https://github.com/viebel/klipse) configuration for the post. See [Klipse Integration](klipse.html) for details.                                                                                                                                    |
 | `layout`                    | A keyword corresponding to an HTML file under `themes/{theme}/html`. Defaults to `:post` for posts.                                                                                                                                                              |
 | `description`               | Provide a custom description for the post (available as `{{post.description}}` in the templates) instead of the one created automatically from the post's preview. Set it to `false` to disable description for the page. (`post.description` will thus be nil.) |
+| `image`                     | Path to an image illustrating the page, *or* a map with the keys as documented below; in either case, used to provide the metadata to allow social media platforms to construct a rich Open Graph banner for a link to your post. |
+{.table .table-bordered}
+
+If you include a map rather than a path as the value of `:image`, it should have keys as follows:
+
+| Key                         | Description                                                                                                                                                           |
+|-----------------------------|---------------------------------------------------------------------------|
+| {style="width:100px"} `alt` | a description of the image intended to describe it to users with visual impairments. |
+| `height` | the height of the image in pixels as a number. |
+| `path` | the path to the image. |
+| `type` | the [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types) of the image, as a string; typically one of `"image/gif"`, `"image/jpeg"`, or `"image/png"`. |
+| `width` | the width of the image in pixels as a number. |
 {.table .table-bordered}
 
 The rest of your file should contain valid Markdown content. For example:
@@ -81,6 +95,29 @@ You can specify the author for a particular post by including the `:author` key 
 ### Tags
 
 Cryogen will automatically create a page for each unique tag that you've used in your posts.
+
+### Posts without embedded metadata
+
+If you don't include a map of metadata at the head of your post, an attempt will be made to construct such a map. Fields will be constructed as follows:
+
+| Key                         | Derivation                                                                                                                                                           |
+|-----------------------------|---------------------------------------------------------------------------|
+| {style="width:100px"} `author` | will be inferred from the owner of the file. This will be passed to an appropriate operating system mechanism to retrieve the real name associated with that user account, if any. |
+| `date` | will be taken from the name of the file, if you've used a name as suggested above, or, failing that, from the creation date of the file. |
+| `description` | will be taken from the first normal paragraph of the text. |
+| `image` | will be taken from the first image linked in the text, if any. |
+| `tags` | will be taken from a contatenation of the text of all paragraphs which start with the emboldened string 'Tags:' (i.e., in Markdown, `**Tags:**`), considered as comma-separated values. |
+| `title` | will be taken from the first top level heading in the text, or, failing that, from the name of the file with the date part (if any) and extension removed. |
+{.table .table-bordered}
+
+There are clearly, then, fields which are not currently inferred; these are:
+
+1. `:draft?`;
+2. `:klipse` &mdash; which could be inferred and may be in the future but is not now;
+3. `:layout`;
+4. `:toc` &mdash; this again could be inferred but is not currently.
+
+If you wish to use any of these fields you **must** embed metadata in your file; and, curently, you cannot use both embedded and inferred metadata: if a metadata map is found, no metadata will be inferred.
 
 ### Including Images in Posts
 
