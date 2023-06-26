@@ -22,7 +22,7 @@ contact-me.asc
 
 ### Page Contents
 
-The following information is mandatory in your page metadata.
+You may include an [EDN](https://github.com/edn-format/edn)-formatted map of metadata at the start of your page file. If you do include such a map, the following information is mandatory:
 
 | Key          | Description                                                                           |
 |--------------|---------------------------------------------------------------------------------------|
@@ -41,7 +41,8 @@ These are some optional keys that you may provide:
 | `toc-class`   | Specify the class that you want attached to the root element of your TOC (either `ul` or `li`). If this is not provided then the compiler will look for the class in `config.edn`. If neither are provided then `"toc"` is used.                                                                                                          |
 | `klipse`      | Set [Klipse](https://github.com/viebel/klipse) configuration for the post. See [Klipse Integration](klipse.html) for details.                                                                                                                                                                                                             |
 | `layout`      | A keyword corresponding to an HTML file under `themes/{theme}/html`. Defaults to `:page`.                                                                                                                                                                                                                                                 |
-| `description` | Provide a custom description for the post (available as `{{post.description}}` in the templates) instead of the one created automatically from the post's preview. Set it to `false` to disable description for the page. (`post.description` will thus be nil.)                                                                          |
+| `description` | Provide a custom description for the page (available as `{{page.description}}` in the templates) instead of the one created automatically from the post's preview. Set it to `false` to disable description for the page. (`page.description` will thus be nil.)                                                                          |
+| `image`       | Path to an image illustrating the page, *or* a map with the keys as documented below; in either case, used to provide the metadata to allow social media platforms to construct a rich Open Graph banner for a link to your post. |
 {.table .table-bordered}
 
 For example:
@@ -52,6 +53,38 @@ For example:
  :navbar?    false
  :home?      false}
 ```
+
+If you include a map rather than a path as the value of `:image`, it should have keys as follows:
+
+| Key                         | Description                                                                                                                                                           |
+|-----------------------------|---------------------------------------------------------------------------|
+| {style="width:100px"} `alt` | a description of the image intended to describe it to users with visual impairments. |
+| `height` | the height of the image in pixels as a number. |
+| `path` | the path to the image. |
+| `type` | the [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types) of the image, as a string; typically one of "image/gif", "image/jpeg", or "image/png". |
+| `width` | the width of the image in pixels as a number. |
+{.table .table-bordered}
+
+If you don't include a map of metadata at the head of your post, an attempt will be made to construct such a map. Fields will be constructed as follows:
+
+| Key                         | Derivation                                                                                                                                                           |
+|-----------------------------|---------------------------------------------------------------------------|
+| {style="width:100px"} `author` | will be inferred from the owner of the file. This will be passed to an appropriate operating system mechanism to retrieve the real name associated with that user account, if any. |
+| `description` | will be taken from the first normal paragraph of the text. |
+| `image` | will be taken from the first image linked in the text, if any. |
+| `title` | will be taken from the first top level heading in the text, or, failing that, from the name of the file with the date part (if any) and extension removed. |
+{.table .table-bordered}
+
+There are clearly, then, fields which are not currently inferred; these are:
+
+1. `:home?`;
+2. `:klipse` &mdash; which could be inferred and may be in the future but is not now;
+3. `:layout`;
+4. `:navbar?`;
+5. `:page-index` &mdash; this is not currently inferred but clearly should be;
+6. `:toc` &mdash; this again could be inferred but is not currently.
+
+If you wish to use any of these fields you **must** embed metadata in your file; and, curently, you cannot use both embedded and inferred metadata: if a metadata map is found, no metadata will be inferred.
 
 ### Images in Your Pages
 
