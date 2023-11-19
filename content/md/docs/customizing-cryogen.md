@@ -16,8 +16,10 @@ You can invoke [`cryogen-core.compiler/compile-assets-timed`](https://github.com
 3. Derive new / modify existing page parameters (available in your Selmer templates) by supplying under `:extend-params-fn`
    a function of the signature `(fn [params site-data] params)`. See the code for the available `site-data`.
 4. Add or modify data of any "article" (a page or a post) or exclude it from further processing by supplying under
-   `:update-article-fn` a function of the signature `(fn [article, config] article)`. Return `nil` to exclude that article.
-5. Post-process the HTML `:content` of any article right before it is written to the disk by supplying under `:postprocess-article-html-fn` a function of the signature `(fn [article, params] article)`.
+   `:update-article-fn` a function of the signature `(fn [article, config] article)`. The function may change the content of the article
+   by modifying its `:content-dom`, which is an [Enlive snippet](https://github.com/cgrand/enlive#concepts), i.e. a sequence of nodes.
+   You may operate on it using e.g. `enlive/transform`. Return `nil` to exclude that article.
+6. Post-process the HTML `:content` of any article right before it is written to the disk by supplying under `:postprocess-article-html-fn` a function of the signature `(fn [article, params] article)`. (Notice that when an article is first read, its `:content` is the markup text, it is later removed and replaced with `:content-dom` of Enlive nodes, and this again is later removed and replaced with `:content`, this time HTML text - this one is what this function sees.)
 
 ### Examples
 
@@ -48,7 +50,7 @@ And in `tags.html`:
 
 #### Auto-link headings in posts and pages, GitHub style
 
-See the cryogen 0.2.3 [auto-link customization gist](https://gist.github.com/holyjak/bbeb714ca25ec99b55933c40f2e75881).
+See the cryogen 0.4.4 [auto-link customization gist](https://gist.github.com/holyjak/bbeb714ca25ec99b55933c40f2e75881).
 
 
 #### Override the default URI based on a custom article metadata
@@ -72,7 +74,7 @@ Now let's tell Cryogen to use the slug instead of the default `:uri`:
 
 Voilà, https://blog.example.com/my-awesome-post/ is there!
 
-#### Post-process article content with Selmer
+#### Post-process article HTML content with Selmer
 
 Having a post like this:
 
