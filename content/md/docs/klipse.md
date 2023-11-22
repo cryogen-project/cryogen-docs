@@ -63,7 +63,7 @@ Reagent and/or Ruby evaluation.
 
 Alternatively, for asciidoc:
 
-`hello-world.asc`
+`hello-world.adoc`
 
     {:title "A post"
      :layout :post

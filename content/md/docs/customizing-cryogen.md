@@ -52,7 +52,7 @@ See the cryogen 0.2.3 [auto-link customization gist](https://gist.github.com/hol
 
 
 #### Override the default URI based on a custom article metadata
-You have the post `2019-12-31-my-awesome-post.asc`, which would normally be displayed at https://blog.example.com/2019-12-31-my-awesome-post/ but you don't want to have the date in the URL. (You could simply move the date from the file name into the `:date` metadata but let's assume you don't want to for a reason.) So you have added the desired URL slug to the post:
+You have the post `2019-12-31-my-awesome-post.adoc`, which would normally be displayed at https://blog.example.com/2019-12-31-my-awesome-post/ but you don't want to have the date in the URL. (You could simply move the date from the file name into the `:date` metadata but let's assume you don't want to for a reason.) So you have added the desired URL slug to the post:
 
 ```clojure
 {:title "Awesome!" :slug "my-awesome-post"}

@@ -12,12 +12,12 @@ Similar to your posts, all of your pages should reside under the `page-root` fol
 
 ## Creating Pages
 
-To create a new page, just make a new Markdown/AsciiDoc file under your `page-root`. You don't need to include a date in the file name or in the metadata like you did a post but words should still be dash-separated and the file must have a `.md` or `.asc` extension. For example:
+To create a new page, just make a new Markdown/AsciiDoc file under your `page-root`. You don't need to include a date in the file name or in the metadata like you did a post but words should still be dash-separated and the file must have a `.md` or `.adoc` extension. For example:
 
 ```
 about.md
 my-projects.md
-contact-me.asc
+contact-me.adoc
 ```
 
 ### Page Contents
