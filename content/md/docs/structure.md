@@ -11,9 +11,9 @@ my-blog
 ├── content
 │   ├── asc
 │   │   ├── pages
-│   │   │   └── adoc-page.asc
+│   │   │   └── adoc-page.adoc
 │   │   └── posts
-│   │       └── 2014-10-10-adoc-post.asc
+│   │       └── 2014-10-10-adoc-post.adoc
 │   ├── md
 │   │   ├── pages
 │   │   │   ├── about.md
